@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+title: "fc-variant-atlas: aligned, sequence-validated engineered IgG Fc variants with measured structural context"
+message: "If you use this software or its curated data, please cite it."
+type: software
+authors:
+  - family-names: Damko
+    given-names: Ermelinda
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/dataRichinsightPoor/fc-variant-atlas"
+abstract: >-
+  A curated, machine-readable atlas of engineered human IgG Fc variants
+  (effector silencing, effector enhancement, half-life engineering,
+  heterodimerization, hexamerization, conjugation, stabilization), aligned
+  across IgG1 to IgG4 in EU numbering, with every substitution validated
+  against the UniProt reference sequence and with interface contacts measured
+  directly from deposited coordinates. Ships a browser viewer and generated
+  PyMOL scripts so any variant can be inspected structurally without manual
+  setup.
+keywords:
+  - antibody engineering
+  - Fc silencing
+  - EU numbering
+  - FcgammaR
+  - FcRn
+  - structural bioinformatics

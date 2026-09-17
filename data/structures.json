@@ -1,0 +1,706 @@
+{
+ "_about": "Interface contacts and structure provenance used by fcatlas.structure.",
+ "_method": "Minimum heavy-atom distance from each Fc residue to any atom of the partner chains, computed from the deposited mmCIF coordinates with a 5.0 A cutoff. Author numbering in these entries is EU numbering, verified residue by residue against the UniProt reference sequence.",
+ "complexes": {
+  "1E4K": {
+   "partner": "FcgammaRIIIb ectodomain",
+   "partner_chains": [
+    "C"
+   ],
+   "fc_chains": [
+    "A",
+    "B"
+   ],
+   "fc_genotype": "wild type",
+   "cutoff": 5.0,
+   "contacts": {
+    "234": 3.15,
+    "235": 2.68,
+    "236": 2.7,
+    "237": 3.09,
+    "238": 3.5,
+    "239": 3.11,
+    "265": 2.73,
+    "266": 4.35,
+    "267": 3.43,
+    "269": 3.63,
+    "297": 3.05,
+    "298": 3.26,
+    "299": 4.24,
+    "326": 4.44,
+    "327": 3.87,
+    "328": 3.24,
+    "329": 3.26,
+    "330": 4.23,
+    "332": 3.93
+   },
+   "doi": "https://doi.org/10.1038/35018508"
+  },
+  "1T89": {
+   "partner": "FcgammaRIIIa ectodomain",
+   "partner_chains": [
+    "B"
+   ],
+   "fc_chains": [
+    "A"
+   ],
+   "fc_genotype": "wild type",
+   "cutoff": 5.0,
+   "contacts": {
+    "235": 3.0,
+    "236": 3.02,
+    "237": 2.8,
+    "238": 3.25,
+    "239": 3.22,
+    "265": 2.85,
+    "266": 4.54,
+    "267": 3.79,
+    "269": 2.52,
+    "297": 3.96,
+    "298": 3.51,
+    "299": 4.47,
+    "325": 4.3,
+    "327": 3.64,
+    "328": 3.59,
+    "329": 3.23,
+    "330": 4.17,
+    "332": 4.74
+   },
+   "doi": "https://doi.org/10.1074/jbc.M312904200"
+  },
+  "5XJE": {
+   "partner": "FcgammaRIIIa, both partners glycosylated",
+   "partner_chains": [
+    "C"
+   ],
+   "fc_chains": [
+    "A",
+    "B"
+   ],
+   "fc_genotype": "wild type",
+   "cutoff": 5.0,
+   "contacts": {
+    "235": 3.24,
+    "236": 2.97,
+    "237": 2.85,
+    "238": 2.71,
+    "239": 2.7,
+    "265": 2.85,
+    "266": 4.54,
+    "267": 3.57,
+    "268": 4.88,
+    "269": 2.47,
+    "294": 4.77,
+    "295": 4.73,
+    "296": 2.98,
+    "297": 3.86,
+    "298": 3.36,
+    "299": 3.54,
+    "325": 4.94,
+    "326": 4.15,
+    "327": 3.23,
+    "328": 3.43,
+    "329": 3.44,
+    "330": 3.81,
+    "332": 3.59
+   },
+   "doi": "https://doi.org/10.1074/jbc.M117.808618"
+  },
+  "4N0U": {
+   "partner": "FcRn heavy chain and beta-2 microglobulin",
+   "partner_chains": [
+    "A",
+    "B"
+   ],
+   "fc_chains": [
+    "E"
+   ],
+   "fc_genotype": "M252Y/S254T/T256E (YTE)",
+   "cutoff": 5.0,
+   "contacts": {
+    "251": 3.57,
+    "252": 3.17,
+    "253": 2.53,
+    "254": 2.99,
+    "257": 3.93,
+    "285": 4.61,
+    "288": 3.98,
+    "307": 4.04,
+    "308": 3.36,
+    "309": 3.04,
+    "310": 2.04,
+    "311": 3.02,
+    "433": 3.69,
+    "434": 1.93,
+    "435": 3.32,
+    "436": 4.75
+   },
+   "doi": "https://doi.org/10.1073/pnas.1408886111",
+   "caveat": "This Fc is not wild type. The three YTE substitutions sit inside the FcRn contact patch, so contact distances at EU 252, 254 and 256 describe the engineered molecule, not human IgG1."
+  }
+ },
+ "fcrn_provenance_survey": {
+  "_about": "Every human FcRn-containing entry returned by an RCSB text search for FcRn, plus the deposited unbound human Fc entries from the same experimental series. Each entry was screened for an IgG Fc chain and, where one is present, genotyped at the EU positions measured in contact with FcRn in 4N0U. Composition and title were confirmed against the RCSB entry and polymer-entity records.",
+  "_finding": "Of the 9 FcRn-containing entries in this survey, 4 contain an IgG Fc chain (4N0U, 6WNA, 6WOL, 7Q15), and every one of those Fc chains is engineered at FcRn contact positions. None is wild type. The remaining FcRn entries are albumin or viral-capsid complexes with no Fc at all. Wild-type human IgG1 Fc has been solved unbound (4WI2, 6BZ4) but not, in this survey, bound to FcRn. Any statement about how wild-type IgG1 contacts FcRn is therefore inferred from engineered Fc, and the engineering sits inside the contact patch being measured.",
+  "entries": [
+   {
+    "pdb": "4WI3",
+    "title": "Structural mapping of the human IgG1 binding site for FcRn: hu3S193 Fc mutation I253A",
+    "fc": [
+     [
+      "A",
+      [
+       "I253A"
+      ]
+     ],
+     [
+      "B",
+      [
+       "I253A"
+      ]
+     ]
+    ],
+    "composition": "IgG1 Fc alone",
+    "category": "unbound_fc",
+    "has_igg_fc": true,
+    "fc_chains_engineered": [
+     "A",
+     "B"
+    ],
+    "fc_chains_wild_type": [],
+    "contains_fcrn": false
+   },
+   {
+    "pdb": "4WI8",
+    "title": "Structural mapping of the human IgG1 binding site for FcRn: hu3S193 Fc mutation Y436A",
+    "fc": [
+     [
+      "A",
+      [
+       "Y436A"
+      ]
+     ],
+     [
+      "B",
+      [
+       "Y436A"
+      ]
+     ]
+    ],
+    "composition": "IgG1 Fc alone",
+    "category": "unbound_fc",
+    "has_igg_fc": true,
+    "fc_chains_engineered": [
+     "A",
+     "B"
+    ],
+    "fc_chains_wild_type": [],
+    "contains_fcrn": false
+   },
+   {
+    "pdb": "4WI6",
+    "title": "Structural mapping of the human IgG1 binding site for FcRn: hu3S193 Fc mutation N434A",
+    "fc": [
+     [
+      "A",
+      [
+       "N434A"
+      ]
+     ],
+     [
+      "B",
+      [
+       "N434A"
+      ]
+     ]
+    ],
+    "composition": "IgG1 Fc alone",
+    "category": "unbound_fc",
+    "has_igg_fc": true,
+    "fc_chains_engineered": [
+     "A",
+     "B"
+    ],
+    "fc_chains_wild_type": [],
+    "contains_fcrn": false
+   },
+   {
+    "pdb": "4WI9",
+    "title": "Structural mapping of the human IgG1 binding site for FcRn: hu3S193 Fc mutation I253A/H310A",
+    "fc": [
+     [
+      "A",
+      [
+       "H310A",
+       "I253A"
+      ]
+     ],
+     [
+      "B",
+      [
+       "H310A",
+       "I253A"
+      ]
+     ]
+    ],
+    "composition": "IgG1 Fc alone",
+    "category": "unbound_fc",
+    "has_igg_fc": true,
+    "fc_chains_engineered": [
+     "A",
+     "B"
+    ],
+    "fc_chains_wild_type": [],
+    "contains_fcrn": false
+   },
+   {
+    "pdb": "4WI2",
+    "title": "Structural mapping of the human IgG1 binding site for FcRn: hu3S193 Fc (wild-type)",
+    "fc": [
+     [
+      "A",
+      [
+       "wild type"
+      ]
+     ],
+     [
+      "B",
+      [
+       "wild type"
+      ]
+     ]
+    ],
+    "composition": "IgG1 Fc alone",
+    "category": "unbound_fc",
+    "has_igg_fc": true,
+    "fc_chains_engineered": [],
+    "fc_chains_wild_type": [
+     "A",
+     "B"
+    ],
+    "contains_fcrn": false
+   },
+   {
+    "pdb": "4WI4",
+    "title": "Structural mapping of the human IgG1 binding site for FcRn: hu3S193 Fc mutation S254A",
+    "fc": [
+     [
+      "A",
+      [
+       "S254A"
+      ]
+     ],
+     [
+      "B",
+      [
+       "S254A"
+      ]
+     ]
+    ],
+    "composition": "IgG1 Fc alone",
+    "category": "unbound_fc",
+    "has_igg_fc": true,
+    "fc_chains_engineered": [
+     "A",
+     "B"
+    ],
+    "fc_chains_wild_type": [],
+    "contains_fcrn": false
+   },
+   {
+    "pdb": "4WI5",
+    "title": "Structural mapping of the human IgG1 binding site for FcRn: hu3S193 Fc mutation H310A",
+    "fc": [
+     [
+      "A",
+      [
+       "H310A"
+      ]
+     ],
+     [
+      "B",
+      [
+       "H310A"
+      ]
+     ]
+    ],
+    "composition": "IgG1 Fc alone",
+    "category": "unbound_fc",
+    "has_igg_fc": true,
+    "fc_chains_engineered": [
+     "A",
+     "B"
+    ],
+    "fc_chains_wild_type": [],
+    "contains_fcrn": false
+   },
+   {
+    "pdb": "4WI7",
+    "title": "Structural mapping of the human IgG1 binding site for FcRn: hu3S193 Fc mutation H435A",
+    "fc": [
+     [
+      "A",
+      [
+       "H435A"
+      ]
+     ],
+     [
+      "B",
+      [
+       "H435A"
+      ]
+     ]
+    ],
+    "composition": "IgG1 Fc alone",
+    "category": "unbound_fc",
+    "has_igg_fc": true,
+    "fc_chains_engineered": [
+     "A",
+     "B"
+    ],
+    "fc_chains_wild_type": [],
+    "contains_fcrn": false
+   },
+   {
+    "pdb": "7Q3P",
+    "title": "Crystal structure of IgG1-Fc-MST-HN (efgartigimod)",
+    "fc": [
+     [
+      "A",
+      [
+       "H433K",
+       "M252Y",
+       "N434F",
+       "S254T",
+       "T256E"
+      ]
+     ],
+     [
+      "B",
+      [
+       "H433K",
+       "M252Y",
+       "N434F",
+       "S254T",
+       "T256E"
+      ]
+     ],
+     [
+      "C",
+      [
+       "H433K",
+       "M252Y",
+       "N434F",
+       "S254T",
+       "T256E"
+      ]
+     ]
+    ],
+    "composition": "IgG1 Fc alone",
+    "category": "unbound_fc",
+    "has_igg_fc": true,
+    "fc_chains_engineered": [
+     "A",
+     "B",
+     "C"
+    ],
+    "fc_chains_wild_type": [],
+    "contains_fcrn": false
+   },
+   {
+    "pdb": "6BZ4",
+    "title": "Human IgG1 lacking complement-dependent cytotoxicity: hu3S193 Fc mutant K322A",
+    "fc": [
+     [
+      "A",
+      [
+       "wild type"
+      ]
+     ],
+     [
+      "B",
+      [
+       "wild type"
+      ]
+     ]
+    ],
+    "composition": "IgG1 Fc alone",
+    "category": "unbound_fc",
+    "has_igg_fc": true,
+    "fc_chains_engineered": [],
+    "fc_chains_wild_type": [
+     "A",
+     "B"
+    ],
+    "contains_fcrn": false
+   },
+   {
+    "pdb": "7Q15",
+    "title": "Crystal structure of FcRn and beta-2-microglobulin in complex with IgG1-Fc-MST-HN",
+    "fc": [
+     [
+      "E",
+      [
+       "H433K",
+       "M252Y",
+       "N434F",
+       "S254T",
+       "T256E"
+      ]
+     ],
+     [
+      "F",
+      [
+       "H433K",
+       "M252Y",
+       "N434F",
+       "S254T",
+       "T256E"
+      ]
+     ]
+    ],
+    "composition": "FcRn + beta-2m + IgG1 Fc",
+    "category": "fc_fcrn_complex",
+    "has_igg_fc": true,
+    "fc_chains_engineered": [
+     "E",
+     "F"
+    ],
+    "fc_chains_wild_type": [],
+    "contains_fcrn": true
+   },
+   {
+    "pdb": "1L6X",
+    "title": "Rituximab Fc in complex with the Z34C protein A fragment",
+    "fc": [
+     [
+      "A",
+      [
+       "wild type"
+      ]
+     ]
+    ],
+    "composition": "IgG1 Fc + protein A Z34C",
+    "category": "unbound_fc",
+    "has_igg_fc": true,
+    "fc_chains_engineered": [],
+    "fc_chains_wild_type": [
+     "A"
+    ],
+    "contains_fcrn": false
+   },
+   {
+    "pdb": "9NAV",
+    "title": "CryoEM structure of human astrovirus 1 spike in complex with human neonatal Fc receptor",
+    "fc": [
+     [
+      "A",
+      "NOT-HUMAN-IgG1?"
+     ],
+     [
+      "D",
+      "NOT-HUMAN-IgG1?"
+     ]
+    ],
+    "composition": "FcRn + beta-2m + astrovirus capsid spike",
+    "category": "fcrn_without_fc",
+    "has_igg_fc": false,
+    "fc_chains_engineered": [],
+    "fc_chains_wild_type": [],
+    "contains_fcrn": true
+   },
+   {
+    "pdb": "6WOL",
+    "title": "Next generation monomeric IgG4 Fc bound to neonatal Fc receptor",
+    "fc": [
+     [
+      "H",
+      [
+       "H433S",
+       "K439S",
+       "L432C",
+       "N434Y",
+       "Q438K",
+       "T437C",
+       "Y436L"
+      ]
+     ]
+    ],
+    "composition": "FcRn + beta-2m + monomeric IgG4 Fc",
+    "category": "fc_fcrn_complex",
+    "has_igg_fc": true,
+    "fc_chains_engineered": [
+     "H"
+    ],
+    "fc_chains_wild_type": [],
+    "contains_fcrn": true
+   },
+   {
+    "pdb": "3FJT",
+    "title": "Crystal structure of a human Fc fragment engineered for extended serum half-life",
+    "fc": [
+     [
+      "A",
+      [
+       "M252Y",
+       "S254T",
+       "T256E"
+      ]
+     ],
+     [
+      "B",
+      [
+       "M252Y",
+       "S254T",
+       "T256E"
+      ]
+     ]
+    ],
+    "composition": "IgG1 Fc alone",
+    "category": "unbound_fc",
+    "has_igg_fc": true,
+    "fc_chains_engineered": [
+     "A",
+     "B"
+    ],
+    "fc_chains_wild_type": [],
+    "contains_fcrn": false
+   },
+   {
+    "pdb": "4N0U",
+    "title": "Ternary complex between Neonatal Fc receptor, serum albumin and Fc",
+    "fc": [
+     [
+      "D",
+      "NOT-HUMAN-IgG1?"
+     ],
+     [
+      "E",
+      [
+       "M252Y",
+       "S254T",
+       "T256E"
+      ]
+     ]
+    ],
+    "composition": "FcRn + beta-2m + albumin + IgG1 Fc",
+    "category": "fc_fcrn_complex",
+    "has_igg_fc": true,
+    "fc_chains_engineered": [
+     "E"
+    ],
+    "fc_chains_wild_type": [],
+    "contains_fcrn": true
+   },
+   {
+    "pdb": "6WNA",
+    "title": "Next generation monomeric IgG4 Fc",
+    "fc": [
+     [
+      "H",
+      [
+       "M252Y",
+       "S254T",
+       "T256E"
+      ]
+     ]
+    ],
+    "composition": "FcRn + beta-2m + monomeric IgG4 Fc",
+    "category": "fc_fcrn_complex",
+    "has_igg_fc": true,
+    "fc_chains_engineered": [
+     "H"
+    ],
+    "fc_chains_wild_type": [],
+    "contains_fcrn": true
+   },
+   {
+    "pdb": "4N0F",
+    "title": "Human FcRn complexed with human serum albumin",
+    "fc": [
+     [
+      "D",
+      "NOT-HUMAN-IgG1?"
+     ],
+     [
+      "G",
+      "NOT-HUMAN-IgG1?"
+     ],
+     [
+      "J",
+      "NOT-HUMAN-IgG1?"
+     ],
+     [
+      "M",
+      "NOT-HUMAN-IgG1?"
+     ]
+    ],
+    "composition": "FcRn + beta-2m + albumin",
+    "category": "fcrn_without_fc",
+    "has_igg_fc": false,
+    "fc_chains_engineered": [],
+    "fc_chains_wild_type": [],
+    "contains_fcrn": true
+   },
+   {
+    "pdb": "4K71",
+    "title": "Crystal structure of a high affinity Human Serum Albumin variant bound to the Neonatal Fc receptor",
+    "fc": [
+     [
+      "A",
+      "NOT-HUMAN-IgG1?"
+     ],
+     [
+      "D",
+      "NOT-HUMAN-IgG1?"
+     ]
+    ],
+    "composition": "FcRn + beta-2m + albumin variant",
+    "category": "fcrn_without_fc",
+    "has_igg_fc": false,
+    "fc_chains_engineered": [],
+    "fc_chains_wild_type": [],
+    "contains_fcrn": true
+   },
+   {
+    "pdb": "6QIO",
+    "title": "Ternary complex of FcRn ectodomain, FcRn binding optimised human serum albumin",
+    "fc": [
+     [
+      "A",
+      "NOT-HUMAN-IgG1?"
+     ]
+    ],
+    "composition": "FcRn + beta-2m + albumin variant",
+    "category": "fcrn_without_fc",
+    "has_igg_fc": false,
+    "fc_chains_engineered": [],
+    "fc_chains_wild_type": [],
+    "contains_fcrn": true
+   },
+   {
+    "pdb": "6QIP",
+    "title": "Ternary complex of FcRn ectodomain, FcRn binding optimised human serum albumin",
+    "fc": [
+     [
+      "A",
+      "NOT-HUMAN-IgG1?"
+     ]
+    ],
+    "composition": "FcRn + beta-2m + albumin variant",
+    "category": "fcrn_without_fc",
+    "has_igg_fc": false,
+    "fc_chains_engineered": [],
+    "fc_chains_wild_type": [],
+    "contains_fcrn": true
+   }
+  ],
+  "_counts": {
+   "entries_surveyed": 21,
+   "fcrn_containing": 9,
+   "fc_fcrn_complexes": 4,
+   "fc_fcrn_complexes_with_wild_type_fc": 0,
+   "unbound_fc_entries": 12
+  }
+ }
+}

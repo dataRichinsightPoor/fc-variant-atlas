@@ -1,0 +1,999 @@
+# Fc Variant Atlas - curated variant records
+#
+# Every record is keyed by a stable id and carries:
+#   isotype      : parent IGHG isotype the substitutions are defined on
+#   mutations    : substitutions in EU numbering, "<wt><pos><mut>"
+#   aliases      : names used in the literature
+#   imgt         : IMGT engineered-variant identifier where one is assigned
+#   intent       : what the engineering was designed to do
+#   phenotype    : reported functional consequence, direction-explicit
+#   evidence     : "functional" | "binding" | "structural" | "claimed"
+#   therapeutics : named INNs / clinical molecules using the variant
+#   source       : DOI or stable URL for the primary or cataloguing reference
+#   notes        : caveats, numbering disputes, residual-activity warnings
+#
+# Numbering policy: all positions are EU numbering (Edelman 1969). Where a
+# source reports a position that disagrees with EU-numbered structure or
+# sequence, the disagreement is recorded in `notes` rather than silently fixed.
+
+variants:
+
+  # ---------------------------------------------------------------- silencing
+  - id: LALA
+    isotype: IgG1
+    mutations: [L234A, L235A]
+    aliases: [LALA, AA]
+    imgt: G1v14
+    intent: silence
+    phenotype: Reduced binding to FcgammaRI, FcgammaRIIa and FcgammaRIIIa and reduced C1q binding; ADCC, ADCP and CDC reduced but not abolished.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1006/cimm.2000.1617
+    notes: >
+      The most widely used silencing pair and the most widely over-trusted.
+      Residual FcgammaR binding is repeatedly documented; LALA is attenuating,
+      not null. Derived from the murine OKT3 lower-hinge alanine substitutions.
+
+  - id: LALA-PG
+    isotype: IgG1
+    mutations: [L234A, L235A, P329G]
+    aliases: [LALA-PG, LALAPG]
+    imgt: G1v14-49
+    intent: silence
+    phenotype: Eliminates measurable FcgammaRI, FcgammaRII and FcgammaRIII binding and abolishes C1q binding and complement fixation; ADCC and ADCP not detected.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1093/protein/gzw040
+    notes: >
+      P329G removes the proline-sandwich contact with the receptor FG loop, so
+      the two mechanisms are additive rather than redundant. Transfers to murine
+      IgG2a, which makes it useful for matched surrogate work.
+
+  - id: LALA-PS
+    isotype: IgG1
+    mutations: [L234A, L235A, P331S]
+    aliases: [LALA-PS]
+    imgt: G1v40
+    intent: silence
+    phenotype: Reduced FcgammaR binding and reduced C1q binding.
+    evidence: binding
+    therapeutics: []
+    source: https://doi.org/10.1002/pro.3852
+    notes: P331S contributes mainly on the complement arm.
+
+  - id: LALA-GA
+    isotype: IgG1
+    mutations: [L234A, L235A, G237A]
+    aliases: [LALAGA, AAA]
+    imgt: G1v14-1
+    intent: silence
+    phenotype: Reduced FcgammaR binding and reduced C1q binding.
+    evidence: binding
+    therapeutics: []
+    source: https://doi.org/10.1016/j.ymeth.2013.06.035
+    notes: G237A extends the lower-hinge alanine patch.
+
+  - id: LALA-LR
+    isotype: IgG1
+    mutations: [L234A, L235A, L328R]
+    aliases: [LALA-LR]
+    imgt: G1v14-48
+    intent: silence
+    phenotype: Reduced FcgammaR binding and reduced C1q binding.
+    evidence: binding
+    therapeutics: []
+    source: https://doi.org/10.1093/protein/gzw040
+    notes: ""
+
+  - id: LALA-DS
+    isotype: IgG1
+    mutations: [L234A, L235A, D265S]
+    aliases: [LALA-DS]
+    imgt: G1v14-67
+    intent: silence
+    phenotype: Reduced FcgammaR binding and reduced C1q binding.
+    evidence: binding
+    therapeutics: []
+    source: https://doi.org/10.1093/protein/gzw040
+    notes: ""
+
+  - id: LE
+    isotype: IgG1
+    mutations: [L235E]
+    aliases: [LE]
+    imgt: G1v23
+    intent: silence
+    phenotype: Decreased binding to cell-surface FcgammaR; ADCC reduced.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1111/imr.13379
+    notes: Single-substitution silencing; weaker and less complete than paired variants.
+
+  - id: FE
+    isotype: IgG1
+    mutations: [L234F, L235E]
+    aliases: [FE]
+    imgt: G1v41
+    intent: silence
+    phenotype: Reduced FcgammaR binding and reduced C1q binding.
+    evidence: binding
+    therapeutics: []
+    source: https://doi.org/10.1111/imr.13379
+    notes: ""
+
+  - id: TM
+    isotype: IgG1
+    mutations: [L234F, L235E, P331S]
+    aliases: [TM, FES]
+    imgt: G1v39
+    intent: silence
+    phenotype: Decreased binding to FcgammaRI, FcgammaRII, FcgammaRIII and C1q; CDC reduced.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1016/j.ymeth.2013.06.035
+    notes: >
+      Often called the "triple mutant". Reported in the literature both as
+      L234F/L235E/P331S and, in older text, as P331S/L234E/L235F; the residue
+      identities at 234 and 235 are transposed between those two renderings.
+
+  - id: FQQ
+    isotype: IgG1
+    mutations: [L234F, L235Q, K322Q]
+    aliases: [FQQ]
+    imgt: G1v53
+    intent: silence
+    phenotype: Reduced FcgammaR binding and reduced C1q binding.
+    evidence: binding
+    therapeutics: []
+    source: https://doi.org/10.1016/j.xphs.2016.12.023
+    notes: K322Q targets the complement arm specifically.
+
+  - id: FQQ-YTE
+    isotype: IgG1
+    mutations: [L234F, L235Q, K322Q, M252Y, S254T, T256E]
+    aliases: [FQQ-YTE]
+    imgt: G1v53-G1v21
+    intent: silence+halflife
+    phenotype: Reduced FcgammaR and C1q binding with extended half-life via enhanced FcRn binding at pH 6.0.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1016/j.xphs.2016.12.023
+    notes: >
+      A deliberate combination of a silencing module and a half-life module.
+      Useful as the worked example of modular Fc engineering, and of its
+      developability cost.
+
+  - id: GRLR
+    isotype: IgG1
+    mutations: [G236R, L328R]
+    aliases: [GRLR]
+    imgt: G1v52
+    intent: silence
+    phenotype: Decreased binding to all FcgammaR; ADCC reduced.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1111/imr.13379
+    notes: Arginine substitutions introduce steric and electrostatic disruption at the interface.
+
+  - id: STR
+    isotype: IgG1
+    mutations: [L234S, L235T, G236R]
+    aliases: [STR]
+    imgt: G1v59
+    intent: silence
+    phenotype: No detectable FcgammaR binding; ADCC and CDC undetectable; C1q binding abrogated.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1371/journal.pone.0260954
+    notes: >
+      Designed explicitly to reach completeness rather than attenuation, with
+      the G236R substitution doing much of the work.
+
+  - id: N297A
+    isotype: IgG1
+    mutations: [N297A]
+    aliases: [N297A, NA, aglycosylated]
+    imgt: G1v29
+    intent: silence
+    phenotype: Removes the conserved CH2 N-glycan; decreased FcgammaRI and FcgammaRIIIa binding and decreased C1q binding.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.4161/mabs.26436
+    notes: >
+      Silences by deleting the glycan rather than by editing the protein
+      interface, and therefore also destabilizes CH2 and lowers the thermal
+      transition. Residual binding is documented.
+
+  - id: N297G
+    isotype: IgG1
+    mutations: [N297G]
+    aliases: [N297G]
+    imgt: G1v30
+    intent: silence
+    phenotype: Glycan knockout; ADCC reduced and FcgammaR binding reduced.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.4161/mabs.26436
+    notes: Glycine gives more backbone flexibility than alanine at the same position.
+
+  - id: N297Q
+    isotype: IgG1
+    mutations: [N297Q]
+    aliases: [N297Q, NQ]
+    imgt: G1v36
+    intent: silence
+    phenotype: Glycan knockout; ADCC reduced and FcgammaR binding reduced.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1080/19420862.2025.2505092
+    notes: ""
+
+  - id: D265A
+    isotype: IgG1
+    mutations: [D265A]
+    aliases: [DA]
+    imgt: G1v66
+    intent: silence
+    phenotype: Decreased binding to FcgammaRI, FcgammaRII and FcgammaRIII; ADCC and ADCP reduced.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1093/protein/gzw040
+    notes: D265 is a direct interface contact in every Fc-FcgammaR complex in this atlas.
+
+  - id: DAPA
+    isotype: IgG1
+    mutations: [D265A, N297A]
+    aliases: [DAPA]
+    intent: silence
+    phenotype: Combines interface disruption with glycan removal; FcgammaR binding and effector function strongly reduced.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1080/19420862.2025.2505092
+    notes: Two mechanistically distinct silencing routes stacked on one molecule.
+
+  - id: P329G
+    isotype: IgG1
+    mutations: [P329G]
+    aliases: [PG]
+    imgt: G1v49
+    intent: silence
+    phenotype: Reduced FcgammaR binding and reduced C1q binding.
+    evidence: binding
+    therapeutics: []
+    source: https://doi.org/10.1093/protein/gzw040
+    notes: Destroys the proline sandwich formed with the receptor FG loop tryptophans.
+
+  - id: L328R
+    isotype: IgG1
+    mutations: [L328R]
+    aliases: []
+    imgt: G1v48
+    intent: silence
+    phenotype: Reduced FcgammaR binding and reduced C1q binding.
+    evidence: binding
+    therapeutics: []
+    source: https://doi.org/10.1371/journal.pone.0260954
+    notes: ""
+
+  - id: E233P
+    isotype: IgG1
+    mutations: [E233P]
+    aliases: []
+    imgt: G1v1
+    intent: silence
+    phenotype: Prevents FcgammaRI binding; decreased binding to FcgammaRI, II and III.
+    evidence: binding
+    therapeutics: []
+    source: https://doi.org/10.1073/pnas.88.20.9036
+    notes: One of the earliest rationally designed lower-hinge silencing substitutions.
+
+  - id: G1-G2like
+    isotype: IgG1
+    mutations: [E233P, L234V, L235A, G236del]
+    aliases: [IgG2-like lower hinge]
+    imgt: G1v50
+    intent: silence
+    phenotype: Decreased FcgammaR binding by converting the IgG1 lower hinge to an IgG2-like motif.
+    evidence: binding
+    therapeutics: []
+    source: https://doi.org/10.4049/jimmunol.2000961
+    notes: >
+      Includes a residue deletion, so this variant cannot be represented as a
+      pure substitution set and is flagged as non-substitutional.
+
+  - id: IgG1-sigma
+    isotype: IgG1
+    mutations: [L234A, L235A, G237A, P238S, H268A, A330S, P331S]
+    aliases: [IgG1 sigma, IgG1s]
+    intent: silence
+    phenotype: Near-complete elimination of FcgammaRI, FcgammaRIIa, FcgammaRIIb and FcgammaRIIIa binding; ADCC and CDC abolished; FcRn binding retained.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1016/j.ymeth.2013.06.035
+    notes: >
+      The IgG1 counterpart of IgG2-sigma, built by importing the sigma residue
+      set onto an IgG1 frame.
+
+  - id: IgG2-sigma
+    isotype: IgG2
+    mutations: [G237A, P238S, H268A, V309L, A330S, P331S]
+    disputed_mutations: [V234A]
+    aliases: [IgG2 sigma, IgG2s, G2sigma]
+    imgt: G2v3
+    intent: silence
+    phenotype: Near-complete elimination of FcgammaRI, FcgammaRIIa, FcgammaRIIb and FcgammaRIIIa binding; undetectable ADCC, ADCP and CDC; FcRn binding retained.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1016/j.ymeth.2013.06.035
+    notes: >
+      NUMBERING DISPUTE. The primary publication and most reviews write the
+      first substitution as V234A. IMGT lists the same variant as V235A
+      (G2v3). This is a real consequence of the shorter IgG2 lower hinge: the
+      IgG1 and IgG2 hinges cannot be aligned without a gap, so the EU index
+      assigned to the valine depends on where that gap is placed. Under this
+      package's alignment EU 234 in IgG2 is a gap and the valine sits at EU
+      235, which reproduces the IMGT assignment from sequence alone. The
+      substitution is therefore held in `disputed_mutations` rather than
+      asserted at one index. Both renderings mean the same physical valine.
+      See docs/numbering.md.
+
+  - id: IgG2m4
+    isotype: IgG2
+    mutations: [H268Q, V309L, A330S, P331S]
+    aliases: [IgG2m4]
+    imgt: G2v2
+    intent: silence
+    phenotype: Reduced binding to all FcgammaR and reduced C1q binding; ADCC, ADCP and CDC reduced.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.4161/mabs.1.6.10185
+    notes: A cross-subclass design that imports four IgG4 residues onto an IgG2 frame.
+
+  - id: IgG4-PAA
+    isotype: IgG4
+    mutations: [S228P, F234A, L235A]
+    aliases: [IgG4 PAA, PAA]
+    intent: silence+stabilize
+    phenotype: Decreased binding to FcgammaRI, FcgammaRIIa and FcgammaRIIIa; ADCC and CDC reduced; S228P prevents Fab-arm exchange.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1016/j.ymeth.2013.06.035
+    notes: >
+      Bundles a silencing module with a stability module. The S228P hinge fix
+      addresses half-molecule exchange, not effector function.
+
+  - id: IgG4-FALA
+    isotype: IgG4
+    mutations: [F234A, L235A]
+    aliases: [FALA]
+    imgt: G4v4
+    intent: silence
+    phenotype: Reduced FcgammaR binding and reduced C1q binding.
+    evidence: binding
+    therapeutics: []
+    source: https://doi.org/10.1111/imr.13379
+    notes: The IgG4 positional equivalent of LALA; position 234 is phenylalanine in IgG4.
+
+  - id: IgG4-SPLE
+    isotype: IgG4
+    mutations: [S228P, L235E]
+    aliases: [SPLE]
+    intent: silence+stabilize
+    phenotype: Decreased FcgammaRI binding with half-life unchanged; S228P prevents Fab-arm exchange.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1038/nbt.1553
+    notes: ""
+
+  - id: IgG4-LEPG
+    isotype: IgG4
+    mutations: [L235E, P329G]
+    aliases: [LEPG]
+    imgt: G4v3-49
+    intent: silence
+    phenotype: Reduced FcgammaR binding and reduced C1q binding.
+    evidence: binding
+    therapeutics: []
+    source: https://doi.org/10.1093/protein/gzw040
+    notes: ""
+
+  - id: eculizumab-hybrid
+    isotype: IgG4
+    mutations: [E233del, F234P, L235V, G236A]
+    aliases: [IgG2/IgG4 hybrid]
+    imgt: G2G4v1
+    intent: silence
+    phenotype: Reduced FcgammaR binding and reduced C1q binding.
+    evidence: functional
+    therapeutics: [eculizumab]
+    source: https://doi.org/10.1038/nbt1344
+    notes: >
+      A chimeric constant region rather than a point-variant series, and one of
+      the few silencing designs with a named approved therapeutic attached.
+      Contains a deletion and is flagged as non-substitutional. The parent
+      frame is recorded as IgG4 because the wild-type residues implied by the
+      substitution set (E233, F234, L235, G236) are the IgG4 residues; the
+      changes convert an IgG4 lower hinge toward the IgG2 motif. Curating this
+      record against IgG2, as its IMGT G2G4v1 label invites, fails sequence
+      validation at all four positions.
+
+  # ------------------------------------------------------------- ADCC/ADCP up
+  - id: DE
+    isotype: IgG1
+    mutations: [S239D, I332E]
+    aliases: [DE, S239D/I332E]
+    imgt: G1v7
+    intent: enhance_adcc
+    phenotype: Increased FcgammaRIIIa binding; ADCC enhanced; ADCP with FcgammaRII increased modestly.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1073/pnas.0508123103
+    notes: The parent of the aspartate/glutamate charge-engineering series.
+
+  - id: DLE
+    isotype: IgG1
+    mutations: [S239D, A330L, I332E]
+    aliases: [DLE, 3M]
+    imgt: G1v8
+    intent: enhance_adcc
+    phenotype: Increased FcgammaRIIIa binding and decreased FcgammaRIIb binding; ADCC enhanced; CDC eliminated.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1073/pnas.0508123103
+    notes: >
+      A useful counterexample to the assumption that enhancement is monotonic.
+      A330L raises ADCC while ablating complement, so the same variant is an
+      enhancing and a silencing design depending on the axis measured.
+
+  - id: GASDALIE
+    isotype: IgG1
+    mutations: [G236A, S239D, A330L, I332E]
+    aliases: [GASDALIE]
+    imgt: G1v12
+    intent: enhance_adcc
+    phenotype: Increased FcgammaRIIIa and FcgammaRIIa binding; ADCC and ADCP enhanced; FcgammaRI-mediated phagocytosis increased 1.87-fold; CDC absent.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1073/pnas.1203954109
+    notes: Widely used in preclinical immuno-oncology models.
+
+  - id: GASDIE
+    isotype: IgG1
+    mutations: [G236A, S239D, I332E]
+    aliases: [GASDIE, ADE]
+    imgt: G1v13
+    intent: enhance_adcc
+    phenotype: Increased FcgammaRIIIa binding and FcgammaRIIa binding above 70-fold with a 15-fold shift in the FcgammaRIIa/FcgammaRIIb ratio; ADCC and ADCP enhanced; CDC little changed.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1158/1535-7163.MCT-08-0201
+    notes: ""
+
+  - id: GAALIE
+    isotype: IgG1
+    mutations: [G236A, A330L, I332E]
+    aliases: [GAALIE]
+    imgt: G1v45
+    intent: enhance_adcc
+    phenotype: Increased FcgammaRIIIa binding; ADCC and ADCP enhanced; CDC absent.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1172/JCI128437
+    notes: ""
+
+  - id: SEAKA
+    isotype: IgG1
+    mutations: [S298A, E333A, K334A]
+    aliases: [S298A/E333A/K334A]
+    imgt: G1v6
+    intent: enhance_adcc
+    phenotype: Increased FcgammaRIIIa binding; ADCC enhanced.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1074/jbc.M009483200
+    notes: From the original alanine-scanning survey of the Fc interface.
+
+  - id: MGAH22-set
+    isotype: IgG1
+    mutations: [L235V, F243L, R292P, Y300L, P396L]
+    aliases: [margetuximab Fc]
+    intent: enhance_adcc
+    phenotype: ADCC enhanced; ADCP with FcgammaRIIa-131R absent while FcgammaRIIa-131H is retained; CDC not significantly changed.
+    evidence: functional
+    therapeutics: [margetuximab]
+    source: https://doi.org/10.1186/bcr3069
+    notes: >
+      One of the few effector-enhanced Fc designs in an approved product, and
+      the clearest case of allele-dependent behaviour across FcgammaRIIa-131H
+      and -131R.
+
+  - id: stavenhagen-set
+    isotype: IgG1
+    mutations: [F243L, R292P, Y300L, V305I, P396L]
+    aliases: []
+    imgt: G1v9
+    intent: enhance_adcc
+    phenotype: ADCC enhanced; CDC increased 6-fold; ADCP with FcgammaRIIa-131H increased.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1158/0008-5472.CAN-07-0696
+    notes: >
+      Reported with position 396 as P396L in the source abstract and as P396I
+      in some catalogue renderings; IMGT lists G1v9 with V305I and P396I.
+
+  - id: tafasitamab-set
+    isotype: IgG1
+    mutations: [S239D, K274Q, Y296F, Y300F, L309V, I332E, A339T, V397M]
+    aliases: [XmAb5574 Fc]
+    intent: enhance_adcc
+    phenotype: ADCC enhanced and ADCP with FcgammaRII increased; CDC little changed.
+    evidence: functional
+    therapeutics: [tafasitamab, talcotuzumab]
+    source: https://patents.google.com/patent/WO2015195498A1/en
+    notes: >
+      The INN sequence carries eight substitutions while the functional
+      literature usually describes only S239D/I332E. The six additional changes
+      are distant from the FcgammaR interface and their contribution is not
+      individually resolved.
+
+  - id: afucosylated
+    isotype: IgG1
+    mutations: []
+    aliases: [afucosylation, low-fucose, glycoengineered]
+    intent: enhance_adcc
+    phenotype: ADCC enhanced 31-fold with FcgammaRIIIa-158V and 201-fold with FcgammaRIIIa-158F effector cells; ADCP with FcgammaRI and FcgammaRII not significantly changed.
+    evidence: functional
+    therapeutics: [obinutuzumab, mogamulizumab, benralizumab, inebilizumab, amivantamab, ublituximab, belantamab mafodotin]
+    source: https://doi.org/10.1038/6179
+    notes: >
+      GLYCAN VARIANT, NOT A SEQUENCE VARIANT. It carries no substitutions and
+      cannot be rendered as a mutation set, which is exactly why it belongs in
+      the atlas: the most clinically successful ADCC enhancement to date is
+      invisible to any tool that models Fc engineering as point mutations.
+      Sequence-identical material differing only in core fucose spans the
+      largest effect size in this table.
+
+  # ---------------------------------------------------------------- FcgammaRIIb
+  - id: SELF
+    isotype: IgG1
+    mutations: [S267E, L328F]
+    aliases: [SELF, S267E/L328F]
+    imgt: G1v25
+    intent: enhance_fcgr2b
+    phenotype: Increases FcgammaRIIb binding approximately 400-fold; inhibitory ITIM signalling in B cells engaged.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1016/j.molimm.2008.06.027
+    notes: >
+      Selective enhancement toward the inhibitory receptor, the opposite
+      therapeutic intent from the ADCC series while using the same interface.
+
+  - id: S267E
+    isotype: IgG1
+    mutations: [S267E]
+    aliases: [SE]
+    imgt: G1v35
+    intent: enhance_fcgr2b
+    phenotype: Increased FcgammaRIIb and FcgammaRIIa-131R binding and increased C1q binding with CDC increased 3-fold; no ADCC detected with FcgammaRIIIa.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.4161/mabs.2.2.11158
+    notes: ""
+
+  # ---------------------------------------------------------------------- CDC
+  - id: EFT
+    isotype: IgG1
+    mutations: [S267E, H268F, S324T]
+    aliases: [EFT]
+    imgt: G1v17
+    intent: enhance_cdc
+    phenotype: Tightest reported C1q affinity in its series; CDC potency of an anti-CD20 enhanced up to 23-fold.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.4161/mabs.2.2.11158
+    notes: ""
+
+  - id: RGY
+    isotype: IgG1
+    mutations: [E345R, E430G, S440Y]
+    aliases: [RGY, IgG1-005-RGY]
+    imgt: G1v18
+    intent: enhance_cdc
+    phenotype: Drives IgG hexamer formation in solution with increased C1q binding and enhanced CDC.
+    evidence: structural
+    therapeutics: []
+    source: https://doi.org/10.1126/science.1248943
+    notes: >
+      Acts on Fc-Fc self-association rather than on the C1q contact itself,
+      so the mechanism is assembly stoichiometry, not affinity. RGY
+      hexamerizes in solution, which is why the single-substitution E430G is
+      preferred therapeutically.
+
+  - id: E430G
+    isotype: IgG1
+    mutations: [E430G]
+    aliases: [HexaBody, E430G]
+    imgt: G1v34
+    intent: enhance_cdc
+    phenotype: Favours IgG hexamerization through increased intermolecular Fc-Fc interaction after antigen binding at the cell surface; CDC enhanced.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1111/imr.13394
+    notes: >
+      Antigen-dependent by design: assembly is conditional on surface binding,
+      which keeps solution-phase complement activation low.
+
+  - id: E345K
+    isotype: IgG1
+    mutations: [E345K]
+    aliases: [Stellabody, E345K]
+    intent: enhance_cdc
+    phenotype: Hexamer-promoting substitution; increased self-association and enhanced complement potency.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1111/imr.13399
+    notes: Self-association rank reported as wild type below E430G below E345K below E345R.
+
+  - id: K326W-E333S
+    isotype: IgG1
+    mutations: [K326W, E333S]
+    aliases: []
+    imgt: G1v16
+    intent: enhance_cdc
+    phenotype: Increased C1q binding and enhanced CDC.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.4049/jimmunol.166.4.2571
+    notes: K326W alone enhances CDC while reducing ADCC, an explicit trade between arms.
+
+  - id: K322A
+    isotype: IgG1
+    mutations: [K322A]
+    aliases: []
+    imgt: G1v20
+    intent: reduce_cdc
+    phenotype: Reduced C1q binding and reduced CDC with FcgammaR binding largely preserved.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.4049/jimmunol.164.8.4178
+    notes: Separates the complement arm from the cellular arm.
+
+  - id: D270A
+    isotype: IgG1
+    mutations: [D270A]
+    aliases: []
+    imgt: G1v19
+    intent: reduce_cdc
+    phenotype: Reduced C1q binding and reduced CDC.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.4049/jimmunol.164.8.4178
+    notes: ""
+
+  # ----------------------------------------------------------------- half-life
+  - id: YTE
+    isotype: IgG1
+    mutations: [M252Y, S254T, T256E]
+    aliases: [YTE]
+    imgt: G1v21
+    intent: halflife
+    phenotype: Approximately 10-fold increased FcRn binding at pH 6.0 with retained release at pH 7.4; 2- to 4-fold longer serum half-life in humans.
+    evidence: functional
+    therapeutics: [motavizumab, nirsevimab]
+    source: https://doi.org/10.4049/jimmunol.169.9.5171
+    notes: >
+      The first Fc half-life engineering to be confirmed in humans. T256E
+      contributes two new salt bridges to beta-2 microglobulin. The reference
+      Fc-FcRn structure 4N0U carries YTE rather than wild-type Fc.
+
+  - id: LS
+    isotype: IgG1
+    mutations: [M428L, N434S]
+    aliases: [LS]
+    imgt: G1v24
+    intent: halflife
+    phenotype: Approximately 11-fold higher FcRn affinity at pH 6.0; roughly 2-fold half-life increase in cynomolgus monkeys.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1038/nbt.1601
+    notes: N434S is postulated to add hydrogen bonds to FcRn.
+
+  - id: QL
+    isotype: IgG1
+    mutations: [T250Q, M428L]
+    aliases: [QL]
+    imgt: G1v42
+    intent: halflife
+    phenotype: Enhanced FcRn binding at pH 6.0 and extended half-life.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1074/jbc.C300470200
+    notes: ""
+
+  - id: KF
+    isotype: IgG1
+    mutations: [H433K, N434F]
+    aliases: [KF]
+    imgt: G1v46
+    intent: halflife
+    phenotype: Enhanced FcRn binding at pH 6.0.
+    evidence: binding
+    therapeutics: []
+    source: https://doi.org/10.4049/jimmunol.169.9.5171
+    notes: ""
+
+  - id: YTE-KFH
+    isotype: IgG1
+    mutations: [M252Y, S254T, T256E, H433K, N434F, Y436H]
+    aliases: []
+    imgt: G1v22
+    intent: halflife
+    phenotype: Enhanced FcRn binding at pH 6.0.
+    evidence: binding
+    therapeutics: []
+    source: https://doi.org/10.4049/jimmunol.169.9.5171
+    notes: ""
+
+  - id: H310A
+    isotype: IgG1
+    mutations: [H310A]
+    aliases: []
+    imgt: G2v8-1
+    intent: reduce_halflife
+    phenotype: Abrogates FcRn binding at pH 6.0; rapid clearance.
+    evidence: binding
+    therapeutics: []
+    source: https://doi.org/10.1074/jbc.M113.537563
+    notes: >
+      Any substitution of H310 except cysteine abolishes detectable FcRn
+      binding. H310 is the closest Fc contact to FcRn in 4N0U at 2.04 A.
+      Reported by IMGT on IgG2 and used across isotypes.
+
+  - id: IgG3-R435H
+    isotype: IgG3
+    mutations: [R435H]
+    aliases: []
+    imgt: G3v1
+    intent: halflife
+    phenotype: Extends IgG3 half-life toward that of IgG1 by restoring the IgG1 FcRn contact residue.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1038/ncomms1608
+    notes: >
+      A single residue explains most of the IgG3 half-life deficit. Histidine
+      at 435 is the IgG1 state; arginine is the IgG3 state.
+
+  # ------------------------------------------------------- heterodimerization
+  - id: KiH
+    isotype: IgG1
+    mutations: [T366W]
+    aliases: [knob, knobs-into-holes knob]
+    imgt: G1v32
+    intent: heterodimer
+    phenotype: CH3 knob; pairs with the T366S/L368A/Y407V hole to drive heavy-chain heterodimerization.
+    evidence: structural
+    therapeutics: []
+    source: https://doi.org/10.1093/protein/9.7.617
+    notes: Partner variant required; see KiH-hole.
+
+  - id: KiH-hole
+    isotype: IgG1
+    mutations: [T366S, L368A, Y407V]
+    aliases: [hole, knobs-into-holes hole]
+    imgt: G1v33
+    intent: heterodimer
+    phenotype: CH3 hole; pairs with the T366W knob to drive heavy-chain heterodimerization.
+    evidence: structural
+    therapeutics: []
+    source: https://doi.org/10.1093/protein/9.7.617
+    notes: >
+      Obligate partner design. Half a knobs-into-holes pair on one chain is a
+      destabilizing mutation, not a bispecific platform.
+
+  - id: KiH-orig-knob
+    isotype: IgG1
+    mutations: [T366Y]
+    aliases: [original knob]
+    imgt: G1v26
+    intent: heterodimer
+    phenotype: First-generation CH3 knob, paired with Y407T.
+    evidence: structural
+    therapeutics: []
+    source: https://doi.org/10.1093/protein/9.7.617
+    notes: ""
+
+  - id: KiH-orig-hole
+    isotype: IgG1
+    mutations: [Y407T]
+    aliases: [original hole]
+    imgt: G1v31
+    intent: heterodimer
+    phenotype: First-generation CH3 hole, paired with T366Y.
+    evidence: structural
+    therapeutics: []
+    source: https://doi.org/10.1093/protein/9.7.617
+    notes: ""
+
+  - id: DuoBody
+    isotype: IgG1
+    mutations: [F405L]
+    aliases: [cFAE, controlled Fab-arm exchange]
+    intent: heterodimer
+    phenotype: With a K409R partner chain, permits controlled Fab-arm exchange to assemble bispecific IgG1 from two parental antibodies.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1074/jbc.RA117.000303
+    notes: Partner variant K409R required on the second chain.
+
+  - id: DuoBody-partner
+    isotype: IgG1
+    mutations: [K409R]
+    aliases: [cFAE partner]
+    intent: heterodimer
+    phenotype: Partner chain for controlled Fab-arm exchange; dissociation of the K409R parent into half-molecules is rate-controlling.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1074/jbc.RA117.000303
+    notes: ""
+
+  - id: charge-pair-DD
+    isotype: IgG1
+    mutations: [K392D, K409D]
+    aliases: [DD, electrostatic steering]
+    intent: heterodimer
+    phenotype: Charge-reversed CH3 face; pairs with the E356K/D399K chain to favour heterodimer over homodimer.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1074/jbc.M110.117382
+    notes: Partner variant required; see charge-pair-KK.
+
+  - id: charge-pair-KK
+    isotype: IgG1
+    mutations: [D399K]
+    disputed_mutations: [E356K]
+    aliases: [KK, electrostatic steering]
+    intent: heterodimer
+    phenotype: Charge-reversed CH3 face; pairs with the K392D/K409D chain to favour heterodimer over homodimer.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1074/jbc.M110.117382
+    notes: >
+      ALLOTYPE DEPENDENCE. The published substitution is written E356K, but the
+      UniProt IGHG1 reference sequence P01857 carries aspartate at EU 356. EU
+      356 and EU 358 are the classical IgG1 allotype pair: D356/L358 in the
+      G1m(f) reference used here, E356/M358 in the G1m(1) allotype on which the
+      construct was built. The substitution is real; the wild-type residue it
+      starts from depends on the allotype of the parent antibody. Held in
+      `disputed_mutations` so it is not silently validated against the wrong
+      frame.
+
+  - id: DEKK-DE
+    isotype: IgG1
+    mutations: [L351D, L368E]
+    aliases: [DE arm]
+    intent: heterodimer
+    phenotype: Salt-bridge heterodimerization arm; pairs with the L351K/T366K chain.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.3390/ijms22094550
+    notes: ""
+
+  - id: DEKK-KK
+    isotype: IgG1
+    mutations: [L351K, T366K]
+    aliases: [KK arm]
+    intent: heterodimer
+    phenotype: Salt-bridge heterodimerization arm; pairs with the L351D/L368E chain.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.3390/ijms22094550
+    notes: ""
+
+  # ---------------------------------------------------------------- conjugation
+  - id: S239C
+    isotype: IgG1
+    mutations: [S239C]
+    aliases: [THIOMAB-type site]
+    imgt: G1v27
+    intent: conjugation
+    phenotype: Engineered cysteine for site-specific drug attachment.
+    evidence: structural
+    therapeutics: []
+    source: https://doi.org/10.1080/19420862.2022.2149432
+    notes: >
+      Sits inside the FcgammaR contact patch. Conjugating here is not
+      effector-neutral, which matters for ADC design.
+
+  - id: S442C
+    isotype: IgG1
+    mutations: [S442C]
+    aliases: []
+    imgt: G1v44
+    intent: conjugation
+    phenotype: Engineered cysteine in CH3 for site-specific drug attachment.
+    evidence: structural
+    therapeutics: []
+    source: https://doi.org/10.1080/19420862.2022.2149432
+    notes: Distal to both the FcgammaR and FcRn interfaces.
+
+  - id: E272C
+    isotype: IgG1
+    mutations: [E272C]
+    aliases: []
+    imgt: G1v64
+    intent: conjugation
+    phenotype: Engineered cysteine for site-specific conjugation.
+    evidence: structural
+    therapeutics: []
+    source: https://doi.org/10.1080/19420862.2022.2149432
+    notes: ""
+
+  # -------------------------------------------------------------- stabilization
+  - id: CH2-disulfide
+    isotype: IgG1
+    mutations: [R292C, V302C]
+    aliases: []
+    imgt: G1v54
+    intent: stabilize
+    phenotype: Engineered CH2 disulfide that stabilizes the domain in the absence of N297 glycosylation.
+    evidence: structural
+    therapeutics: []
+    source: https://doi.org/10.1080/19420862.2022.2149432
+    notes: >
+      A direct answer to the destabilization caused by glycan-knockout
+      silencing. Often combined with N297A, N297G or N297Q.
+
+  - id: IgG4-S228P
+    isotype: IgG4
+    mutations: [S228P]
+    aliases: [SP, S228P]
+    imgt: G4v5
+    intent: stabilize
+    phenotype: Prevents IgG4 half-molecule exchange in vitro and in vivo.
+    evidence: functional
+    therapeutics: [pembrolizumab, nivolumab]
+    source: https://doi.org/10.1038/nbt.1553
+    notes: >
+      The single most common IgG4 modification in approved therapeutics, and
+      not an effector-function change at all. Included to keep the distinction
+      between stability engineering and effector engineering visible.
+
+  - id: IgG4-R409K
+    isotype: IgG4
+    mutations: [R409K]
+    aliases: []
+    imgt: G4v6
+    intent: stabilize
+    phenotype: Reduces IgG4 half-molecule exchange.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.4049/jimmunol.1003336
+    notes: ""
+
+  - id: IgG2-aggregation
+    isotype: IgG2
+    mutations: [F300Y, V309L, T339A]
+    aliases: []
+    imgt: G2v7
+    intent: stabilize
+    phenotype: Reduces acid-induced aggregation with low ADCC, low FcgammaR binding, low CDC and low C1q binding.
+    evidence: functional
+    therapeutics: []
+    source: https://doi.org/10.1002/pro.3852
+    notes: ""
+
+  # ------------------------------------------------------------------ purification
+  - id: IgG4-ProtA-null
+    isotype: IgG4
+    mutations: [H435R, Y436F, L445P]
+    aliases: []
+    imgt: G4v8
+    intent: purification
+    phenotype: Abrogates Protein A binding.
+    evidence: binding
+    therapeutics: []
+    source: https://doi.org/10.1080/19420862.2022.2149432
+    notes: >
+      Used to enable differential purification of bispecific heterodimers.
+      H435R also sits in the FcRn contact patch, so a purification handle can
+      carry a pharmacokinetic consequence.
