@@ -230,12 +230,17 @@ Deposited glycans are drawn as spheres rather than sticks, deliberately:
 branched-sugar bond inference is unreliable and sticks produce artifacts that
 look like structure.
 
-The hosted copy is regenerated from `viewer/` rather than maintained separately:
+The hosted copy is regenerated from `viewer/` rather than maintained separately.
+The `gh-pages` branch holds the three files from `viewer/` at its root, so
+publishing a change is a copy and a commit:
 
 ```bash
 python -m fcatlas export json -o viewer/atlas.json
 cp data/interface_detail.json viewer/
-git push origin "$(git subtree split --prefix=viewer)":gh-pages
+git worktree add /tmp/ghp gh-pages
+cp viewer/index.html viewer/atlas.json viewer/interface_detail.json /tmp/ghp/
+git -C /tmp/ghp commit -am "publish viewer from main" && git -C /tmp/ghp push origin gh-pages
+git worktree remove /tmp/ghp
 ```
 
 ## Command line
