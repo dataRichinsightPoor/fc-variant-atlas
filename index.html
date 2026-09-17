@@ -263,6 +263,7 @@ async function boot() {
   $("#pdb").addEventListener("change", e => { CURPDB = e.target.value; draw(); });
   bind("#bIface", "iface"); bind("#bPartner", "partner");
   bind("#bLabels", "labels"); bind("#bSurf", "surface");
+  bind("#bBurial", "burial"); bind("#bSide", "side");
   $("#bReset").addEventListener("click", () => { if (VIEW) { VIEW.zoomTo(); VIEW.render(); } });
 
   renderList();
