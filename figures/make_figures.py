@@ -174,7 +174,7 @@ def figure_hotspots() -> None:
     fig.text(
         0.5,
         -0.14,
-        "74 curated variants, 60 distinct positions. Contact means a heavy atom "
+        "73 curated variants, 59 distinct positions. Contact means a heavy atom "
         "within 5.0 \u00c5 of the partner in 1E4K, 1T89, 5XJE or 4N0U.",
         ha="center",
         fontsize=8,
@@ -235,7 +235,7 @@ def figure_classification() -> None:
     )
     fig.text(
         0.5, -0.04,
-        "24 of 74 variants change no position ever measured in contact with Fc\u03b3R "
+        "24 of 73 variants change no position ever measured in contact with Fc\u03b3R "
         "or FcRn in these structures.",
         ha="center", fontsize=8, color=MUTED,
     )

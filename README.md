@@ -2,9 +2,9 @@
 
 Aligned, sequence-validated, structure-linked Fc variants for IgG-based therapeutics.
 
-Seventy-four curated engineered Fc records — effector silencing, effector
+Seventy-three curated engineered Fc records — effector silencing, effector
 enhancement, half-life extension, heterodimerization, hexamerization,
-stabilization, site-specific conjugation and purification handles — each one
+stabilization and site-specific conjugation — each one
 checked residue by residue against the real UniProt constant-region sequence of
 its isotype, placed on a cross-isotype EU alignment, and tested against
 heavy-atom contacts measured in deposited Fc–receptor complexes.
@@ -29,13 +29,13 @@ disagreement in the published literature, described below.
 
 ## What the atlas contains
 
-Seventy-four records spanning IgG1, IgG2, IgG3 and IgG4, touching sixty
-distinct EU positions with 174 individual substitutions plus two deletions.
+Seventy-three records spanning IgG1, IgG2, IgG3 and IgG4, touching fifty-nine
+distinct EU positions with 171 individual substitutions plus two deletions.
 Design intents, as curated: effector silencing (27), ADCC enhancement (10),
 heterodimerization (10), half-life extension (6), CDC enhancement (5),
 stabilization (4), conjugation (3), silencing combined with stabilization (2),
 FcγRIIb enhancement (2), CDC reduction (2), silencing combined with half-life
-extension (1), half-life shortening (1) and purification (1).
+extension (1) and half-life shortening (1).
 
 Each record carries its aliases as they appear in the literature, its IMGT
 engineered-variant code where one exists, a phenotype description tied to a
@@ -97,7 +97,7 @@ sitting with.
 
 ![Design intent against measured interface location](figures/fig2_intent_vs_interface.png)
 
-Twenty-four of seventy-four variants change no position that has ever been
+Twenty-four of seventy-three variants change no position that has ever been
 observed in contact with FcγR or FcRn in these structures. Some of those are
 genuinely allosteric or conformational by design: the knob-into-hole and
 charge-pair heterodimerization sets act in the CH3 dimer interface, not at a
@@ -180,7 +180,7 @@ It ends with a comment block naming the Fc genotype in that entry and, when the
 variant's positions do not contact the partner in that structure, saying so
 outright rather than letting an empty selection imply an answer.
 
-Pre-generated scripts for all seventy-four variants ship in `examples/pymol`
+Pre-generated scripts for all seventy-three variants ship in `examples/pymol`
 (against 1E4K) and `examples/pymol_fcrn` (against 4N0U), so the repository is
 usable without running anything:
 
@@ -369,7 +369,7 @@ its data is academic-use restricted.
 This is the constant region only. Variable-domain numbering is a solved problem
 with better tools, and `docs/tools.md` points at them.
 
-Curation is deep rather than exhaustive. Seventy-four records with provenance
+Curation is deep, not exhaustive. Seventy-three records with provenance
 are more useful than four hundred without, and the schema is built so that
 adding a record forces you to supply a sequence-checkable substitution list and
 a source. Records that fail validation do not enter.

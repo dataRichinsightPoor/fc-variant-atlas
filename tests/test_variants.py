@@ -17,7 +17,7 @@ VARIANTS = load_variants()
 
 
 def test_dataset_size():
-    assert len(VARIANTS) == 74
+    assert len(VARIANTS) == 73
 
 
 def test_no_unexplained_validation_problems():
@@ -46,7 +46,7 @@ def test_intents_are_declared():
 
 def test_substitution_count():
     n = sum(len(v.substitutions) for v in VARIANTS)
-    assert n == 174
+    assert n == 171
 
 
 def test_disputed_records_are_flagged_and_explained():
@@ -89,7 +89,7 @@ def test_position_index_finds_the_dominant_hotspot():
 
 
 def test_distinct_positions_touched():
-    assert len(position_index()) == 60
+    assert len(position_index()) == 59
 
 
 def test_by_intent_partitions_the_dataset():

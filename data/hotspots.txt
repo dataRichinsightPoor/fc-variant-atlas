@@ -14,7 +14,7 @@
   366   T CH3       4 -                                  knob, hole, original knob, KK arm
   228   P hinge     3 -                                  IgG4 PAA, SPLE, SP
   233   E CH2       3 -                                  E233P, IgG2-like lower hinge, IgG2/IgG4 hybrid
-  237   G CH2       3 1T89 2.80 A (FcgammaRIIIa)         LALAGA, IgG1 sigma, IgG2 sigma
+  237   G CH2       3 1T89 2.80 A (FcgammaRIIIb)         LALAGA, IgG1 sigma, IgG2 sigma
   252   M CH2       3 4N0U 3.17 A (FcRn)                 FQQ-YTE, YTE, YTE-KFH
   254   S CH2       3 4N0U 2.99 A (FcRn)                 FQQ-YTE, YTE, YTE-KFH
   256   T CH2       3 -                                  FQQ-YTE, YTE, YTE-KFH
@@ -22,7 +22,7 @@
   267   S CH2       3 1E4K 3.43 A (FcgammaRIIIb)         SELF, SE, EFT
   292   R CH2       3 -                                  margetuximab Fc, stavenhagen-set, CH2-disulfide
   322   K CH2       3 -                                  FQQ, FQQ-YTE, K322A
-  329   P CH2       3 1T89 3.23 A (FcgammaRIIIa)         LALA-PG, PG, LEPG
+  329   P CH2       3 1T89 3.23 A (FcgammaRIIIb)         LALA-PG, PG, LEPG
   409   K CH3       3 -                                  cFAE partner, DD, IgG4-R409K
   434   N CH3       3 4N0U 1.93 A (FcRn)                 LS, KF, YTE-KFH
   238   P CH2       2 5XJE 2.71 A (FcgammaRIIIa)         IgG1 sigma, IgG2 sigma
@@ -37,8 +37,6 @@
   428   M CH3       2 -                                  LS, QL
   430   E CH3       2 -                                  RGY, HexaBody
   433   H CH3       2 4N0U 3.69 A (FcRn)                 KF, YTE-KFH
-  435   H CH3       2 4N0U 3.32 A (FcRn)                 IgG3-R435H, IgG4-ProtA-null
-  436   Y CH3       2 4N0U 4.75 A (FcRn)                 YTE-KFH, IgG4-ProtA-null
   250   T CH2       1 -                                  QL
   270   D CH2       1 -                                  D270A
   272   E CH2       1 -                                  E272C
@@ -56,6 +54,7 @@
   397   V CH3       1 -                                  XmAb5574 Fc
   399   D CH3       1 -                                  KK
   405   F CH3       1 -                                  cFAE
+  435   H CH3       1 4N0U 3.32 A (FcRn)                 IgG3-R435H
+  436   Y CH3       1 4N0U 4.75 A (FcRn)                 YTE-KFH
   440   S CH3       1 -                                  RGY
   442   S CH3       1 -                                  S442C
-  445   P CH3       1 -                                  IgG4-ProtA-null

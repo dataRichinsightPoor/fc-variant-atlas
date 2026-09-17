@@ -39,7 +39,6 @@ INTENTS = (
     "heterodimer",
     "conjugation",
     "stabilize",
-    "purification",
 )
 
 #: Human-readable labels for the engineering intents.
@@ -56,7 +55,6 @@ INTENT_LABELS = {
     "heterodimer": "heavy-chain heterodimerization",
     "conjugation": "site-specific conjugation",
     "stabilize": "stabilization",
-    "purification": "purification handle",
 }
 
 

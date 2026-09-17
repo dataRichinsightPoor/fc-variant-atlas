@@ -123,7 +123,7 @@ def test_classification_counts():
     fcrn = [r for r in rows if r["fcrn_interface"]]
     neither = [r for r in rows if not r["fcgr_interface"] and not r["fcrn_interface"]]
     assert len(fcgr) == 42
-    assert len(fcrn) == 12
+    assert len(fcrn) == 11
     assert len(neither) == 24
 
 

@@ -4194,28 +4194,6 @@
    "phenotype": "Reduces acid-induced aggregation with low ADCC, low FcgammaR binding, low CDC and low C1q binding.",
    "source": "https://doi.org/10.1002/pro.3852",
    "notes": ""
-  },
-  {
-   "id": "IgG4-ProtA-null",
-   "label": "IgG4-ProtA-null",
-   "isotype": "IgG4",
-   "mutations": "H435R/Y436F/L445P",
-   "disputed_mutations": "",
-   "n_positions": 3,
-   "eu_positions": "435; 436; 445",
-   "intent": "purification",
-   "intent_label": "purification handle",
-   "imgt": "G4v8",
-   "evidence": "binding",
-   "fcgr_interface_positions": "",
-   "fcrn_interface_positions": "435; 436",
-   "off_interface_positions": "445",
-   "is_glycan_variant": false,
-   "has_deletion": false,
-   "therapeutics": "",
-   "phenotype": "Abrogates Protein A binding.",
-   "source": "https://doi.org/10.3390/antib11040065",
-   "notes": "Used to enable differential purification of bispecific heterodimers. H435R also sits in the FcRn contact patch, so a purification handle can carry a pharmacokinetic consequence. Cataloged by IMGT as G4v8; the H435R/Y436F pair (IgG3-derived, called RF) is the component with published binding characterization, in Steinhardt et al., https://doi.org/10.3390/pharmaceutics12010003."
   }
  ]
 }

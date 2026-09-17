@@ -4,7 +4,7 @@ Fetch a deposited Fc complex, mark the positions a named variant changes,
 colour the interface by measured buried surface area, and print what the
 picture rests on before it is drawn.
 
-The plugin carries the same data as the rest of this repository: 74 curated
+The plugin carries the same data as the rest of this repository: 73 curated
 variant records in EU numbering, four deposited complexes with committed
 contact distances, and per-position buried surface area computed from the
 deposited coordinates. It needs no network access except the structure fetch

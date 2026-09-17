@@ -982,21 +982,3 @@ variants:
     source: https://doi.org/10.1002/pro.3852
     notes: ""
 
-  # ------------------------------------------------------------------ purification
-  - id: IgG4-ProtA-null
-    isotype: IgG4
-    mutations: [H435R, Y436F, L445P]
-    aliases: []
-    imgt: G4v8
-    intent: purification
-    phenotype: Abrogates Protein A binding.
-    evidence: binding
-    therapeutics: []
-    source: https://doi.org/10.3390/antib11040065
-    notes: >
-      Used to enable differential purification of bispecific heterodimers.
-      H435R also sits in the FcRn contact patch, so a purification handle can
-      carry a pharmacokinetic consequence. Cataloged by IMGT as G4v8; the
-      H435R/Y436F pair (IgG3-derived, called RF) is the component with
-      published binding characterization, in Steinhardt et al.,
-      https://doi.org/10.3390/pharmaceutics12010003.
