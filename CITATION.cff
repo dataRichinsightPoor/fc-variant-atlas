@@ -5,7 +5,7 @@ type: software
 authors:
   - family-names: Damko
     given-names: Ermelinda
-version: 1.0.0
+version: 1.0.1
 license: MIT
 repository-code: "https://github.com/dataRichinsightPoor/fc-variant-atlas"
 abstract: >-
