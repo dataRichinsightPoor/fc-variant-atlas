@@ -166,6 +166,8 @@
     <button id="bIface" class="on">interface</button>
     <button id="bPartner" class="on">partner</button>
     <button id="bLabels" class="on">labels</button>
+    <button id="bBurial">burial</button>
+    <button id="bSide">partner side</button>
     <button id="bSurf">surface</button>
     <button id="bReset">recenter</button>
   </div>
@@ -174,8 +176,12 @@
     <i style="background:#ff5c5c"></i>variant position<br>
     <i style="background:#d8b45c"></i>deposited glycan<br>
     <i style="background:#7fd6c1"></i>measured interface<br>
+    <i style="background:#6cb6ff"></i>contacting partner residue<br>
     <i style="background:#8c93a4"></i>Fc<br>
-    <i style="background:#4d525e"></i>partner
+    <i style="background:#4d525e"></i>partner<br>
+    <span style="display:inline-block;width:52px;height:8px;border-radius:2px;margin-right:6px;
+      vertical-align:middle;background:linear-gradient(90deg,#f6f4f0,#f7d894,#e28d4a,#a82c2c)"></span>0
+    to 125 &Aring;&sup2; buried
   </div>
 </div>
 
@@ -187,15 +193,44 @@
 "use strict";
 
 const COL = { fc: "#8c93a4", partner: "#4d525e", iface: "#7fd6c1", variant: "#ff5c5c",
+  partnerSide: "#6cb6ff",
               glycan: "#d8b45c" };
 // N-glycan and related sugar residues deposited with these Fc models.
 const GLYCAN = ["NAG", "NDG", "BMA", "MAN", "FUC", "GAL", "GLA", "SIA", "BGC", "XYS"];
 let ATLAS = null, VIEW = null, CUR = null, CURPDB = null;
-const show = { iface: true, partner: true, labels: true, surface: false };
+const show = { iface: true, partner: true, labels: true, surface: false,
+                burial: false, side: false };
+let DETAIL = null;
+
+// Buried area, white through to deep red. The scale is fixed at 0 to 125
+// square angstroms across every structure, so colour means the same thing
+// when the structure selector changes.
+const BURIAL_MAX = 125;
+function burialColor(area) {
+  const stops = [[246, 244, 240], [247, 216, 148], [226, 141, 74], [168, 44, 44]];
+  const t = Math.max(0, Math.min(1, (area || 0) / BURIAL_MAX)) * (stops.length - 1);
+  const i = Math.min(stops.length - 2, Math.floor(t)), f = t - i;
+  const c = stops[i].map((v, k) => Math.round(v + f * (stops[i + 1][k] - v)));
+  return "#" + c.map(v => v.toString(16).padStart(2, "0")).join("");
+}
+
+function positionsIn(pdb) {
+  return (DETAIL && DETAIL.complexes[pdb] && DETAIL.complexes[pdb].positions) || {};
+}
+
+function burialFor(pdb, eu) {
+  return positionsIn(pdb)[String(eu)] || null;
+}
 
 const $ = (s) => document.querySelector(s);
 
 async function boot() {
+  // Buried-surface detail is optional: the viewer still works without it,
+  // it just cannot colour by area or name partner residues.
+  fetch("interface_detail.json")
+    .then(r => r.ok ? r.json() : null)
+    .then(d => { DETAIL = d; if (CUR) { detail(CUR); draw(); } })
+    .catch(() => { DETAIL = null; });
   const r = await fetch("atlas.json");
   if (!r.ok) {
     $("#detail").innerHTML =
@@ -319,8 +354,9 @@ function detail(v) {
        or the residue is not resolved in that model.</div>`;
   }
 
-  const st = ATLAS.structures[CURPDB];
-  if (st && st.caveat) html += `<h2>Structure caveat</h2><div class="note">${st.caveat}</div>`;
+  html += burialBlock(v);
+
+  html += provenanceBlock();
 
   html += `<h2>Isotype alignment</h2>` + alnBlock(v);
   html += `<div class="foot">
@@ -329,6 +365,83 @@ function detail(v) {
     <br><br>Source: <a href="${v.source}" target="_blank" rel="noopener">${v.source}</a>
   </div>`;
   $("#detail").innerHTML = html;
+}
+
+function burialBlock(v) {
+  const pos = (v.eu_positions || "").split("; ").filter(Boolean).map(Number);
+  if (!DETAIL || !pos.length) return "";
+  const measured = positionsIn(CURPDB);
+  if (!Object.keys(measured).length) return "";
+  const rows = pos
+    .map(eu => [eu, measured[String(eu)]])
+    .filter(([, rec]) => rec)
+    .sort((a, b) => b[1].delta_sasa - a[1].delta_sasa);
+  if (!rows.length) {
+    return `<h2>Buried surface in ${CURPDB}</h2>
+      <div class="note plain">None of this variant&rsquo;s positions gives up
+      measurable surface when the partner binds in ${CURPDB}.</div>`;
+  }
+  const total = rows.reduce((t, [, r]) => t + r.delta_sasa, 0);
+  let html = `<h2>Buried surface in ${CURPDB}</h2>
+    <table class="iface">
+      <tr><th>EU</th><th>chain</th><th>&Delta;SASA</th><th>of free</th><th>nearest partner residue</th></tr>`;
+  for (const [eu, rec] of rows) {
+    const near = rec.partners && rec.partners.length
+      ? `${rec.partners[0].residue}${rec.partners[0].seq} chain ${rec.partners[0].chain}` +
+        ` &middot; ${rec.partners[0].distance.toFixed(2)} &Aring;`
+      : "no contact within the cutoff";
+    html += `<tr>
+      <td class="mono">${eu}</td>
+      <td class="mono">${rec.chain}</td>
+      <td class="d hit" style="background:${burialColor(rec.delta_sasa)};color:#16181d">
+        ${rec.delta_sasa.toFixed(1)}</td>
+      <td class="d">${Math.round(rec.buried_fraction * 100)}%</td>
+      <td>${near}</td></tr>`;
+    const per = rec.per_chain || {};
+    const vals = Object.values(per).map(c => c.delta_sasa);
+    if (vals.length > 1 && Math.max(...vals) >= 10 &&
+        Math.min(...vals) <= 0.25 * Math.max(...vals)) {
+      html += `<tr><td></td><td colspan="4" class="foot" style="padding-top:0">
+        asymmetric between the heavy chains: ` +
+        Object.entries(per).map(([c, x]) =>
+          `chain ${c} ${x.delta_sasa.toFixed(1)}`).join(", ") + `</td></tr>`;
+    }
+  }
+  const whole = DETAIL.complexes[CURPDB];
+  const ifaceTotal = Object.values(whole.positions)
+    .reduce((t, r) => t + r.delta_sasa, 0) +
+    (whole.fc_glycan_contacts || []).reduce((t, g) => t + (g.delta_sasa || 0), 0);
+  html += `</table><div class="foot">
+    Solvent-accessible surface lost on binding, Shrake&ndash;Rupley, probe 1.40 &Aring;,
+    heavy atoms only. These positions account for ${total.toFixed(1)} of the
+    ${ifaceTotal.toFixed(0)} &Aring;&sup2; this partner buries. Each position is
+    reported for the heavy chain that buries the most surface, since binding to the
+    Fc dimer is asymmetric.</div>`;
+  return html;
+}
+
+function provenanceBlock() {
+  const st = ATLAS.structures[CURPDB];
+  if (!st) return "";
+  let html = `<h2>What this structure is</h2><dl class="kv">
+    <dt>partner</dt><dd>${st.partner}</dd>
+    <dt>method</dt><dd>${st.method || "not stated"}${
+      st.resolution_angstrom ? `, ${st.resolution_angstrom} &Aring;` : ""}</dd>
+    <dt>Fc chains</dt><dd class="mono">${st.fc_chains.join("+")}${
+      st.fc_glycan_chains && st.fc_glycan_chains.length
+        ? ` (glycan ${st.fc_glycan_chains.join("+")})` : ""}</dd>
+    <dt>partner chains</dt><dd class="mono">${st.partner_chains.join("+")}</dd>
+    <dt>Fc genotype</dt><dd class="mono">${st.fc_genotype}</dd>
+    <dt>partner genotype</dt><dd class="mono">${st.partner_genotype || "not recorded"}</dd>
+  </dl>`;
+  if (st.caveat) html += `<div class="note">${st.caveat}</div>`;
+  if (st.partner_caveat) html += `<div class="note">${st.partner_caveat}</div>`;
+  for (const o of st.other_polymers_in_entry || []) {
+    html += `<div class="note plain">Also in this entry: ${o.description} on chain
+      ${o.chain}, closest approach to the Fc
+      ${o.closest_approach_to_fc_angstrom} &Aring;.</div>`;
+  }
+  return html;
 }
 
 function alnBlock(v) {
@@ -378,6 +491,35 @@ function draw() {
       const iface = Object.keys(st.contacts).map(Number);
       VIEW.addStyle({ chain: st.fc_chains, resi: iface },
         { stick: { radius: 0.13, color: COL.iface } });
+    }
+    // Colour by measured buried area. Applied per chain, because the same
+    // position buries different amounts on the two heavy chains.
+    if (show.burial) {
+      const measured = positionsIn(CURPDB);
+      for (const [eu, rec] of Object.entries(measured)) {
+        for (const [chain, per] of Object.entries(rec.per_chain || {})) {
+          if (!per.delta_sasa) continue;
+          VIEW.addStyle({ chain: chain, resi: Number(eu) },
+            { stick: { radius: 0.22, color: burialColor(per.delta_sasa) } });
+        }
+      }
+    }
+    // The partner residues that actually touch this variant's positions.
+    if (show.side && CUR) {
+      const measured = positionsIn(CURPDB);
+      const wanted = (CUR.eu_positions || "").split("; ").filter(Boolean);
+      const byChain = {};
+      for (const eu of wanted) {
+        const rec = measured[eu];
+        if (!rec) continue;
+        for (const q of rec.partners || []) {
+          (byChain[q.chain] = byChain[q.chain] || new Set()).add(q.seq);
+        }
+      }
+      for (const [chain, seqs] of Object.entries(byChain)) {
+        VIEW.addStyle({ chain: chain, resi: [...seqs] },
+          { stick: { radius: 0.2, color: COL.partnerSide } });
+      }
     }
     const pos = (CUR.eu_positions || "").split("; ").filter(Boolean).map(Number);
     if (pos.length) {

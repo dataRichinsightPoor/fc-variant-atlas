@@ -9,12 +9,13 @@ checked residue by residue against the real UniProt constant-region sequence of
 its isotype, placed on a cross-isotype EU alignment, and tested against
 heavy-atom contacts measured in deposited Fc–receptor complexes.
 
-Then it hands you a PyMOL script.
+Then it hands you a PyMOL script, a PyMOL plugin, and a browser viewer.
 
 ```bash
 pip install -e .
 fcatlas show LALA-PG
 fcatlas interface GASDALIE
+fcatlas burial --pdb 4N0U --top 10
 fcatlas pymol LALA-PG --pdb 1E4K -o lala-pg.pml && pymol lala-pg.pml
 ```
 
@@ -77,11 +78,17 @@ package are derived from the numbering module, never typed.
 ## Structure, and what the structures do not contain
 
 Four deposited complexes are shipped with measured contacts rather than with
-assertions: 1E4K (Fc with FcγRIIIb), 1T89 (Fc with FcγRIIIa), 5XJE (Fc with
-FcγRIIIa, both partners glycosylated) and 4N0U (Fc with FcRn and albumin).
-Contacts are computed as any Fc heavy atom within 5.0 Å of any partner heavy
-atom, with a spatial grid, and the results are carried in `data/structures.json`
-so nothing has to be recomputed at query time.
+assertions: 1E4K and 1T89 (Fc with FcγRIIIb), 5XJE (Fc with FcγRIIIa, both
+partners glycosylated) and 4N0U (Fc with FcRn, with albumin elsewhere in the
+asymmetric unit). Contacts are computed as any Fc heavy atom within 5.0 Å of any
+partner heavy atom, with a spatial grid, and the results are carried in
+`data/structures.json` so nothing has to be recomputed at query time.
+
+Both genotypes are recorded, not just the Fc one. 5XJE is the only FcγRIIIa
+complex here and its receptor carries N56Q, N92Q, N187Q and F176V, so this set
+contains no wild-type FcγRIIIa measurement. The albumin in 4N0U comes no closer
+than 24.16 Å to the Fc and is excluded from every calculation rather than folded
+into the partner.
 
 Classifying every variant against those contacts produces a result worth
 sitting with.
@@ -114,6 +121,47 @@ Fc genotype of the entry it just fetched, and prints a caveat when that genotype
 is not wild type. That is not pedantry. If you color EU 252 on 4N0U you are
 coloring a tyrosine that the deposited construct put there.
 
+## Buried surface, not just contact
+
+Contact is a yes or no at a cutoff, and it is the weaker of the two things the
+coordinates will tell you. `tools/measure_interfaces.py` computes, for every
+position of every complex, the solvent-accessible surface each residue gives up
+when the partner binds — Shrake-Rupley, probe 1.40 Å, heavy atoms only — along
+with the partner residues it touches and a per-chain breakdown.
+
+![What the field engineers, against what the interface actually buries](figures/fig5_burial_against_density.png)
+
+The two axes are close to unrelated, and the outliers are the point. EU 329
+buries 120.5 Å² in 1E4K, 87 percent of its free surface, and carries three
+records. EU 234, seventeen records and the second most engineered position in the
+atlas, buries 52.3 Å² there and only 34 percent — it sits closer to FcγRIIIb than
+EU 329 does while giving up far less surface, which is a reminder that proximity
+and burial are different measurements. EU 332 buries 8.9 Å² at its best and
+carries six records. EU 331 carries five and has neither burial nor contact in any
+of these four structures, which is what a complement-directed position looks like
+in a set containing no C1q. And EU 253 gives up 121.2 Å², 96 percent of itself, to
+FcRn in 4N0U while appearing in no curated record here at all.
+
+The figure plots each position once, at the structure where it buries the most,
+so a point is the best case for that position rather than an average over
+non-comparable models.
+
+Binding to the Fc dimer is asymmetric, so the areas are reported per chain as
+well as per position. EU 234 buries 52.3 Å² on one heavy chain of 1E4K and 1.6 Å²
+on the other; EU 329 does the reverse, 120.5 Å² against 5.2 Å². A single number
+per position would have hidden that.
+
+```bash
+fcatlas burial --pdb 1E4K --top 12          # most-buried positions
+fcatlas burial --against-density            # attention against area
+fcatlas partners LALA-PG --pdb 1E4K         # what each position touches
+fcatlas provenance                          # genotypes, methods, resolutions
+```
+
+Method, conventions and scope are in `docs/interface.md`. Areas come from four
+X-ray models at 2.4 to 3.8 Å; an area of zero means "not buried in these four
+models," never "not buried."
+
 ## Plug and play
 
 Generate a script for one variant on one structure:
@@ -140,13 +188,43 @@ pymol examples/pymol/LALA-PG_1E4K.pml
 
 Regenerate the whole set with `fcatlas pymol-all examples/pymol --pdb 1E4K`.
 
-A browser viewer with no install at all lives in `viewer/`. Open
-`viewer/index.html` locally, or serve the directory; it reads `viewer/atlas.json`
-and renders the same content with 3Dmol.js — searchable variant list, intent and
-isotype filters, structure switching, interface and glycan display, measured
-contact distances, and the isotype alignment block. Deposited glycans are drawn
-as spheres rather than sticks, deliberately: branched-sugar bond inference is
-unreliable and sticks produce artifacts that look like structure.
+### A PyMOL plugin
+
+The scripts are text and stay text. If you would rather have the atlas inside a
+running PyMOL, `pymol_plugin/` builds an installable plugin:
+
+```bash
+python pymol_plugin/build_plugin_zip.py -o dist/
+# PyMOL: Plugin > Plugin Manager > Install New Plugin > Choose file
+```
+
+It adds `fcatlas`, `fcatlas_list`, `fcatlas_show`, `fcatlas_interface`,
+`fcatlas_partners`, `fcatlas_burial`, `fcatlas_compare`, `fcatlas_provenance` and
+`fcatlas_hotspots` to the PyMOL command line, plus a small dialog when Qt is
+available. `fcatlas_burial 4N0U` writes measured buried area into the B-factor
+column and colors by it, so the spectrum on your screen is a measurement and not
+a mood. `fcatlas_compare LALA-PG,LALA-PG-DAPA` loads one structure per variant
+and lines the scenes up.
+
+The plugin bundles its own copy of `data/`, so it works with no `pip install`,
+and it resolves data in a fixed order: `FCATLAS_DATA` if you set it, then an
+installed `fcatlas` package, then the bundled copy. Every scene prints the
+genotype and provenance of the entry before it draws anything.
+
+### A browser viewer
+
+No install at all: open `viewer/index.html` locally, or serve the directory. It
+reads `viewer/atlas.json` and `viewer/interface_detail.json` and renders the same
+content with 3Dmol.js — searchable variant list, intent and isotype filters,
+structure switching, interface and glycan display, measured contact distances,
+buried area per position with the per-chain asymmetry called out, the partner
+residues each position touches, both genotypes with resolution and method, and
+the isotype alignment block. The burial toggle colors residues on a fixed 0 to
+125 Å² scale so color means the same thing when you change structures.
+
+Deposited glycans are drawn as spheres rather than sticks, deliberately:
+branched-sugar bond inference is unreliable and sticks produce artifacts that
+look like structure.
 
 ## Command line
 
@@ -156,6 +234,10 @@ fcatlas show LALA-PG                               one record in full
 fcatlas align [--from 228] [--to 340] [--fasta]    aligned isotype block
 fcatlas hotspots                                   positions by variant density
 fcatlas interface GASDALIE                         variant against measured contacts
+fcatlas burial [--pdb ID] [--top N]                positions by buried surface
+fcatlas burial --against-density                   records against buried area
+fcatlas partners LALA-PG [--pdb 1E4K]              partner residues per position
+fcatlas provenance                                 genotypes, methods, resolutions
 fcatlas pymol LALA-PG [--pdb 1E4K] [-o f.pml]      one PyMOL script
 fcatlas pymol-all DIR [--pdb 1E4K]                 a script per variant
 fcatlas export {csv,json,fasta} [-o f]             machine-readable atlas
@@ -191,8 +273,23 @@ n.residue(235)               # 'V'
 
 cx = load_complexes()["1E4K"]
 cx.at_interface(235), cx.distance(235)
+cx.partner_genotype          # 'wild type'
+cx.has_wild_type_partner     # True
 
 classify()                   # every variant against every measured interface
+```
+
+```python
+from fcatlas import load_interface, engineering_against_burial
+
+d = load_interface()["1E4K"]
+d.total_buried_area                # 722.8
+d.ranked()[0].summary()            # most-buried position, one line
+d.positions[329].is_asymmetric     # True
+d.positions[329].protein_partners  # TRP87 chain C at 3.26 A
+d.variant_buried_area("LALA-PG")   # 261.4
+
+engineering_against_burial()       # records against area, one row per position
 ```
 
 ## Data files
@@ -201,6 +298,7 @@ classify()                   # every variant against every measured interface
 | --- | --- |
 | `data/variants.yaml` | the curated source of truth, one record per variant |
 | `data/structures.json` | measured contacts and the FcRn provenance survey |
+| `data/interface_detail.json` | buried surface per position, partner residues, per-chain areas |
 | `data/atlas.json` | full machine-readable export, schema `fcatlas/1` |
 | `data/variants.csv` | flat table for spreadsheets and joins |
 | `data/alignment.fasta` | the four EU-numbered constant regions, gapped |
@@ -215,13 +313,22 @@ P01860, P01861), trimmed at the secreted terminus.
 ```bash
 pip install -e .
 python -m pytest tests/ -q
+python tools/enrich_structures.py            # genotypes and provenance from RCSB
+python tools/measure_interfaces.py           # buried surface from coordinates
 python figures/make_figures.py
 python -m fcatlas export json -o data/atlas.json
 python -m fcatlas pymol-all examples/pymol --pdb 1E4K
+python pymol_plugin/build_plugin_zip.py -o dist/
 ```
 
-Sixty-two tests cover the numbering, the variant records, the structural layer,
-the citation format and the exports. Every DOI in `data/variants.yaml` and
+The two `tools/` scripts download mmCIF files from RCSB into `tools/.cache/` on
+first run and are the only thing here that needs the network. Rerunning them on
+unchanged depositions reproduces `data/interface_detail.json` byte for byte.
+
+A hundred and thirty-two tests cover the numbering, the variant records, the
+structural layer, the buried-surface layer, the command line as text a person
+reads, the PyMOL plugin against a recording fake of the `cmd` API, the citation
+format and the exports. Every DOI in `data/variants.yaml` and
 `data/structures.json` was resolved against Crossref during curation and checked
 against the paper the record claims; four citations were wrong on the first pass
 and were corrected before release.
@@ -250,9 +357,14 @@ are more useful than four hundred without, and the schema is built so that
 adding a record forces you to supply a sequence-checkable substitution list and
 a source. Records that fail validation do not enter.
 
-Contacts come from four structures. A position absent from all four is not
-necessarily far from a receptor; it is unmeasured in this set. The
+Contacts and areas come from four structures. A position absent from all four is
+not necessarily far from a receptor; it is unmeasured in this set. The
 classification says "never measured in contact," never "not in contact."
+
+Neither is a complete accounting of the interface. There is no C1q complex here,
+no FcγRI, no FcγRIIa or IIb, no afucosylated Fc, and one receptor allotype per
+entry. Areas are single-model measurements from static coordinates at 2.4 to
+3.8 Å, with no error bar and no conformational ensemble behind them.
 
 Phenotype fields describe what was measured in the cited work, in the assay of
 that work. They are not a promise about your assay, your effector cells, or your
@@ -274,5 +386,6 @@ sequences to UniProt; both are cited per record.
 ## Documentation
 
 - `docs/numbering.md` — EU, IMGT and sequential numbering, and the 234/235 collision
-- `docs/structures.md` — how contacts are computed, and the provenance caveat
+- `docs/structures.md` — what each structure is, how contacts are computed, and the provenance caveat
+- `docs/interface.md` — buried surface: method, the two distance conventions, and what the areas say
 - `docs/tools.md` — open-license tools this work builds on or can be swapped for

@@ -2361,11 +2361,31 @@
    "partner_chains": [
     "C"
    ],
+   "fc_glycan_chains": [
+    "D",
+    "E"
+   ],
+   "partner_glycan_chains": [],
    "fc_genotype": "wild type",
    "wild_type_fc": true,
+   "partner_genotype": "wild type",
+   "wild_type_partner": true,
+   "method": "X-RAY DIFFRACTION",
+   "resolution_angstrom": 3.2,
+   "fc_accession": "P01857",
+   "fc_accession_database": "UNP",
+   "fc_reference": "UNP:P01857",
+   "partner_accessions": [
+    "O75015"
+   ],
+   "partner_accession_databases": [
+    "UNP"
+   ],
    "cutoff_angstrom": 5.0,
    "doi": "https://doi.org/10.1038/35018508",
    "caveat": "",
+   "partner_caveat": "",
+   "other_polymers_in_entry": [],
    "contacts": {
     "234": 3.15,
     "235": 2.68,
@@ -2389,18 +2409,39 @@
    }
   },
   "1T89": {
-   "partner": "FcgammaRIIIa ectodomain",
+   "partner": "FcgammaRIIIb ectodomain",
    "fc_chains": [
-    "A"
-   ],
-   "partner_chains": [
+    "A",
     "B"
    ],
+   "partner_chains": [
+    "C"
+   ],
+   "fc_glycan_chains": [
+    "D",
+    "E"
+   ],
+   "partner_glycan_chains": [],
    "fc_genotype": "wild type",
    "wild_type_fc": true,
+   "partner_genotype": "wild type",
+   "wild_type_partner": true,
+   "method": "X-RAY DIFFRACTION",
+   "resolution_angstrom": 3.5,
+   "fc_accession": "9857753",
+   "fc_accession_database": "GB",
+   "fc_reference": "GB:9857753",
+   "partner_accessions": [
+    "O75015"
+   ],
+   "partner_accession_databases": [
+    "UNP"
+   ],
    "cutoff_angstrom": 5.0,
    "doi": "https://doi.org/10.1074/jbc.M100350200",
    "caveat": "",
+   "partner_caveat": "",
+   "other_polymers_in_entry": [],
    "contacts": {
     "235": 3.0,
     "236": 3.02,
@@ -2431,11 +2472,39 @@
     "A",
     "B"
    ],
+   "fc_glycan_chains": [
+    "C"
+   ],
+   "partner_glycan_chains": [],
    "fc_genotype": "M252Y/S254T/T256E (YTE)",
    "wild_type_fc": false,
+   "partner_genotype": "wild type",
+   "wild_type_partner": true,
+   "method": "X-RAY DIFFRACTION",
+   "resolution_angstrom": 3.8,
+   "fc_accession": "P01857",
+   "fc_accession_database": "UNP",
+   "fc_reference": "UNP:P01857",
+   "partner_accessions": [
+    "P55899",
+    "P61769"
+   ],
+   "partner_accession_databases": [
+    "UNP",
+    "UNP"
+   ],
    "cutoff_angstrom": 5.0,
    "doi": "https://doi.org/10.1074/jbc.M113.537563",
    "caveat": "This Fc is not wild type. The three YTE substitutions sit inside the FcRn contact patch, so contact distances at EU 252, 254 and 256 describe the engineered molecule, not human IgG1.",
+   "partner_caveat": "",
+   "other_polymers_in_entry": [
+    {
+     "chain": "D",
+     "description": "Serum albumin",
+     "accession": "P02768",
+     "closest_approach_to_fc_angstrom": 24.16
+    }
+   ],
    "contacts": {
     "251": 3.57,
     "252": 3.17,
@@ -2456,7 +2525,7 @@
    }
   },
   "5XJE": {
-   "partner": "FcgammaRIIIa, both partners glycosylated",
+   "partner": "FcgammaRIIIa ectodomain, glycans resolved on both partners",
    "fc_chains": [
     "A",
     "B"
@@ -2464,11 +2533,34 @@
    "partner_chains": [
     "C"
    ],
+   "fc_glycan_chains": [
+    "D",
+    "E"
+   ],
+   "partner_glycan_chains": [
+    "F",
+    "G"
+   ],
    "fc_genotype": "wild type",
    "wild_type_fc": true,
+   "partner_genotype": "N56Q/N92Q/F176V/N187Q",
+   "wild_type_partner": false,
+   "method": "X-RAY DIFFRACTION",
+   "resolution_angstrom": 2.4,
+   "fc_accession": "P0DOX5",
+   "fc_accession_database": "UNP",
+   "fc_reference": "UNP:P0DOX5",
+   "partner_accessions": [
+    "P08637"
+   ],
+   "partner_accession_databases": [
+    "UNP"
+   ],
    "cutoff_angstrom": 5.0,
    "doi": "https://doi.org/10.1038/s41598-017-13845-8",
    "caveat": "",
+   "partner_caveat": "The receptor in this entry is not wild type. Three N-glycosylation sequons are removed (N56Q, N92Q, N187Q) and F176V is the 158V allotype in mature-protein numbering. This is the only FcgammaRIIIa entry used here; 1E4K and 1T89 both carry FcgammaRIIIb, which is 97 percent identical but is not the receptor that mediates ADCC by natural killer cells.",
+   "other_polymers_in_entry": [],
    "contacts": {
     "235": 3.24,
     "236": 2.97,

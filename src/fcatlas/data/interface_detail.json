@@ -1,0 +1,3542 @@
+{
+ "_schema": "fcatlas-interface/1",
+ "_about": "Per-position interface detail for the deposited complexes used by the atlas: buried surface area, named partner residues, and the provenance each deposition states about its own chains.",
+ "_method": {
+  "sasa_algorithm": "Shrake-Rupley",
+  "probe_radius_angstrom": 1.4,
+  "test_points_per_atom": 960,
+  "atoms": "heavy atoms only; waters and ions removed",
+  "glycans": "glycan-only chains are adopted by the nearest protein chain, so an Fc glycan is Fc surface for both area and contacts",
+  "sasa_free": "area of the Fc chains alone, including their glycans",
+  "sasa_bound": "area of the same residues in the complex",
+  "delta_sasa": "sasa_free minus sasa_bound, square angstroms",
+  "buried_fraction": "delta_sasa divided by sasa_free",
+  "chain_choice": "each position is reported for the Fc chain that buries the most surface, since receptor binding to the Fc dimer is asymmetric; every chain is kept under per_chain",
+  "contact_cutoff_angstrom": 5.0,
+  "min_delta_sasa_reported": 0.5,
+  "numbering": "auth_seq_id, which is EU numbering in these entries"
+ },
+ "complexes": {
+  "1E4K": {
+   "method": "X-RAY DIFFRACTION",
+   "resolution_angstrom": 3.2,
+   "fc_chains": [
+    "A",
+    "B"
+   ],
+   "fc_glycan_chains": [
+    "D",
+    "E"
+   ],
+   "partner_chains": [
+    "C"
+   ],
+   "partner_glycan_chains": [],
+   "ignored_chains": [],
+   "deposited_fc_mutation": null,
+   "deposited_partner_mutation": null,
+   "entities": [
+    {
+     "entity_id": "1",
+     "type": "polymer",
+     "description": "FC FRAGMENT OF HUMAN IGG1",
+     "deposited_mutation": null,
+     "chains": [
+      "A",
+      "B"
+     ]
+    },
+    {
+     "entity_id": "2",
+     "type": "polymer",
+     "description": "LOW AFFINITY IMMUNOGLOBULIN GAMMA FC RECEPTOR III",
+     "deposited_mutation": null,
+     "chains": [
+      "C"
+     ]
+    },
+    {
+     "entity_id": "3",
+     "type": "branched",
+     "description": "alpha-D-galactopyranose-(1-4)-2-acetamido-2-deoxy-beta-D-glucopyranose-(1-2)-alpha-D-mannopyranose-(1-6)-[2-acetamido-2-deoxy-beta-D-glucopyranose-(1-2)-alpha-D-mannopyranose-(1-3)]beta-D-mannopyranos",
+     "deposited_mutation": null,
+     "chains": [
+      "D"
+     ]
+    },
+    {
+     "entity_id": "4",
+     "type": "branched",
+     "description": "beta-D-galactopyranose-(1-4)-2-acetamido-2-deoxy-beta-D-glucopyranose-(1-2)-alpha-D-mannopyranose-(1-6)-[2-acetamido-2-deoxy-beta-D-glucopyranose-(1-2)-alpha-D-mannopyranose-(1-3)]beta-D-mannopyranose",
+     "deposited_mutation": null,
+     "chains": [
+      "E"
+     ]
+    }
+   ],
+   "positions": {
+    "234": {
+     "residue": "LEU",
+     "chain": "B",
+     "sasa_free": 155.4,
+     "sasa_bound": 103.1,
+     "delta_sasa": 52.3,
+     "buried_fraction": 0.337,
+     "min_distance": 3.15,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 116,
+       "residue": "HIS",
+       "distance": 3.15,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 157,
+       "residue": "SER",
+       "distance": 4.91,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 156,
+       "residue": "GLY",
+       "distance": 4.96,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 1.6,
+       "min_distance": null,
+       "contacts": 0
+      },
+      "B": {
+       "delta_sasa": 52.3,
+       "min_distance": 3.15,
+       "contacts": 3
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "235": {
+     "residue": "LEU",
+     "chain": "A",
+     "sasa_free": 155.2,
+     "sasa_bound": 66.7,
+     "delta_sasa": 88.6,
+     "buried_fraction": 0.571,
+     "min_distance": 2.9,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 155,
+       "residue": "VAL",
+       "distance": 2.9,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 113,
+       "residue": "THR",
+       "distance": 3.75,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 114,
+       "residue": "ALA",
+       "distance": 3.94,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 156,
+       "residue": "GLY",
+       "distance": 4.09,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 87,
+       "residue": "TRP",
+       "distance": 4.87,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 88.6,
+       "min_distance": 2.9,
+       "contacts": 5
+      },
+      "B": {
+       "delta_sasa": 35.7,
+       "min_distance": 2.68,
+       "contacts": 2
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "236": {
+     "residue": "GLY",
+     "chain": "B",
+     "sasa_free": 69.7,
+     "sasa_bound": 10.9,
+     "delta_sasa": 58.8,
+     "buried_fraction": 0.843,
+     "min_distance": 2.7,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 116,
+       "residue": "HIS",
+       "distance": 2.7,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 117,
+       "residue": "LYS",
+       "distance": 3.7,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 132,
+       "residue": "HIS",
+       "distance": 3.76,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 131,
+       "residue": "HIS",
+       "distance": 4.12,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 21.4,
+       "min_distance": 4.09,
+       "contacts": 3
+      },
+      "B": {
+       "delta_sasa": 58.8,
+       "min_distance": 2.7,
+       "contacts": 4
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "237": {
+     "residue": "GLY",
+     "chain": "B",
+     "sasa_free": 31.2,
+     "sasa_bound": 0.4,
+     "delta_sasa": 30.8,
+     "buried_fraction": 0.988,
+     "min_distance": 3.09,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 131,
+       "residue": "HIS",
+       "distance": 3.09,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 117,
+       "residue": "LYS",
+       "distance": 3.57,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 132,
+       "residue": "HIS",
+       "distance": 4.33,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 129,
+       "residue": "TYR",
+       "distance": 4.47,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 23.8,
+       "min_distance": 3.3,
+       "contacts": 2
+      },
+      "B": {
+       "delta_sasa": 30.8,
+       "min_distance": 3.09,
+       "contacts": 4
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "238": {
+     "residue": "PRO",
+     "chain": "B",
+     "sasa_free": 7.8,
+     "sasa_bound": 5.9,
+     "delta_sasa": 1.9,
+     "buried_fraction": 0.243,
+     "min_distance": 3.5,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 131,
+       "residue": "HIS",
+       "distance": 3.5,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 1.3,
+       "min_distance": 3.58,
+       "contacts": 1
+      },
+      "B": {
+       "delta_sasa": 1.9,
+       "min_distance": 3.5,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "239": {
+     "residue": "SER",
+     "chain": "A",
+     "sasa_free": 52.6,
+     "sasa_bound": 32.3,
+     "delta_sasa": 20.3,
+     "buried_fraction": 0.386,
+     "min_distance": 4.21,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 158,
+       "residue": "LYS",
+       "distance": 4.21,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 20.3,
+       "min_distance": 4.21,
+       "contacts": 1
+      },
+      "B": {
+       "delta_sasa": 15.1,
+       "min_distance": 3.11,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "265": {
+     "residue": "ASP",
+     "chain": "B",
+     "sasa_free": 39.7,
+     "sasa_bound": 4.0,
+     "delta_sasa": 35.7,
+     "buried_fraction": 0.899,
+     "min_distance": 2.73,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 131,
+       "residue": "HIS",
+       "distance": 2.73,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 117,
+       "residue": "LYS",
+       "distance": 2.89,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 129,
+       "residue": "TYR",
+       "distance": 3.61,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "B": {
+       "delta_sasa": 35.7,
+       "min_distance": 2.73,
+       "contacts": 3
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "266": {
+     "residue": "VAL",
+     "chain": "B",
+     "sasa_free": 0.6,
+     "sasa_bound": 0.6,
+     "delta_sasa": 0.0,
+     "buried_fraction": 0.0,
+     "min_distance": 4.35,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 131,
+       "residue": "HIS",
+       "distance": 4.35,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "B": {
+       "delta_sasa": 0.0,
+       "min_distance": 4.35,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "267": {
+     "residue": "SER",
+     "chain": "B",
+     "sasa_free": 34.8,
+     "sasa_bound": 7.6,
+     "delta_sasa": 27.1,
+     "buried_fraction": 0.78,
+     "min_distance": 3.43,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 131,
+       "residue": "HIS",
+       "distance": 3.43,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 129,
+       "residue": "TYR",
+       "distance": 4.72,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "B": {
+       "delta_sasa": 27.1,
+       "min_distance": 3.43,
+       "contacts": 2
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "268": {
+     "residue": "HIS",
+     "chain": "B",
+     "sasa_free": 85.0,
+     "sasa_bound": 79.1,
+     "delta_sasa": 5.9,
+     "buried_fraction": 0.07,
+     "min_distance": null,
+     "partners": [],
+     "per_chain": {
+      "B": {
+       "delta_sasa": 5.9,
+       "min_distance": null,
+       "contacts": 0
+      }
+     },
+     "in_contact": false,
+     "contacts_glycan_only": false
+    },
+    "269": {
+     "residue": "GLU",
+     "chain": "B",
+     "sasa_free": 141.9,
+     "sasa_bound": 108.8,
+     "delta_sasa": 33.1,
+     "buried_fraction": 0.233,
+     "min_distance": 3.63,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 128,
+       "residue": "LYS",
+       "distance": 3.63,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 129,
+       "residue": "TYR",
+       "distance": 4.75,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "B": {
+       "delta_sasa": 33.1,
+       "min_distance": 3.63,
+       "contacts": 2
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "297": {
+     "residue": "ASN",
+     "chain": "B",
+     "sasa_free": 65.0,
+     "sasa_bound": 33.0,
+     "delta_sasa": 32.0,
+     "buried_fraction": 0.492,
+     "min_distance": 3.05,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 126,
+       "residue": "ASP",
+       "distance": 3.05,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 152,
+       "residue": "ARG",
+       "distance": 4.8,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "B": {
+       "delta_sasa": 32.0,
+       "min_distance": 3.05,
+       "contacts": 2
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "298": {
+     "residue": "SER",
+     "chain": "B",
+     "sasa_free": 71.3,
+     "sasa_bound": 11.8,
+     "delta_sasa": 59.5,
+     "buried_fraction": 0.834,
+     "min_distance": 3.26,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 126,
+       "residue": "ASP",
+       "distance": 3.26,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 129,
+       "residue": "TYR",
+       "distance": 4.09,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 127,
+       "residue": "ARG",
+       "distance": 4.4,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "B": {
+       "delta_sasa": 59.5,
+       "min_distance": 3.26,
+       "contacts": 3
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "299": {
+     "residue": "THR",
+     "chain": "B",
+     "sasa_free": 16.3,
+     "sasa_bound": 0.9,
+     "delta_sasa": 15.4,
+     "buried_fraction": 0.946,
+     "min_distance": 4.24,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 129,
+       "residue": "TYR",
+       "distance": 4.24,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "B": {
+       "delta_sasa": 15.4,
+       "min_distance": 4.24,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "326": {
+     "residue": "LYS",
+     "chain": "A",
+     "sasa_free": 179.9,
+     "sasa_bound": 167.1,
+     "delta_sasa": 12.8,
+     "buried_fraction": 0.071,
+     "min_distance": 4.44,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 110,
+       "residue": "TRP",
+       "distance": 4.44,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 12.8,
+       "min_distance": 4.44,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "327": {
+     "residue": "ALA",
+     "chain": "B",
+     "sasa_free": 49.7,
+     "sasa_bound": 28.8,
+     "delta_sasa": 20.9,
+     "buried_fraction": 0.42,
+     "min_distance": 4.15,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 131,
+       "residue": "HIS",
+       "distance": 4.15,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 132,
+       "residue": "HIS",
+       "distance": 4.8,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 11.5,
+       "min_distance": 3.87,
+       "contacts": 2
+      },
+      "B": {
+       "delta_sasa": 20.9,
+       "min_distance": 4.15,
+       "contacts": 2
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "328": {
+     "residue": "LEU",
+     "chain": "A",
+     "sasa_free": 32.6,
+     "sasa_bound": 20.1,
+     "delta_sasa": 12.5,
+     "buried_fraction": 0.383,
+     "min_distance": 3.24,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 158,
+       "residue": "LYS",
+       "distance": 3.24,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 87,
+       "residue": "TRP",
+       "distance": 4.05,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 110,
+       "residue": "TRP",
+       "distance": 4.4,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 12.5,
+       "min_distance": 3.24,
+       "contacts": 3
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "329": {
+     "residue": "PRO",
+     "chain": "A",
+     "sasa_free": 138.3,
+     "sasa_bound": 17.7,
+     "delta_sasa": 120.5,
+     "buried_fraction": 0.872,
+     "min_distance": 3.26,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 87,
+       "residue": "TRP",
+       "distance": 3.26,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 110,
+       "residue": "TRP",
+       "distance": 3.27,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 85,
+       "residue": "ILE",
+       "distance": 3.37,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 86,
+       "residue": "GLY",
+       "distance": 3.51,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 120.5,
+       "min_distance": 3.26,
+       "contacts": 4
+      },
+      "B": {
+       "delta_sasa": 5.2,
+       "min_distance": null,
+       "contacts": 0
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "330": {
+     "residue": "ALA",
+     "chain": "A",
+     "sasa_free": 52.1,
+     "sasa_bound": 41.0,
+     "delta_sasa": 11.1,
+     "buried_fraction": 0.213,
+     "min_distance": 4.23,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 85,
+       "residue": "ILE",
+       "distance": 4.23,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 11.1,
+       "min_distance": 4.23,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "332": {
+     "residue": "ILE",
+     "chain": "A",
+     "sasa_free": 41.5,
+     "sasa_bound": 32.9,
+     "delta_sasa": 8.6,
+     "buried_fraction": 0.206,
+     "min_distance": 3.93,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 158,
+       "residue": "LYS",
+       "distance": 3.93,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 8.6,
+       "min_distance": 3.93,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    }
+   },
+   "fc_glycan_contacts": [
+    {
+     "residue": "NAG",
+     "chain": "E",
+     "sasa_free": 111.1,
+     "sasa_bound": 36.2,
+     "delta_sasa": 75.0,
+     "buried_fraction": 0.675,
+     "min_distance": 3.17,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 152,
+       "residue": "ARG",
+       "distance": 3.17,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 129,
+       "residue": "TYR",
+       "distance": 3.82,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 119,
+       "residue": "THR",
+       "distance": 3.97,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 117,
+       "residue": "LYS",
+       "distance": 4.22,
+       "is_glycan": false
+      }
+     ],
+     "glycan_chain": "E",
+     "seq": 1
+    }
+   ]
+  },
+  "1T89": {
+   "method": "X-RAY DIFFRACTION",
+   "resolution_angstrom": 3.5,
+   "fc_chains": [
+    "A",
+    "B"
+   ],
+   "fc_glycan_chains": [
+    "D",
+    "E"
+   ],
+   "partner_chains": [
+    "C"
+   ],
+   "partner_glycan_chains": [],
+   "ignored_chains": [],
+   "deposited_fc_mutation": null,
+   "deposited_partner_mutation": null,
+   "entities": [
+    {
+     "entity_id": "1",
+     "type": "polymer",
+     "description": "recombinant IgG1 heavy chain",
+     "deposited_mutation": null,
+     "chains": [
+      "A",
+      "B"
+     ]
+    },
+    {
+     "entity_id": "2",
+     "type": "polymer",
+     "description": "Low affinity immunoglobulin gamma Fc region receptor III-B",
+     "deposited_mutation": null,
+     "chains": [
+      "C"
+     ]
+    },
+    {
+     "entity_id": "3",
+     "type": "branched",
+     "description": "beta-D-galactopyranose-(1-4)-2-acetamido-2-deoxy-alpha-D-glucopyranose-(1-2)-alpha-D-mannopyranose-(1-6)-[beta-D-mannopyranose-(1-3)]beta-D-mannopyranose-(1-4)-2-acetamido-2-deoxy-beta-D-glucopyranose",
+     "deposited_mutation": null,
+     "chains": [
+      "D"
+     ]
+    },
+    {
+     "entity_id": "4",
+     "type": "branched",
+     "description": "2-acetamido-2-deoxy-beta-D-glucopyranose-(1-2)-alpha-D-mannopyranose-(1-3)-[2-acetamido-2-deoxy-beta-D-glucopyranose-(1-2)-alpha-D-mannopyranose-(1-6)]beta-D-mannopyranose-(1-4)-2-acetamido-2-deoxy-al",
+     "deposited_mutation": null,
+     "chains": [
+      "E"
+     ]
+    }
+   ],
+   "positions": {
+    "235": {
+     "residue": "LEU",
+     "chain": "B",
+     "sasa_free": 140.7,
+     "sasa_bound": 59.7,
+     "delta_sasa": 81.1,
+     "buried_fraction": 0.576,
+     "min_distance": 3.19,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 158,
+       "residue": "VAL",
+       "distance": 3.19,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 159,
+       "residue": "GLY",
+       "distance": 3.38,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 117,
+       "residue": "ALA",
+       "distance": 3.98,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 160,
+       "residue": "SER",
+       "distance": 4.83,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 116,
+       "residue": "THR",
+       "distance": 4.84,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 39.3,
+       "min_distance": 3.0,
+       "contacts": 3
+      },
+      "B": {
+       "delta_sasa": 81.1,
+       "min_distance": 3.19,
+       "contacts": 5
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "236": {
+     "residue": "GLY",
+     "chain": "A",
+     "sasa_free": 71.4,
+     "sasa_bound": 11.8,
+     "delta_sasa": 59.6,
+     "buried_fraction": 0.835,
+     "min_distance": 3.02,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 135,
+       "residue": "HIS",
+       "distance": 3.02,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 119,
+       "residue": "HIS",
+       "distance": 3.11,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 120,
+       "residue": "LYS",
+       "distance": 3.76,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 134,
+       "residue": "HIS",
+       "distance": 3.82,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 59.6,
+       "min_distance": 3.02,
+       "contacts": 4
+      },
+      "B": {
+       "delta_sasa": 30.3,
+       "min_distance": 3.9,
+       "contacts": 3
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "237": {
+     "residue": "GLY",
+     "chain": "B",
+     "sasa_free": 39.9,
+     "sasa_bound": 2.6,
+     "delta_sasa": 37.3,
+     "buried_fraction": 0.935,
+     "min_distance": 2.87,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 161,
+       "residue": "LYS",
+       "distance": 2.87,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 90,
+       "residue": "TRP",
+       "distance": 3.38,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 35.2,
+       "min_distance": 2.8,
+       "contacts": 4
+      },
+      "B": {
+       "delta_sasa": 37.3,
+       "min_distance": 2.87,
+       "contacts": 2
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "238": {
+     "residue": "PRO",
+     "chain": "A",
+     "sasa_free": 13.2,
+     "sasa_bound": 9.3,
+     "delta_sasa": 3.9,
+     "buried_fraction": 0.294,
+     "min_distance": 3.25,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 134,
+       "residue": "HIS",
+       "distance": 3.25,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 120,
+       "residue": "LYS",
+       "distance": 4.92,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 3.9,
+       "min_distance": 3.25,
+       "contacts": 2
+      },
+      "B": {
+       "delta_sasa": 0.0,
+       "min_distance": 4.88,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "239": {
+     "residue": "SER",
+     "chain": "A",
+     "sasa_free": 36.9,
+     "sasa_bound": 21.8,
+     "delta_sasa": 15.1,
+     "buried_fraction": 0.408,
+     "min_distance": 3.22,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 120,
+       "residue": "LYS",
+       "distance": 3.22,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 15.1,
+       "min_distance": 3.22,
+       "contacts": 1
+      },
+      "B": {
+       "delta_sasa": 6.6,
+       "min_distance": null,
+       "contacts": 0
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "265": {
+     "residue": "ASP",
+     "chain": "A",
+     "sasa_free": 34.6,
+     "sasa_bound": 1.3,
+     "delta_sasa": 33.3,
+     "buried_fraction": 0.961,
+     "min_distance": 2.85,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 134,
+       "residue": "HIS",
+       "distance": 2.85,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 132,
+       "residue": "TYR",
+       "distance": 3.41,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 120,
+       "residue": "LYS",
+       "distance": 3.55,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 33.3,
+       "min_distance": 2.85,
+       "contacts": 3
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "266": {
+     "residue": "VAL",
+     "chain": "A",
+     "sasa_free": 0.5,
+     "sasa_bound": 0.5,
+     "delta_sasa": 0.0,
+     "buried_fraction": 0.0,
+     "min_distance": 4.54,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 134,
+       "residue": "HIS",
+       "distance": 4.54,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 0.0,
+       "min_distance": 4.54,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "267": {
+     "residue": "SER",
+     "chain": "A",
+     "sasa_free": 36.3,
+     "sasa_bound": 7.5,
+     "delta_sasa": 28.8,
+     "buried_fraction": 0.793,
+     "min_distance": 3.79,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 134,
+       "residue": "HIS",
+       "distance": 3.79,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 132,
+       "residue": "TYR",
+       "distance": 4.62,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 28.8,
+       "min_distance": 3.79,
+       "contacts": 2
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "269": {
+     "residue": "GLU",
+     "chain": "A",
+     "sasa_free": 137.8,
+     "sasa_bound": 104.8,
+     "delta_sasa": 32.9,
+     "buried_fraction": 0.239,
+     "min_distance": 2.52,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 131,
+       "residue": "LYS",
+       "distance": 2.52,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 32.9,
+       "min_distance": 2.52,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "297": {
+     "residue": "ASN",
+     "chain": "A",
+     "sasa_free": 76.0,
+     "sasa_bound": 41.7,
+     "delta_sasa": 34.3,
+     "buried_fraction": 0.451,
+     "min_distance": 3.96,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 129,
+       "residue": "ASP",
+       "distance": 3.96,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 34.3,
+       "min_distance": 3.96,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "298": {
+     "residue": "SER",
+     "chain": "A",
+     "sasa_free": 82.7,
+     "sasa_bound": 16.8,
+     "delta_sasa": 65.9,
+     "buried_fraction": 0.797,
+     "min_distance": 3.51,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 129,
+       "residue": "ASP",
+       "distance": 3.51,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 132,
+       "residue": "TYR",
+       "distance": 3.95,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 122,
+       "residue": "THR",
+       "distance": 4.21,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 131,
+       "residue": "LYS",
+       "distance": 4.46,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 130,
+       "residue": "ARG",
+       "distance": 4.75,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 65.9,
+       "min_distance": 3.51,
+       "contacts": 5
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "299": {
+     "residue": "THR",
+     "chain": "A",
+     "sasa_free": 20.1,
+     "sasa_bound": 2.5,
+     "delta_sasa": 17.6,
+     "buried_fraction": 0.875,
+     "min_distance": 4.47,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 132,
+       "residue": "TYR",
+       "distance": 4.47,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 17.6,
+       "min_distance": 4.47,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "325": {
+     "residue": "ASN",
+     "chain": "A",
+     "sasa_free": 17.3,
+     "sasa_bound": 16.2,
+     "delta_sasa": 1.1,
+     "buried_fraction": 0.065,
+     "min_distance": 4.3,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 134,
+       "residue": "HIS",
+       "distance": 4.3,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 1.1,
+       "min_distance": 4.3,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "326": {
+     "residue": "LYS",
+     "chain": "B",
+     "sasa_free": 184.1,
+     "sasa_bound": 172.6,
+     "delta_sasa": 11.5,
+     "buried_fraction": 0.062,
+     "min_distance": null,
+     "partners": [],
+     "per_chain": {
+      "B": {
+       "delta_sasa": 11.5,
+       "min_distance": null,
+       "contacts": 0
+      }
+     },
+     "in_contact": false,
+     "contacts_glycan_only": false
+    },
+    "327": {
+     "residue": "ALA",
+     "chain": "A",
+     "sasa_free": 50.8,
+     "sasa_bound": 31.6,
+     "delta_sasa": 19.2,
+     "buried_fraction": 0.378,
+     "min_distance": 3.64,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 134,
+       "residue": "HIS",
+       "distance": 3.64,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 19.2,
+       "min_distance": 3.64,
+       "contacts": 1
+      },
+      "B": {
+       "delta_sasa": 9.9,
+       "min_distance": 4.86,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "328": {
+     "residue": "LEU",
+     "chain": "B",
+     "sasa_free": 31.8,
+     "sasa_bound": 15.3,
+     "delta_sasa": 16.5,
+     "buried_fraction": 0.519,
+     "min_distance": 3.59,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 113,
+       "residue": "TRP",
+       "distance": 3.59,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 90,
+       "residue": "TRP",
+       "distance": 4.79,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "B": {
+       "delta_sasa": 16.5,
+       "min_distance": 3.59,
+       "contacts": 2
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "329": {
+     "residue": "PRO",
+     "chain": "B",
+     "sasa_free": 140.1,
+     "sasa_bound": 15.9,
+     "delta_sasa": 124.2,
+     "buried_fraction": 0.886,
+     "min_distance": 3.23,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 90,
+       "residue": "TRP",
+       "distance": 3.23,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 89,
+       "residue": "GLY",
+       "distance": 3.29,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 88,
+       "residue": "ILE",
+       "distance": 3.48,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 113,
+       "residue": "TRP",
+       "distance": 3.65,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 21,
+       "residue": "GLU",
+       "distance": 4.93,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 1.3,
+       "min_distance": null,
+       "contacts": 0
+      },
+      "B": {
+       "delta_sasa": 124.2,
+       "min_distance": 3.23,
+       "contacts": 5
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "330": {
+     "residue": "ALA",
+     "chain": "B",
+     "sasa_free": 57.7,
+     "sasa_bound": 47.3,
+     "delta_sasa": 10.4,
+     "buried_fraction": 0.181,
+     "min_distance": 4.17,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 88,
+       "residue": "ILE",
+       "distance": 4.17,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "B": {
+       "delta_sasa": 10.4,
+       "min_distance": 4.17,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "332": {
+     "residue": "ILE",
+     "chain": "B",
+     "sasa_free": 41.4,
+     "sasa_bound": 32.5,
+     "delta_sasa": 8.9,
+     "buried_fraction": 0.216,
+     "min_distance": 4.74,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 161,
+       "residue": "LYS",
+       "distance": 4.74,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "B": {
+       "delta_sasa": 8.9,
+       "min_distance": 4.74,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    }
+   },
+   "fc_glycan_contacts": [
+    {
+     "residue": "NAG",
+     "chain": "D",
+     "sasa_free": 97.9,
+     "sasa_bound": 56.2,
+     "delta_sasa": 41.7,
+     "buried_fraction": 0.426,
+     "min_distance": 4.42,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 122,
+       "residue": "THR",
+       "distance": 4.42,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 120,
+       "residue": "LYS",
+       "distance": 4.79,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 132,
+       "residue": "TYR",
+       "distance": 4.97,
+       "is_glycan": false
+      }
+     ],
+     "glycan_chain": "D",
+     "seq": 1
+    },
+    {
+     "residue": "NAG",
+     "chain": "D",
+     "sasa_free": 71.4,
+     "sasa_bound": 70.6,
+     "delta_sasa": 0.8,
+     "buried_fraction": 0.011,
+     "min_distance": null,
+     "partners": [],
+     "glycan_chain": "D",
+     "seq": 2
+    }
+   ]
+  },
+  "5XJE": {
+   "method": "X-RAY DIFFRACTION",
+   "resolution_angstrom": 2.4,
+   "fc_chains": [
+    "A",
+    "B"
+   ],
+   "fc_glycan_chains": [
+    "D",
+    "E"
+   ],
+   "partner_chains": [
+    "C"
+   ],
+   "partner_glycan_chains": [
+    "F",
+    "G"
+   ],
+   "ignored_chains": [],
+   "deposited_fc_mutation": null,
+   "deposited_partner_mutation": "N56Q, N92Q, F176V, N187Q",
+   "entities": [
+    {
+     "entity_id": "1",
+     "type": "polymer",
+     "description": "Immunoglobulin gamma-1 heavy chain",
+     "deposited_mutation": null,
+     "chains": [
+      "A",
+      "B"
+     ]
+    },
+    {
+     "entity_id": "2",
+     "type": "polymer",
+     "description": "Low affinity immunoglobulin gamma Fc region receptor III-A",
+     "deposited_mutation": "N56Q, N92Q, F176V, N187Q",
+     "chains": [
+      "C"
+     ]
+    },
+    {
+     "entity_id": "3",
+     "type": "branched",
+     "description": "beta-D-galactopyranose-(1-4)-2-acetamido-2-deoxy-beta-D-glucopyranose-(1-2)-alpha-D-mannopyranose-(1-6)-[2-acetamido-2-deoxy-beta-D-glucopyranose-(1-2)-alpha-D-mannopyranose-(1-3)]beta-D-mannopyranose",
+     "deposited_mutation": null,
+     "chains": [
+      "D",
+      "E"
+     ]
+    },
+    {
+     "entity_id": "4",
+     "type": "branched",
+     "description": "alpha-L-fucopyranose-(1-6)-2-acetamido-2-deoxy-beta-D-glucopyranose",
+     "deposited_mutation": null,
+     "chains": [
+      "F"
+     ]
+    },
+    {
+     "entity_id": "5",
+     "type": "branched",
+     "description": "beta-D-mannopyranose-(1-4)-2-acetamido-2-deoxy-beta-D-glucopyranose-(1-4)-2-acetamido-2-deoxy-beta-D-glucopyranose",
+     "deposited_mutation": null,
+     "chains": [
+      "G"
+     ]
+    }
+   ],
+   "positions": {
+    "233": {
+     "residue": "GLU",
+     "chain": "A",
+     "sasa_free": 167.8,
+     "sasa_bound": 160.6,
+     "delta_sasa": 7.3,
+     "buried_fraction": 0.043,
+     "min_distance": null,
+     "partners": [],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 7.3,
+       "min_distance": null,
+       "contacts": 0
+      }
+     },
+     "in_contact": false,
+     "contacts_glycan_only": false
+    },
+    "235": {
+     "residue": "LEU",
+     "chain": "B",
+     "sasa_free": 148.3,
+     "sasa_bound": 54.3,
+     "delta_sasa": 94.0,
+     "buried_fraction": 0.634,
+     "min_distance": 3.24,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 90,
+       "residue": "TRP",
+       "distance": 3.24,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 116,
+       "residue": "THR",
+       "distance": 3.57,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 159,
+       "residue": "GLY",
+       "distance": 3.73,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 158,
+       "residue": "VAL",
+       "distance": 4.19,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 117,
+       "residue": "ALA",
+       "distance": 4.19,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 43.9,
+       "min_distance": 3.69,
+       "contacts": 2
+      },
+      "B": {
+       "delta_sasa": 94.0,
+       "min_distance": 3.24,
+       "contacts": 5
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "236": {
+     "residue": "GLY",
+     "chain": "A",
+     "sasa_free": 72.1,
+     "sasa_bound": 10.9,
+     "delta_sasa": 61.3,
+     "buried_fraction": 0.849,
+     "min_distance": 3.44,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 134,
+       "residue": "HIS",
+       "distance": 3.44,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 119,
+       "residue": "HIS",
+       "distance": 3.51,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 135,
+       "residue": "HIS",
+       "distance": 3.6,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 120,
+       "residue": "LYS",
+       "distance": 4.33,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 61.3,
+       "min_distance": 3.44,
+       "contacts": 4
+      },
+      "B": {
+       "delta_sasa": 57.3,
+       "min_distance": 2.97,
+       "contacts": 4
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "237": {
+     "residue": "GLY",
+     "chain": "A",
+     "sasa_free": 30.1,
+     "sasa_bound": 3.1,
+     "delta_sasa": 27.0,
+     "buried_fraction": 0.896,
+     "min_distance": 2.85,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 120,
+       "residue": "LYS",
+       "distance": 2.85,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 134,
+       "residue": "HIS",
+       "distance": 3.32,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 132,
+       "residue": "TYR",
+       "distance": 3.94,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 27.0,
+       "min_distance": 2.85,
+       "contacts": 3
+      },
+      "B": {
+       "delta_sasa": 0.3,
+       "min_distance": 4.46,
+       "contacts": 2
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "238": {
+     "residue": "PRO",
+     "chain": "B",
+     "sasa_free": 5.2,
+     "sasa_bound": 1.1,
+     "delta_sasa": 4.0,
+     "buried_fraction": 0.78,
+     "min_distance": 2.71,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 161,
+       "residue": "LYS",
+       "distance": 2.71,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 3.6,
+       "min_distance": 3.56,
+       "contacts": 2
+      },
+      "B": {
+       "delta_sasa": 4.0,
+       "min_distance": 2.71,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "239": {
+     "residue": "SER",
+     "chain": "B",
+     "sasa_free": 46.0,
+     "sasa_bound": 32.0,
+     "delta_sasa": 14.0,
+     "buried_fraction": 0.304,
+     "min_distance": 3.85,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 161,
+       "residue": "LYS",
+       "distance": 3.85,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 12.4,
+       "min_distance": 2.7,
+       "contacts": 1
+      },
+      "B": {
+       "delta_sasa": 14.0,
+       "min_distance": 3.85,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "265": {
+     "residue": "ASP",
+     "chain": "A",
+     "sasa_free": 39.4,
+     "sasa_bound": 3.6,
+     "delta_sasa": 35.8,
+     "buried_fraction": 0.909,
+     "min_distance": 2.85,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 120,
+       "residue": "LYS",
+       "distance": 2.85,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 134,
+       "residue": "HIS",
+       "distance": 3.07,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 132,
+       "residue": "TYR",
+       "distance": 3.54,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 35.8,
+       "min_distance": 2.85,
+       "contacts": 3
+      },
+      "B": {
+       "delta_sasa": 3.3,
+       "min_distance": null,
+       "contacts": 0
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "266": {
+     "residue": "VAL",
+     "chain": "A",
+     "sasa_free": 0.5,
+     "sasa_bound": 0.1,
+     "delta_sasa": 0.4,
+     "buried_fraction": 0.75,
+     "min_distance": 4.54,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 134,
+       "residue": "HIS",
+       "distance": 4.54,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 132,
+       "residue": "TYR",
+       "distance": 4.81,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 0.4,
+       "min_distance": 4.54,
+       "contacts": 2
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "267": {
+     "residue": "SER",
+     "chain": "A",
+     "sasa_free": 42.8,
+     "sasa_bound": 4.8,
+     "delta_sasa": 38.0,
+     "buried_fraction": 0.888,
+     "min_distance": 3.57,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 134,
+       "residue": "HIS",
+       "distance": 3.57,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 132,
+       "residue": "TYR",
+       "distance": 4.18,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 38.0,
+       "min_distance": 3.57,
+       "contacts": 2
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "268": {
+     "residue": "HIS",
+     "chain": "A",
+     "sasa_free": 81.7,
+     "sasa_bound": 77.4,
+     "delta_sasa": 4.3,
+     "buried_fraction": 0.052,
+     "min_distance": 4.88,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 131,
+       "residue": "LYS",
+       "distance": 4.88,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 4.3,
+       "min_distance": 4.88,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "269": {
+     "residue": "GLU",
+     "chain": "A",
+     "sasa_free": 145.1,
+     "sasa_bound": 98.6,
+     "delta_sasa": 46.5,
+     "buried_fraction": 0.32,
+     "min_distance": 2.47,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 131,
+       "residue": "LYS",
+       "distance": 2.47,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 132,
+       "residue": "TYR",
+       "distance": 4.17,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 46.5,
+       "min_distance": 2.47,
+       "contacts": 2
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "270": {
+     "residue": "ASP",
+     "chain": "A",
+     "sasa_free": 50.0,
+     "sasa_bound": 48.8,
+     "delta_sasa": 1.2,
+     "buried_fraction": 0.025,
+     "min_distance": null,
+     "partners": [],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 1.2,
+       "min_distance": null,
+       "contacts": 0
+      }
+     },
+     "in_contact": false,
+     "contacts_glycan_only": false
+    },
+    "294": {
+     "residue": "GLU",
+     "chain": "A",
+     "sasa_free": 107.2,
+     "sasa_bound": 99.6,
+     "delta_sasa": 7.6,
+     "buried_fraction": 0.071,
+     "min_distance": 4.77,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 128,
+       "residue": "LYS",
+       "distance": 4.77,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 7.6,
+       "min_distance": 4.77,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "295": {
+     "residue": "GLN",
+     "chain": "A",
+     "sasa_free": 22.1,
+     "sasa_bound": 21.8,
+     "delta_sasa": 0.3,
+     "buried_fraction": 0.015,
+     "min_distance": 4.73,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 128,
+       "residue": "LYS",
+       "distance": 4.73,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 0.3,
+       "min_distance": 4.73,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "296": {
+     "residue": "TYR",
+     "chain": "A",
+     "sasa_free": 216.0,
+     "sasa_bound": 136.5,
+     "delta_sasa": 79.4,
+     "buried_fraction": 0.368,
+     "min_distance": 2.98,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 128,
+       "residue": "LYS",
+       "distance": 2.98,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 129,
+       "residue": "GLY",
+       "distance": 3.58,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 127,
+       "residue": "GLY",
+       "distance": 4.14,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 79.4,
+       "min_distance": 2.98,
+       "contacts": 3
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "297": {
+     "residue": "ASN",
+     "chain": "A",
+     "sasa_free": 54.9,
+     "sasa_bound": 16.0,
+     "delta_sasa": 38.8,
+     "buried_fraction": 0.708,
+     "min_distance": 3.86,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 129,
+       "residue": "GLY",
+       "distance": 3.86,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 122,
+       "residue": "THR",
+       "distance": 4.15,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 132,
+       "residue": "TYR",
+       "distance": 4.38,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 130,
+       "residue": "ARG",
+       "distance": 4.79,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 155,
+       "residue": "ARG",
+       "distance": 4.97,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 128,
+       "residue": "LYS",
+       "distance": 5.0,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 38.8,
+       "min_distance": 3.86,
+       "contacts": 6
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "298": {
+     "residue": "SER",
+     "chain": "A",
+     "sasa_free": 71.3,
+     "sasa_bound": 7.2,
+     "delta_sasa": 64.1,
+     "buried_fraction": 0.898,
+     "min_distance": 3.36,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 130,
+       "residue": "ARG",
+       "distance": 3.36,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 132,
+       "residue": "TYR",
+       "distance": 3.39,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 129,
+       "residue": "GLY",
+       "distance": 3.46,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 131,
+       "residue": "LYS",
+       "distance": 3.53,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 128,
+       "residue": "LYS",
+       "distance": 4.69,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 64.1,
+       "min_distance": 3.36,
+       "contacts": 5
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "299": {
+     "residue": "THR",
+     "chain": "A",
+     "sasa_free": 20.1,
+     "sasa_bound": 0.6,
+     "delta_sasa": 19.5,
+     "buried_fraction": 0.972,
+     "min_distance": 3.54,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 132,
+       "residue": "TYR",
+       "distance": 3.54,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 19.5,
+       "min_distance": 3.54,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "325": {
+     "residue": "ASN",
+     "chain": "A",
+     "sasa_free": 17.7,
+     "sasa_bound": 17.1,
+     "delta_sasa": 0.7,
+     "buried_fraction": 0.038,
+     "min_distance": 4.94,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 134,
+       "residue": "HIS",
+       "distance": 4.94,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 0.7,
+       "min_distance": 4.94,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "326": {
+     "residue": "LYS",
+     "chain": "B",
+     "sasa_free": 167.8,
+     "sasa_bound": 151.3,
+     "delta_sasa": 16.5,
+     "buried_fraction": 0.098,
+     "min_distance": 4.15,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 113,
+       "residue": "TRP",
+       "distance": 4.15,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "B": {
+       "delta_sasa": 16.5,
+       "min_distance": 4.15,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "327": {
+     "residue": "ALA",
+     "chain": "A",
+     "sasa_free": 47.4,
+     "sasa_bound": 24.7,
+     "delta_sasa": 22.7,
+     "buried_fraction": 0.479,
+     "min_distance": 3.23,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 134,
+       "residue": "HIS",
+       "distance": 3.23,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "A": {
+       "delta_sasa": 22.7,
+       "min_distance": 3.23,
+       "contacts": 1
+      },
+      "B": {
+       "delta_sasa": 21.0,
+       "min_distance": 3.34,
+       "contacts": 2
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "328": {
+     "residue": "LEU",
+     "chain": "B",
+     "sasa_free": 27.2,
+     "sasa_bound": 12.8,
+     "delta_sasa": 14.4,
+     "buried_fraction": 0.53,
+     "min_distance": 3.43,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 113,
+       "residue": "TRP",
+       "distance": 3.43,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 161,
+       "residue": "LYS",
+       "distance": 3.66,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 90,
+       "residue": "TRP",
+       "distance": 4.53,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "B": {
+       "delta_sasa": 14.4,
+       "min_distance": 3.43,
+       "contacts": 3
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "329": {
+     "residue": "PRO",
+     "chain": "B",
+     "sasa_free": 136.6,
+     "sasa_bound": 23.1,
+     "delta_sasa": 113.5,
+     "buried_fraction": 0.831,
+     "min_distance": 3.44,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 90,
+       "residue": "TRP",
+       "distance": 3.44,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 88,
+       "residue": "ILE",
+       "distance": 3.45,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 89,
+       "residue": "GLY",
+       "distance": 3.51,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 113,
+       "residue": "TRP",
+       "distance": 3.66,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 21,
+       "residue": "GLU",
+       "distance": 4.62,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "B": {
+       "delta_sasa": 113.5,
+       "min_distance": 3.44,
+       "contacts": 5
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "330": {
+     "residue": "ALA",
+     "chain": "B",
+     "sasa_free": 56.7,
+     "sasa_bound": 40.5,
+     "delta_sasa": 16.2,
+     "buried_fraction": 0.286,
+     "min_distance": 3.81,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 88,
+       "residue": "ILE",
+       "distance": 3.81,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "B": {
+       "delta_sasa": 16.2,
+       "min_distance": 3.81,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "332": {
+     "residue": "ILE",
+     "chain": "B",
+     "sasa_free": 39.8,
+     "sasa_bound": 31.0,
+     "delta_sasa": 8.8,
+     "buried_fraction": 0.221,
+     "min_distance": 3.59,
+     "partners": [
+      {
+       "chain": "C",
+       "seq": 161,
+       "residue": "LYS",
+       "distance": 3.59,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "B": {
+       "delta_sasa": 8.8,
+       "min_distance": 3.59,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "334": {
+     "residue": "LYS",
+     "chain": "B",
+     "sasa_free": 65.8,
+     "sasa_bound": 63.0,
+     "delta_sasa": 2.8,
+     "buried_fraction": 0.043,
+     "min_distance": null,
+     "partners": [],
+     "per_chain": {
+      "B": {
+       "delta_sasa": 2.8,
+       "min_distance": null,
+       "contacts": 0
+      }
+     },
+     "in_contact": false,
+     "contacts_glycan_only": false
+    }
+   },
+   "fc_glycan_contacts": [
+    {
+     "residue": "NAG",
+     "chain": "D",
+     "sasa_free": 98.1,
+     "sasa_bound": 9.4,
+     "delta_sasa": 88.7,
+     "buried_fraction": 0.904,
+     "min_distance": 3.69,
+     "partners": [
+      {
+       "chain": "F",
+       "seq": 1,
+       "residue": "NAG",
+       "distance": 3.69,
+       "is_glycan": true
+      },
+      {
+       "chain": "C",
+       "seq": 122,
+       "residue": "THR",
+       "distance": 3.84,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 132,
+       "residue": "TYR",
+       "distance": 3.97,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 120,
+       "residue": "LYS",
+       "distance": 4.36,
+       "is_glycan": false
+      },
+      {
+       "chain": "C",
+       "seq": 155,
+       "residue": "ARG",
+       "distance": 4.55,
+       "is_glycan": false
+      }
+     ],
+     "glycan_chain": "D",
+     "seq": 1
+    },
+    {
+     "residue": "NAG",
+     "chain": "D",
+     "sasa_free": 76.5,
+     "sasa_bound": 73.8,
+     "delta_sasa": 2.7,
+     "buried_fraction": 0.035,
+     "min_distance": null,
+     "partners": [],
+     "glycan_chain": "D",
+     "seq": 2
+    },
+    {
+     "residue": "FUC",
+     "chain": "D",
+     "sasa_free": 170.7,
+     "sasa_bound": 162.7,
+     "delta_sasa": 8.1,
+     "buried_fraction": 0.047,
+     "min_distance": null,
+     "partners": [],
+     "glycan_chain": "D",
+     "seq": 9
+    },
+    {
+     "residue": "NAG",
+     "chain": "E",
+     "sasa_free": 267.1,
+     "sasa_bound": 253.2,
+     "delta_sasa": 13.9,
+     "buried_fraction": 0.052,
+     "min_distance": 4.53,
+     "partners": [
+      {
+       "chain": "F",
+       "seq": 2,
+       "residue": "FUC",
+       "distance": 4.53,
+       "is_glycan": true
+      }
+     ],
+     "glycan_chain": "E",
+     "seq": 8
+    }
+   ]
+  },
+  "4N0U": {
+   "method": "X-RAY DIFFRACTION",
+   "resolution_angstrom": 3.8,
+   "fc_chains": [
+    "E"
+   ],
+   "fc_glycan_chains": [
+    "C"
+   ],
+   "partner_chains": [
+    "A",
+    "B"
+   ],
+   "partner_glycan_chains": [],
+   "ignored_chains": [
+    {
+     "chain": "D",
+     "residues": 583,
+     "closest_approach_to_fc_angstrom": 24.16,
+     "reason": "polymer outside the measured pair"
+    }
+   ],
+   "deposited_fc_mutation": "M252Y, S254T, T256E",
+   "deposited_partner_mutation": null,
+   "entities": [
+    {
+     "entity_id": "1",
+     "type": "polymer",
+     "description": "IgG receptor FcRn large subunit p51",
+     "deposited_mutation": null,
+     "chains": [
+      "A"
+     ]
+    },
+    {
+     "entity_id": "2",
+     "type": "polymer",
+     "description": "Beta-2-microglobulin",
+     "deposited_mutation": null,
+     "chains": [
+      "B"
+     ]
+    },
+    {
+     "entity_id": "3",
+     "type": "polymer",
+     "description": "Serum albumin",
+     "deposited_mutation": null,
+     "chains": [
+      "D"
+     ]
+    },
+    {
+     "entity_id": "4",
+     "type": "polymer",
+     "description": "Ig gamma-1 chain C region",
+     "deposited_mutation": "M252Y, S254T, T256E",
+     "chains": [
+      "E"
+     ]
+    },
+    {
+     "entity_id": "5",
+     "type": "branched",
+     "description": "2-acetamido-2-deoxy-beta-D-glucopyranose-(1-2)-alpha-D-mannopyranose-(1-3)-[2-acetamido-2-deoxy-beta-D-glucopyranose-(1-2)-alpha-D-mannopyranose-(1-6)]beta-D-mannopyranose-(1-4)-2-acetamido-2-deoxy-be",
+     "deposited_mutation": null,
+     "chains": [
+      "C"
+     ]
+    }
+   ],
+   "positions": {
+    "251": {
+     "residue": "LEU",
+     "chain": "E",
+     "sasa_free": 31.9,
+     "sasa_bound": 8.8,
+     "delta_sasa": 23.1,
+     "buried_fraction": 0.724,
+     "min_distance": 3.57,
+     "partners": [
+      {
+       "chain": "A",
+       "seq": 132,
+       "residue": "PRO",
+       "distance": 3.57,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 133,
+       "residue": "GLU",
+       "distance": 3.92,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 131,
+       "residue": "TRP",
+       "distance": 4.31,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "E": {
+       "delta_sasa": 23.1,
+       "min_distance": 3.57,
+       "contacts": 3
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "252": {
+     "residue": "TYR",
+     "chain": "E",
+     "sasa_free": 82.0,
+     "sasa_bound": 53.3,
+     "delta_sasa": 28.7,
+     "buried_fraction": 0.35,
+     "min_distance": 3.17,
+     "partners": [
+      {
+       "chain": "A",
+       "seq": 133,
+       "residue": "GLU",
+       "distance": 3.17,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 132,
+       "residue": "PRO",
+       "distance": 3.44,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "E": {
+       "delta_sasa": 28.7,
+       "min_distance": 3.17,
+       "contacts": 2
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "253": {
+     "residue": "ILE",
+     "chain": "E",
+     "sasa_free": 125.8,
+     "sasa_bound": 4.6,
+     "delta_sasa": 121.2,
+     "buried_fraction": 0.964,
+     "min_distance": 2.53,
+     "partners": [
+      {
+       "chain": "A",
+       "seq": 131,
+       "residue": "TRP",
+       "distance": 2.53,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 133,
+       "residue": "GLU",
+       "distance": 2.7,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 112,
+       "residue": "LEU",
+       "distance": 3.76,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 115,
+       "residue": "GLU",
+       "distance": 4.02,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 117,
+       "residue": "PHE",
+       "distance": 4.04,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 113,
+       "residue": "ASN",
+       "distance": 4.18,
+       "is_glycan": false
+      },
+      {
+       "chain": "B",
+       "seq": 1,
+       "residue": "ILE",
+       "distance": 4.21,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "E": {
+       "delta_sasa": 121.2,
+       "min_distance": 2.53,
+       "contacts": 7
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "254": {
+     "residue": "THR",
+     "chain": "E",
+     "sasa_free": 137.2,
+     "sasa_bound": 58.3,
+     "delta_sasa": 78.9,
+     "buried_fraction": 0.575,
+     "min_distance": 2.99,
+     "partners": [
+      {
+       "chain": "A",
+       "seq": 133,
+       "residue": "GLU",
+       "distance": 2.99,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 88,
+       "residue": "TYR",
+       "distance": 3.11,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 113,
+       "residue": "ASN",
+       "distance": 4.52,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 112,
+       "residue": "LEU",
+       "distance": 4.6,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 86,
+       "residue": "GLY",
+       "distance": 4.87,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "E": {
+       "delta_sasa": 78.9,
+       "min_distance": 2.99,
+       "contacts": 5
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "255": {
+     "residue": "ARG",
+     "chain": "E",
+     "sasa_free": 82.9,
+     "sasa_bound": 82.1,
+     "delta_sasa": 0.8,
+     "buried_fraction": 0.009,
+     "min_distance": null,
+     "partners": [],
+     "per_chain": {
+      "E": {
+       "delta_sasa": 0.8,
+       "min_distance": null,
+       "contacts": 0
+      }
+     },
+     "in_contact": false,
+     "contacts_glycan_only": false
+    },
+    "256": {
+     "residue": "GLU",
+     "chain": "E",
+     "sasa_free": 98.3,
+     "sasa_bound": 83.3,
+     "delta_sasa": 15.1,
+     "buried_fraction": 0.153,
+     "min_distance": null,
+     "partners": [],
+     "per_chain": {
+      "E": {
+       "delta_sasa": 15.1,
+       "min_distance": null,
+       "contacts": 0
+      }
+     },
+     "in_contact": false,
+     "contacts_glycan_only": false
+    },
+    "257": {
+     "residue": "PRO",
+     "chain": "E",
+     "sasa_free": 2.3,
+     "sasa_bound": 0.0,
+     "delta_sasa": 2.3,
+     "buried_fraction": 1.0,
+     "min_distance": 3.93,
+     "partners": [
+      {
+       "chain": "B",
+       "seq": 1,
+       "residue": "ILE",
+       "distance": 3.93,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "E": {
+       "delta_sasa": 2.3,
+       "min_distance": 3.93,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "285": {
+     "residue": "HIS",
+     "chain": "E",
+     "sasa_free": 157.6,
+     "sasa_bound": 144.0,
+     "delta_sasa": 13.6,
+     "buried_fraction": 0.086,
+     "min_distance": 4.61,
+     "partners": [
+      {
+       "chain": "B",
+       "seq": 4,
+       "residue": "THR",
+       "distance": 4.61,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "E": {
+       "delta_sasa": 13.6,
+       "min_distance": 4.61,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "286": {
+     "residue": "ASN",
+     "chain": "E",
+     "sasa_free": 75.1,
+     "sasa_bound": 63.8,
+     "delta_sasa": 11.3,
+     "buried_fraction": 0.15,
+     "min_distance": null,
+     "partners": [],
+     "per_chain": {
+      "E": {
+       "delta_sasa": 11.3,
+       "min_distance": null,
+       "contacts": 0
+      }
+     },
+     "in_contact": false,
+     "contacts_glycan_only": false
+    },
+    "288": {
+     "residue": "LYS",
+     "chain": "E",
+     "sasa_free": 152.6,
+     "sasa_bound": 104.6,
+     "delta_sasa": 48.0,
+     "buried_fraction": 0.315,
+     "min_distance": 3.98,
+     "partners": [
+      {
+       "chain": "B",
+       "seq": 86,
+       "residue": "THR",
+       "distance": 3.98,
+       "is_glycan": false
+      },
+      {
+       "chain": "B",
+       "seq": 85,
+       "residue": "VAL",
+       "distance": 4.01,
+       "is_glycan": false
+      },
+      {
+       "chain": "B",
+       "seq": 2,
+       "residue": "GLN",
+       "distance": 4.43,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "E": {
+       "delta_sasa": 48.0,
+       "min_distance": 3.98,
+       "contacts": 3
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "307": {
+     "residue": "THR",
+     "chain": "E",
+     "sasa_free": 54.7,
+     "sasa_bound": 34.6,
+     "delta_sasa": 20.1,
+     "buried_fraction": 0.367,
+     "min_distance": 4.04,
+     "partners": [
+      {
+       "chain": "B",
+       "seq": 1,
+       "residue": "ILE",
+       "distance": 4.04,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "E": {
+       "delta_sasa": 20.1,
+       "min_distance": 4.04,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "308": {
+     "residue": "VAL",
+     "chain": "E",
+     "sasa_free": 9.7,
+     "sasa_bound": 4.0,
+     "delta_sasa": 5.7,
+     "buried_fraction": 0.586,
+     "min_distance": 3.36,
+     "partners": [
+      {
+       "chain": "B",
+       "seq": 1,
+       "residue": "ILE",
+       "distance": 3.36,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "E": {
+       "delta_sasa": 5.7,
+       "min_distance": 3.36,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "309": {
+     "residue": "LEU",
+     "chain": "E",
+     "sasa_free": 100.9,
+     "sasa_bound": 48.6,
+     "delta_sasa": 52.3,
+     "buried_fraction": 0.519,
+     "min_distance": 3.04,
+     "partners": [
+      {
+       "chain": "A",
+       "seq": 115,
+       "residue": "GLU",
+       "distance": 3.04,
+       "is_glycan": false
+      },
+      {
+       "chain": "B",
+       "seq": 1,
+       "residue": "ILE",
+       "distance": 3.63,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "E": {
+       "delta_sasa": 52.3,
+       "min_distance": 3.04,
+       "contacts": 2
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "310": {
+     "residue": "HIS",
+     "chain": "E",
+     "sasa_free": 39.6,
+     "sasa_bound": 1.1,
+     "delta_sasa": 38.5,
+     "buried_fraction": 0.971,
+     "min_distance": 2.04,
+     "partners": [
+      {
+       "chain": "A",
+       "seq": 115,
+       "residue": "GLU",
+       "distance": 2.04,
+       "is_glycan": false
+      },
+      {
+       "chain": "B",
+       "seq": 1,
+       "residue": "ILE",
+       "distance": 3.57,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 131,
+       "residue": "TRP",
+       "distance": 3.65,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "E": {
+       "delta_sasa": 38.5,
+       "min_distance": 2.04,
+       "contacts": 3
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "311": {
+     "residue": "GLN",
+     "chain": "E",
+     "sasa_free": 149.7,
+     "sasa_bound": 80.9,
+     "delta_sasa": 68.8,
+     "buried_fraction": 0.459,
+     "min_distance": 3.02,
+     "partners": [
+      {
+       "chain": "A",
+       "seq": 116,
+       "residue": "GLU",
+       "distance": 3.02,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 131,
+       "residue": "TRP",
+       "distance": 3.7,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 115,
+       "residue": "GLU",
+       "distance": 4.44,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 117,
+       "residue": "PHE",
+       "distance": 4.98,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "E": {
+       "delta_sasa": 68.8,
+       "min_distance": 3.02,
+       "contacts": 4
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "314": {
+     "residue": "LEU",
+     "chain": "E",
+     "sasa_free": 36.8,
+     "sasa_bound": 35.9,
+     "delta_sasa": 0.9,
+     "buried_fraction": 0.024,
+     "min_distance": null,
+     "partners": [],
+     "per_chain": {
+      "E": {
+       "delta_sasa": 0.9,
+       "min_distance": null,
+       "contacts": 0
+      }
+     },
+     "in_contact": false,
+     "contacts_glycan_only": false
+    },
+    "433": {
+     "residue": "HIS",
+     "chain": "E",
+     "sasa_free": 137.5,
+     "sasa_bound": 127.6,
+     "delta_sasa": 9.9,
+     "buried_fraction": 0.072,
+     "min_distance": 3.69,
+     "partners": [
+      {
+       "chain": "A",
+       "seq": 130,
+       "residue": "ASP",
+       "distance": 3.69,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 135,
+       "residue": "LEU",
+       "distance": 4.82,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "E": {
+       "delta_sasa": 9.9,
+       "min_distance": 3.69,
+       "contacts": 2
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "434": {
+     "residue": "ASN",
+     "chain": "E",
+     "sasa_free": 126.1,
+     "sasa_bound": 30.7,
+     "delta_sasa": 95.4,
+     "buried_fraction": 0.757,
+     "min_distance": 1.93,
+     "partners": [
+      {
+       "chain": "A",
+       "seq": 130,
+       "residue": "ASP",
+       "distance": 1.93,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 135,
+       "residue": "LEU",
+       "distance": 2.4,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 132,
+       "residue": "PRO",
+       "distance": 3.67,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 131,
+       "residue": "TRP",
+       "distance": 3.89,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 129,
+       "residue": "GLY",
+       "distance": 4.3,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "E": {
+       "delta_sasa": 95.4,
+       "min_distance": 1.93,
+       "contacts": 5
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "435": {
+     "residue": "HIS",
+     "chain": "E",
+     "sasa_free": 70.7,
+     "sasa_bound": 28.4,
+     "delta_sasa": 42.3,
+     "buried_fraction": 0.598,
+     "min_distance": 3.32,
+     "partners": [
+      {
+       "chain": "A",
+       "seq": 131,
+       "residue": "TRP",
+       "distance": 3.32,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 130,
+       "residue": "ASP",
+       "distance": 3.42,
+       "is_glycan": false
+      },
+      {
+       "chain": "A",
+       "seq": 132,
+       "residue": "PRO",
+       "distance": 4.32,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "E": {
+       "delta_sasa": 42.3,
+       "min_distance": 3.32,
+       "contacts": 3
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    },
+    "436": {
+     "residue": "TYR",
+     "chain": "E",
+     "sasa_free": 77.1,
+     "sasa_bound": 63.1,
+     "delta_sasa": 14.0,
+     "buried_fraction": 0.182,
+     "min_distance": 4.75,
+     "partners": [
+      {
+       "chain": "A",
+       "seq": 132,
+       "residue": "PRO",
+       "distance": 4.75,
+       "is_glycan": false
+      }
+     ],
+     "per_chain": {
+      "E": {
+       "delta_sasa": 14.0,
+       "min_distance": 4.75,
+       "contacts": 1
+      }
+     },
+     "in_contact": true,
+     "contacts_glycan_only": false
+    }
+   },
+   "fc_glycan_contacts": []
+  }
+ }
+}

@@ -5,12 +5,27 @@
 Four deposited complexes, each carrying measured Fc-side contacts rather than
 asserted ones.
 
-| PDB | partner | Fc chains | Fc residues in contact | Fc genotype | source |
-| --- | --- | --- | --- | --- | --- |
-| 1E4K | FcγRIIIb ectodomain | A, B | 19 | wild type | [10.1038/35018508](https://doi.org/10.1038/35018508) |
-| 1T89 | FcγRIIIa ectodomain | A | 18 | wild type | [10.1074/jbc.M100350200](https://doi.org/10.1074/jbc.M100350200) |
-| 5XJE | FcγRIIIa, both partners glycosylated | A, B | 23 | wild type | [10.1038/s41598-017-13845-8](https://doi.org/10.1038/s41598-017-13845-8) |
-| 4N0U | FcRn heavy chain with β2-microglobulin | E | 16 | M252Y/S254T/T256E | [10.1074/jbc.M113.537563](https://doi.org/10.1074/jbc.M113.537563) |
+| PDB | partner | Fc chains | partner chains | Fc residues in contact | Fc genotype | partner genotype | method | source |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1E4K | FcγRIIIb ectodomain (O75015) | A, B | C | 19 | wild type | wild type | X-ray, 3.2 Å | [10.1038/35018508](https://doi.org/10.1038/35018508) |
+| 1T89 | FcγRIIIb ectodomain (O75015) | A, B | C | 18 | wild type | wild type | X-ray, 3.5 Å | [10.1074/jbc.M100350200](https://doi.org/10.1074/jbc.M100350200) |
+| 5XJE | FcγRIIIa ectodomain (P08637), both partners glycosylated | A, B | C | 23 | wild type | N56Q/N92Q/F176V/N187Q | X-ray, 2.4 Å | [10.1038/s41598-017-13845-8](https://doi.org/10.1038/s41598-017-13845-8) |
+| 4N0U | FcRn heavy chain with β2-microglobulin, albumin also present | E | A, B | 16 | M252Y/S254T/T256E | wild type | X-ray, 3.8 Å | [10.1074/jbc.M113.537563](https://doi.org/10.1074/jbc.M113.537563) |
+
+Chain assignments, accessions, methods, resolutions and both genotypes are read
+from each deposition by `tools/enrich_structures.py`, which queries the RCSB
+entry and polymer-entity records rather than a paper's methods section.
+
+Two of these assignments were wrong in earlier drafts of this atlas and are worth
+naming, because they are the kind of error that propagates silently. 1T89 is a
+complex with FcγRIIIb, not FcγRIIIa, and its Fc occupies two chains rather than
+one. Only 5XJE contains FcγRIIIa, and its receptor carries four substitutions:
+N56Q, N92Q and N187Q remove N-glycosylation sequons, and F176V is the 158V
+allotype in mature numbering. So this set has no wild-type FcγRIIIa complex, and
+any statement about FcγRIIIa engagement measured here is a statement about an
+engineered receptor. The Fc entity of 1T89 is also referenced to GenBank 9857753
+rather than to a UniProt entry, and 5XJE's to P0DOX5 rather than P01857, so
+matching depositions by accession alone would have missed both.
 
 ## How contacts are computed
 
@@ -34,15 +49,34 @@ Results live in `data/structures.json` and are shipped inside the package, so
 
 ## What the glycosylated entry adds
 
-5XJE resolves five contact positions that the deglycosylated FcγRIIIa entry 1T89
-does not: EU 268, 294, 295, 296 and 326. Interface extent is not a property of
-the protein pair alone; it is a property of the pair as prepared. When a variant
-at EU 296 looks non-interfacial in one entry and interfacial in another, the
-difference is the glycan, not the biology.
+5XJE resolves five contact positions that 1T89 does not: EU 268, 294, 295, 296
+and 326. Interface extent is not a property of the protein pair alone; it is a
+property of the pair as prepared and as diffracted. When a variant at EU 296
+looks non-interfacial in one entry and interfacial in another, the entries differ
+before the biology does.
+
+How much of that difference is the glycan cannot be settled with these two
+entries, and the atlas does not pretend otherwise. 5XJE and 1T89 differ in
+receptor gene (FcγRIIIa against FcγRIIIb), in receptor genotype (four
+substitutions against none), in glycosylation state and in resolution, 2.4 Å
+against 3.5 Å. Any of those four differences will add contacts. Resolution alone
+would do it: a 2.4 Å model resolves side chains and ordered sugars that a 3.5 Å
+model leaves out. The honest statement is that the wider interface travels with
+the better-resolved, glycosylated, engineered entry, and that separating the four
+causes needs entries that vary one at a time.
 
 The atlas therefore reports contact per structure rather than as a single
 boolean, and `fcatlas interface` prints every structure in which a position is
 within cutoff, with its distance.
+
+## Buried surface
+
+Contact is a yes or no at a cutoff. Buried surface is a quantity, and the two
+rank positions differently. `data/interface_detail.json` carries per-position
+solvent-accessible surface lost on binding, the partner residues each position
+touches, and the per-chain breakdown that shows how asymmetric the Fc dimer's
+engagement is. The method, the two tables' different conventions, and what the
+areas turn out to say are in [docs/interface.md](interface.md).
 
 ## The FcRn provenance problem
 
@@ -60,7 +94,10 @@ as `fcrn_provenance()`.
 
 Nine entries contain FcRn. Four of those nine contain an IgG Fc chain:
 
-- 4N0U — FcRn, β2m, albumin and IgG1 Fc carrying YTE
+- 4N0U — FcRn, β2m, albumin and IgG1 Fc carrying YTE. The albumin, chain D, is
+  not a binding partner of the Fc in this entry: its closest approach is 24.16 Å,
+  so it is recorded as another polymer in the asymmetric unit and excluded from
+  the contact and area calculations rather than silently merged into the partner
 - 7Q15 — FcRn, β2m and IgG1 Fc carrying YTE plus H433K/N434F
 - 6WOL — FcRn, β2m and a monomeric IgG4 Fc carrying seven substitutions
 - 6WNA — FcRn, β2m and the same monomeric IgG4 Fc lineage

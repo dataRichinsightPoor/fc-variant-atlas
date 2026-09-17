@@ -1,6 +1,6 @@
 {
  "_about": "Interface contacts and structure provenance used by fcatlas.structure.",
- "_method": "Minimum heavy-atom distance from each Fc residue to any atom of the partner chains, computed from the deposited mmCIF coordinates with a 5.0 A cutoff. Author numbering in these entries is EU numbering, verified residue by residue against the UniProt reference sequence.",
+ "_method": "Minimum heavy-atom distance from each Fc residue to any atom of the partner chains, computed from the deposited mmCIF coordinates with a 5.0 A cutoff. Author numbering in these entries is EU numbering, verified residue by residue against the UniProt reference sequence. Chain assignment, partner identity, genotype, resolution, method and citation are read from the deposited mmCIF rather than transcribed: the entity-to-chain mapping gives the chains, the sequence database accession gives the partner, and _entity.pdbx_mutation gives the genotype, which is checked against the curated genotype string at build time.",
  "complexes": {
   "1E4K": {
    "partner": "FcgammaRIIIb ectodomain",
@@ -34,15 +34,85 @@
     "330": 4.23,
     "332": 3.93
    },
-   "doi": "https://doi.org/10.1038/35018508"
+   "doi": "https://doi.org/10.1038/35018508",
+   "fc_glycan_chains": [
+    "D",
+    "E"
+   ],
+   "partner_glycan_chains": [],
+   "resolution_angstrom": 3.2,
+   "method": "X-RAY DIFFRACTION",
+   "deposited_citation_doi": "https://doi.org/10.1038/35018508",
+   "fc_accession": "P01857",
+   "partner_accessions": [
+    "O75015"
+   ],
+   "deposited_fc_mutation": null,
+   "deposited_partner_mutation": null,
+   "partner_genotype": "wild type",
+   "wild_type_partner": true,
+   "partner_caveat": "",
+   "other_polymers_in_entry": [],
+   "entities": [
+    {
+     "entity_id": "1",
+     "type": "polymer",
+     "description": "FC FRAGMENT OF HUMAN IGG1",
+     "accession": "P01857",
+     "database": "UNP",
+     "deposited_mutation": null,
+     "chains": [
+      "A",
+      "B"
+     ]
+    },
+    {
+     "entity_id": "2",
+     "type": "polymer",
+     "description": "LOW AFFINITY IMMUNOGLOBULIN GAMMA FC RECEPTOR III",
+     "accession": "O75015",
+     "database": "UNP",
+     "deposited_mutation": null,
+     "chains": [
+      "C"
+     ]
+    },
+    {
+     "entity_id": "3",
+     "type": "branched",
+     "description": "alpha-D-galactopyranose-(1-4)-2-acetamido-2-deoxy-beta-D-glucopyranose-(1-2)-alpha-D-mannopyranose-(1-6)-[2-acetamido-2-deoxy-beta-D-glucopyranose-(1-2)-alpha-D",
+     "accession": null,
+     "database": null,
+     "deposited_mutation": null,
+     "chains": [
+      "D"
+     ]
+    },
+    {
+     "entity_id": "4",
+     "type": "branched",
+     "description": "beta-D-galactopyranose-(1-4)-2-acetamido-2-deoxy-beta-D-glucopyranose-(1-2)-alpha-D-mannopyranose-(1-6)-[2-acetamido-2-deoxy-beta-D-glucopyranose-(1-2)-alpha-D-",
+     "accession": null,
+     "database": null,
+     "deposited_mutation": null,
+     "chains": [
+      "E"
+     ]
+    }
+   ],
+   "fc_accession_database": "UNP",
+   "partner_accession_databases": [
+    "UNP"
+   ]
   },
   "1T89": {
-   "partner": "FcgammaRIIIa ectodomain",
+   "partner": "FcgammaRIIIb ectodomain",
    "partner_chains": [
-    "B"
+    "C"
    ],
    "fc_chains": [
-    "A"
+    "A",
+    "B"
    ],
    "fc_genotype": "wild type",
    "cutoff": 5.0,
@@ -66,10 +136,79 @@
     "330": 4.17,
     "332": 4.74
    },
-   "doi": "https://doi.org/10.1074/jbc.M100350200"
+   "doi": "https://doi.org/10.1074/jbc.M100350200",
+   "fc_glycan_chains": [
+    "D",
+    "E"
+   ],
+   "partner_glycan_chains": [],
+   "resolution_angstrom": 3.5,
+   "method": "X-RAY DIFFRACTION",
+   "deposited_citation_doi": "https://doi.org/10.1074/jbc.M100350200",
+   "fc_accession": "9857753",
+   "partner_accessions": [
+    "O75015"
+   ],
+   "deposited_fc_mutation": null,
+   "deposited_partner_mutation": null,
+   "partner_genotype": "wild type",
+   "wild_type_partner": true,
+   "partner_caveat": "",
+   "other_polymers_in_entry": [],
+   "entities": [
+    {
+     "entity_id": "1",
+     "type": "polymer",
+     "description": "recombinant IgG1 heavy chain",
+     "accession": "9857753",
+     "database": "GB",
+     "deposited_mutation": null,
+     "chains": [
+      "A",
+      "B"
+     ]
+    },
+    {
+     "entity_id": "2",
+     "type": "polymer",
+     "description": "Low affinity immunoglobulin gamma Fc region receptor III-B",
+     "accession": "O75015",
+     "database": "UNP",
+     "deposited_mutation": null,
+     "chains": [
+      "C"
+     ]
+    },
+    {
+     "entity_id": "3",
+     "type": "branched",
+     "description": "beta-D-galactopyranose-(1-4)-2-acetamido-2-deoxy-alpha-D-glucopyranose-(1-2)-alpha-D-mannopyranose-(1-6)-[beta-D-mannopyranose-(1-3)]beta-D-mannopyranose-(1-4)-",
+     "accession": null,
+     "database": null,
+     "deposited_mutation": null,
+     "chains": [
+      "D"
+     ]
+    },
+    {
+     "entity_id": "4",
+     "type": "branched",
+     "description": "2-acetamido-2-deoxy-beta-D-glucopyranose-(1-2)-alpha-D-mannopyranose-(1-3)-[2-acetamido-2-deoxy-beta-D-glucopyranose-(1-2)-alpha-D-mannopyranose-(1-6)]beta-D-ma",
+     "accession": null,
+     "database": null,
+     "deposited_mutation": null,
+     "chains": [
+      "E"
+     ]
+    }
+   ],
+   "fc_accession_database": "GB",
+   "partner_accession_databases": [
+    "UNP"
+   ]
   },
   "5XJE": {
-   "partner": "FcgammaRIIIa, both partners glycosylated",
+   "partner": "FcgammaRIIIa ectodomain, glycans resolved on both partners",
    "partner_chains": [
     "C"
    ],
@@ -104,7 +243,91 @@
     "330": 3.81,
     "332": 3.59
    },
-   "doi": "https://doi.org/10.1038/s41598-017-13845-8"
+   "doi": "https://doi.org/10.1038/s41598-017-13845-8",
+   "fc_glycan_chains": [
+    "D",
+    "E"
+   ],
+   "partner_glycan_chains": [
+    "F",
+    "G"
+   ],
+   "resolution_angstrom": 2.4,
+   "method": "X-RAY DIFFRACTION",
+   "deposited_citation_doi": "https://doi.org/10.1038/s41598-017-13845-8",
+   "fc_accession": "P0DOX5",
+   "partner_accessions": [
+    "P08637"
+   ],
+   "deposited_fc_mutation": null,
+   "deposited_partner_mutation": "N56Q, N92Q, F176V, N187Q",
+   "partner_genotype": "N56Q/N92Q/F176V/N187Q",
+   "wild_type_partner": false,
+   "partner_caveat": "The receptor in this entry is not wild type. Three N-glycosylation sequons are removed (N56Q, N92Q, N187Q) and F176V is the 158V allotype in mature-protein numbering. This is the only FcgammaRIIIa entry used here; 1E4K and 1T89 both carry FcgammaRIIIb, which is 97 percent identical but is not the receptor that mediates ADCC by natural killer cells.",
+   "other_polymers_in_entry": [],
+   "entities": [
+    {
+     "entity_id": "1",
+     "type": "polymer",
+     "description": "Immunoglobulin gamma-1 heavy chain",
+     "accession": "P0DOX5",
+     "database": "UNP",
+     "deposited_mutation": null,
+     "chains": [
+      "A",
+      "B"
+     ]
+    },
+    {
+     "entity_id": "2",
+     "type": "polymer",
+     "description": "Low affinity immunoglobulin gamma Fc region receptor III-A",
+     "accession": "P08637",
+     "database": "UNP",
+     "deposited_mutation": "N56Q, N92Q, F176V, N187Q",
+     "chains": [
+      "C"
+     ]
+    },
+    {
+     "entity_id": "3",
+     "type": "branched",
+     "description": "beta-D-galactopyranose-(1-4)-2-acetamido-2-deoxy-beta-D-glucopyranose-(1-2)-alpha-D-mannopyranose-(1-6)-[2-acetamido-2-deoxy-beta-D-glucopyranose-(1-2)-alpha-D-",
+     "accession": null,
+     "database": null,
+     "deposited_mutation": null,
+     "chains": [
+      "D",
+      "E"
+     ]
+    },
+    {
+     "entity_id": "4",
+     "type": "branched",
+     "description": "alpha-L-fucopyranose-(1-6)-2-acetamido-2-deoxy-beta-D-glucopyranose",
+     "accession": null,
+     "database": null,
+     "deposited_mutation": null,
+     "chains": [
+      "F"
+     ]
+    },
+    {
+     "entity_id": "5",
+     "type": "branched",
+     "description": "beta-D-mannopyranose-(1-4)-2-acetamido-2-deoxy-beta-D-glucopyranose-(1-4)-2-acetamido-2-deoxy-beta-D-glucopyranose",
+     "accession": null,
+     "database": null,
+     "deposited_mutation": null,
+     "chains": [
+      "G"
+     ]
+    }
+   ],
+   "fc_accession_database": "UNP",
+   "partner_accession_databases": [
+    "UNP"
+   ]
   },
   "4N0U": {
    "partner": "FcRn heavy chain and beta-2 microglobulin",
@@ -136,7 +359,94 @@
     "436": 4.75
    },
    "doi": "https://doi.org/10.1074/jbc.M113.537563",
-   "caveat": "This Fc is not wild type. The three YTE substitutions sit inside the FcRn contact patch, so contact distances at EU 252, 254 and 256 describe the engineered molecule, not human IgG1."
+   "caveat": "This Fc is not wild type. The three YTE substitutions sit inside the FcRn contact patch, so contact distances at EU 252, 254 and 256 describe the engineered molecule, not human IgG1.",
+   "fc_glycan_chains": [
+    "C"
+   ],
+   "partner_glycan_chains": [],
+   "resolution_angstrom": 3.8,
+   "method": "X-RAY DIFFRACTION",
+   "deposited_citation_doi": "https://doi.org/10.1074/jbc.M113.537563",
+   "fc_accession": "P01857",
+   "partner_accessions": [
+    "P55899",
+    "P61769"
+   ],
+   "deposited_fc_mutation": "M252Y, S254T, T256E",
+   "deposited_partner_mutation": null,
+   "partner_genotype": "wild type",
+   "wild_type_partner": true,
+   "partner_caveat": "",
+   "other_polymers_in_entry": [
+    {
+     "chain": "D",
+     "description": "Serum albumin",
+     "accession": "P02768",
+     "closest_approach_to_fc_angstrom": 24.16
+    }
+   ],
+   "entities": [
+    {
+     "entity_id": "1",
+     "type": "polymer",
+     "description": "IgG receptor FcRn large subunit p51",
+     "accession": "P55899",
+     "database": "UNP",
+     "deposited_mutation": null,
+     "chains": [
+      "A"
+     ]
+    },
+    {
+     "entity_id": "2",
+     "type": "polymer",
+     "description": "Beta-2-microglobulin",
+     "accession": "P61769",
+     "database": "UNP",
+     "deposited_mutation": null,
+     "chains": [
+      "B"
+     ]
+    },
+    {
+     "entity_id": "3",
+     "type": "polymer",
+     "description": "Serum albumin",
+     "accession": "P02768",
+     "database": "UNP",
+     "deposited_mutation": null,
+     "chains": [
+      "D"
+     ]
+    },
+    {
+     "entity_id": "4",
+     "type": "polymer",
+     "description": "Ig gamma-1 chain C region",
+     "accession": "P01857",
+     "database": "UNP",
+     "deposited_mutation": "M252Y, S254T, T256E",
+     "chains": [
+      "E"
+     ]
+    },
+    {
+     "entity_id": "5",
+     "type": "branched",
+     "description": "2-acetamido-2-deoxy-beta-D-glucopyranose-(1-2)-alpha-D-mannopyranose-(1-3)-[2-acetamido-2-deoxy-beta-D-glucopyranose-(1-2)-alpha-D-mannopyranose-(1-6)]beta-D-ma",
+     "accession": null,
+     "database": null,
+     "deposited_mutation": null,
+     "chains": [
+      "C"
+     ]
+    }
+   ],
+   "fc_accession_database": "UNP",
+   "partner_accession_databases": [
+    "UNP",
+    "UNP"
+   ]
   }
  },
  "fcrn_provenance_survey": {
@@ -702,5 +1012,6 @@
    "fc_fcrn_complexes_with_wild_type_fc": 0,
    "unbound_fc_entries": 12
   }
- }
+ },
+ "_partner_provenance_finding": "Two of the three FcgammaR complexes used here, 1E4K and 1T89, carry FcgammaRIIIb (UniProt O75015). Only 5XJE carries FcgammaRIIIa (P08637), the receptor responsible for natural killer cell ADCC, and its receptor is engineered: N56Q, N92Q and N187Q remove three N-glycosylation sequons and F176V is the 158V allotype. The provenance problem is therefore symmetric. It is not only the Fc in these complexes that is engineered."
 }

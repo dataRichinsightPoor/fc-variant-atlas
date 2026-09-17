@@ -21,7 +21,7 @@ substitutions lie inside the contact patch being measured.
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from importlib import resources
 from typing import Dict, Iterable, List, Optional, Sequence
 
@@ -47,10 +47,33 @@ class Complex:
     contacts: Dict[int, float]
     doi: str = ""
     caveat: str = ""
+    partner_genotype: str = ""
+    partner_caveat: str = ""
+    method: str = ""
+    resolution_angstrom: Optional[float] = None
+    fc_accession: str = ""
+    fc_accession_database: str = ""
+    partner_accessions: List[str] = field(default_factory=list)
+    partner_accession_databases: List[str] = field(default_factory=list)
+    fc_glycan_chains: List[str] = field(default_factory=list)
+    partner_glycan_chains: List[str] = field(default_factory=list)
+    deposited_fc_mutation: Optional[str] = None
+    deposited_partner_mutation: Optional[str] = None
+    other_polymers_in_entry: List[dict] = field(default_factory=list)
 
     @property
     def is_wild_type(self) -> bool:
         return self.fc_genotype.strip().lower() == "wild type"
+
+    @property
+    def has_wild_type_partner(self) -> bool:
+        """Whether the binding partner in this entry is unengineered.
+
+        The provenance problem is symmetric. An entry can carry a wild-type Fc
+        and still be an engineered picture of the interface, because the
+        receptor was mutated to make the complex crystallize.
+        """
+        return self.deposited_partner_mutation is None
 
     @property
     def interface_positions(self) -> List[int]:
@@ -62,6 +85,13 @@ class Complex:
 
     def at_interface(self, eu: int) -> bool:
         return eu in self.contacts
+
+    @property
+    def fc_reference(self) -> str:
+        """Accession with the database that issued it."""
+        if not self.fc_accession:
+            return ""
+        return f"{self.fc_accession_database or 'unstated'}:{self.fc_accession}"
 
 
 def _payload() -> dict:
@@ -87,6 +117,21 @@ def load_complexes() -> Dict[str, Complex]:
             contacts={int(k): float(v) for k, v in rec["contacts"].items()},
             doi=rec.get("doi", ""),
             caveat=rec.get("caveat", ""),
+            partner_genotype=rec.get("partner_genotype", ""),
+            partner_caveat=rec.get("partner_caveat", ""),
+            method=rec.get("method", ""),
+            resolution_angstrom=rec.get("resolution_angstrom"),
+            fc_accession=rec.get("fc_accession", ""),
+            fc_accession_database=rec.get("fc_accession_database") or "",
+            partner_accessions=list(rec.get("partner_accessions", [])),
+            partner_accession_databases=[
+                d or "" for d in rec.get("partner_accession_databases", [])
+            ],
+            fc_glycan_chains=list(rec.get("fc_glycan_chains", [])),
+            partner_glycan_chains=list(rec.get("partner_glycan_chains", [])),
+            deposited_fc_mutation=rec.get("deposited_fc_mutation"),
+            deposited_partner_mutation=rec.get("deposited_partner_mutation"),
+            other_polymers_in_entry=list(rec.get("other_polymers_in_entry", [])),
         )
     return out
 

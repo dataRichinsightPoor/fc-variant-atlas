@@ -21,6 +21,8 @@ from matplotlib.patches import Patch  # noqa: E402
 
 from fcatlas import (  # noqa: E402
     classify,
+    engineering_against_burial,
+    load_interface,
     domain_of,
     fcrn_provenance,
     load_complexes,
@@ -378,11 +380,124 @@ def figure_numbering_collision() -> None:
     save(fig, "fig4_numbering_collision")
 
 
+# ------------------------------------- figure 5: attention against measurement
+def figure_burial_against_density() -> None:
+    """How often a position is engineered, against how much it actually buries.
+
+    Both axes are measurements. The horizontal one comes from the deposited
+    coordinates; the vertical one comes from what the field has chosen to
+    change. They are close to uncorrelated, and the interesting points are the
+    ones far from any diagonal: heavily buried positions nobody engineers, and
+    heavily engineered positions that barely touch the partner.
+    """
+    interfaces = load_interface()
+    rows = [r for r in engineering_against_burial() if r["delta_sasa"]]
+    fcgr = {"1E4K", "1T89", "5XJE"}
+
+    fig, ax = plt.subplots(figsize=(9.2, 4.6))
+    ax.set_axisbelow(True)
+    ax.grid(axis="both", color=GRID, linewidth=0.6)
+
+    for row in sorted(rows, key=lambda r: -r["delta_sasa"]):
+        colour = FCGR if row["pdb"] in fcgr else FCRN
+        ax.scatter(
+            row["delta_sasa"],
+            row["records"],
+            s=26 + 150 * row["buried_fraction"],
+            facecolor=colour,
+            edgecolor="white",
+            linewidth=0.7,
+            alpha=0.9,
+            zorder=3,
+        )
+
+    # Label the points that carry the argument, placed by hand so nothing
+    # collides and no label needs a leader line.
+    labels = {
+        329: (-6, 14, "right"),
+        253: (7, 3, "left"),
+        434: (6, 8, "left"),
+        235: (0, 14, "center"),
+        236: (0, -16, "center"),
+        234: (0, 14, "center"),
+        311: (6, -6, "left"),
+        296: (0, -16, "center"),
+        330: (11, -7, "left"),
+        239: (0, 14, "center"),
+        254: (8, 8, "left"),
+        309: (8, 4, "left"),
+        252: (0, -15, "center"),
+    }
+    for row in rows:
+        if row["eu"] not in labels:
+            continue
+        dx, dy, ha = labels[row["eu"]]
+        ax.annotate(
+            str(row["eu"]),
+            xy=(row["delta_sasa"], row["records"]),
+            xytext=(dx, dy),
+            textcoords="offset points",
+            fontsize=8.5,
+            color=INK,
+            ha=ha,
+            va="center",
+        )
+
+    ax.set_xlabel("surface the partner buries at this position, square angstroms")
+    ax.set_ylabel("curated variant records that change it")
+    ax.set_xlim(-6, 142)
+    ax.set_ylim(-1.6, 24.0)
+    ax.set_title(
+        "What the field engineers, against what the interface actually buries"
+    )
+
+    ax.axhline(0, color=MUTED, linewidth=0.7, zorder=2)
+    ax.annotate(
+        "buried and untouched: EU 253 gives up 96 percent\nof its surface to FcRn "
+        "and appears in no record here",
+        xy=(121.2, 0.15), xytext=(112, 8.6),
+        fontsize=8.5, color=ACCENT, ha="center", va="bottom",
+        arrowprops=dict(arrowstyle="-", color=ACCENT, linewidth=0.8,
+                        shrinkA=2, shrinkB=4),
+    )
+    ax.annotate(
+        "engineered and barely buried: EU 332 gives up\n9 square angstroms and "
+        "carries six records",
+        xy=(9.5, 6.2), xytext=(48, 11.4),
+        fontsize=8.5, color=ACCENT, ha="center", va="center",
+        arrowprops=dict(arrowstyle="-", color=ACCENT, linewidth=0.8,
+                        shrinkA=2, shrinkB=4),
+    )
+
+    handles = [
+        Patch(facecolor=FCGR, edgecolor="none", label="measured at an FcgammaR interface"),
+        Patch(facecolor=FCRN, edgecolor="none", label="measured at the FcRn interface"),
+    ]
+    ax.legend(
+        handles=handles, loc="upper left", frameon=False, fontsize=8.5,
+        handlelength=1.1, borderaxespad=0.4,
+    )
+
+    total = sum(d.total_buried_area for d in interfaces.values())
+    fig.text(
+        0.5, -0.075,
+        "Each position appears once, at the structure where it buries the most; marker "
+        "area scales with the fraction of the residue's free surface buried there.\n"
+        "Areas are Shrake-Rupley differences over the deposited coordinates, probe "
+        f"1.40 angstroms. {len(rows)} positions carry measurable burial across four "
+        f"complexes totalling {total:.0f} square angstroms of interface; positions "
+        "with none are not plotted.",
+        ha="center", fontsize=8, color=MUTED,
+    )
+    save(fig, "fig5_burial_against_density")
+
+
 def main() -> None:
     figure_hotspots()
     figure_classification()
     figure_fcrn_provenance()
     figure_numbering_collision()
+    figure_burial_against_density()
     print(f"{len(load_variants())} variants; figures written to {HERE}")
 
 

@@ -29,6 +29,16 @@ from .numbering import (
     domain_of,
     numbering,
 )
+from .interface import (
+    BURIED_AREA_THRESHOLD,
+    InterfaceDetail,
+    PartnerContact,
+    PositionDetail,
+    burial_by_position,
+    engineering_against_burial,
+    load_interface,
+    method_note,
+)
 from .structure import (
     Complex,
     InterfaceReport,
@@ -60,9 +70,17 @@ from .export import (
     variant_rows,
 )
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 __all__ = [
+    "BURIED_AREA_THRESHOLD",
+    "InterfaceDetail",
+    "PartnerContact",
+    "PositionDetail",
+    "burial_by_position",
+    "engineering_against_burial",
+    "load_interface",
+    "method_note",
     "ACCESSIONS",
     "DOMAINS",
     "EU_START",

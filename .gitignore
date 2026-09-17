@@ -6,3 +6,6 @@ dist/
 .pytest_cache/
 .venv/
 .DS_Store
+tools/.cache/
+dist/
+pymol_plugin/fcatlas_pymol/data/

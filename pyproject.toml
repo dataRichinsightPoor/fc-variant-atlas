@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fcatlas"
-version = "1.0.1"
+version = "1.1.0"
 description = "Aligned, sequence-validated atlas of engineered IgG Fc variants with measured structural context"
 readme = "README.md"
 requires-python = ">=3.9"
