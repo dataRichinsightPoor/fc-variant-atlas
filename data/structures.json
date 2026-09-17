@@ -66,7 +66,7 @@
     "330": 4.17,
     "332": 4.74
    },
-   "doi": "https://doi.org/10.1074/jbc.M312904200"
+   "doi": "https://doi.org/10.1074/jbc.M100350200"
   },
   "5XJE": {
    "partner": "FcgammaRIIIa, both partners glycosylated",
@@ -104,7 +104,7 @@
     "330": 3.81,
     "332": 3.59
    },
-   "doi": "https://doi.org/10.1074/jbc.M117.808618"
+   "doi": "https://doi.org/10.1038/s41598-017-13845-8"
   },
   "4N0U": {
    "partner": "FcRn heavy chain and beta-2 microglobulin",
@@ -135,7 +135,7 @@
     "435": 3.32,
     "436": 4.75
    },
-   "doi": "https://doi.org/10.1073/pnas.1408886111",
+   "doi": "https://doi.org/10.1074/jbc.M113.537563",
    "caveat": "This Fc is not wild type. The three YTE substitutions sit inside the FcRn contact patch, so contact distances at EU 252, 254 and 256 describe the engineered molecule, not human IgG1."
   }
  },

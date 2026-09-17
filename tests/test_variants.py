@@ -6,6 +6,7 @@ from fcatlas import (
     INTENT_LABELS,
     by_intent,
     find,
+    load_complexes,
     load_variants,
     numbering,
     position_index,
@@ -111,3 +112,29 @@ def test_mutated_sequence_applies_only_validated_substitutions():
 @pytest.mark.parametrize("query", ["LALA-PG", "lala-pg", "P329G", "YTE"])
 def test_find_is_case_insensitive_and_matches_mutations(query):
     assert find(query)
+
+
+def test_every_source_is_a_resolvable_style_reference():
+    """Sources must be DOI URLs, or an explicitly allowed non-DOI reference.
+
+    Every DOI in this file was checked against Crossref during curation to
+    confirm that it resolves to the paper the record claims. This test cannot
+    re-check resolution offline, but it does keep the format enforceable and
+    keeps the allow-list of non-DOI sources visible and small.
+    """
+    allowed_non_doi = {
+        "https://patents.google.com/patent/WO2015195498A1/en",
+    }
+    for variant in load_variants():
+        source = variant.source
+        assert source, f"{variant.id} has no source"
+        if source in allowed_non_doi:
+            continue
+        assert source.startswith("https://doi.org/10."), (
+            f"{variant.id} source is neither a DOI URL nor allow-listed: {source}"
+        )
+
+
+def test_structure_dois_are_doi_urls():
+    for pdb_id, complex_ in load_complexes().items():
+        assert complex_.doi.startswith("https://doi.org/10."), pdb_id

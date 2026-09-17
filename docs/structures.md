@@ -8,9 +8,9 @@ asserted ones.
 | PDB | partner | Fc chains | Fc residues in contact | Fc genotype | source |
 | --- | --- | --- | --- | --- | --- |
 | 1E4K | FcγRIIIb ectodomain | A, B | 19 | wild type | [10.1038/35018508](https://doi.org/10.1038/35018508) |
-| 1T89 | FcγRIIIa ectodomain | A | 18 | wild type | [10.1074/jbc.M312904200](https://doi.org/10.1074/jbc.M312904200) |
-| 5XJE | FcγRIIIa, both partners glycosylated | A, B | 23 | wild type | [10.1074/jbc.M117.808618](https://doi.org/10.1074/jbc.M117.808618) |
-| 4N0U | FcRn heavy chain with β2-microglobulin | E | 16 | M252Y/S254T/T256E | [10.1073/pnas.1408886111](https://doi.org/10.1073/pnas.1408886111) |
+| 1T89 | FcγRIIIa ectodomain | A | 18 | wild type | [10.1074/jbc.M100350200](https://doi.org/10.1074/jbc.M100350200) |
+| 5XJE | FcγRIIIa, both partners glycosylated | A, B | 23 | wild type | [10.1038/s41598-017-13845-8](https://doi.org/10.1038/s41598-017-13845-8) |
+| 4N0U | FcRn heavy chain with β2-microglobulin | E | 16 | M252Y/S254T/T256E | [10.1074/jbc.M113.537563](https://doi.org/10.1074/jbc.M113.537563) |
 
 ## How contacts are computed
 

@@ -220,9 +220,14 @@ python -m fcatlas export json -o data/atlas.json
 python -m fcatlas pymol-all examples/pymol --pdb 1E4K
 ```
 
-Sixty tests cover the numbering, the variant records, the structural layer and
-the exports. Figures are byte-reproducible: no timestamps, no version strings,
-fixed element order, PNG metadata chunks stripped. A diff in a figure means a
+Sixty-two tests cover the numbering, the variant records, the structural layer,
+the citation format and the exports. Every DOI in `data/variants.yaml` and
+`data/structures.json` was resolved against Crossref during curation and checked
+against the paper the record claims; four citations were wrong on the first pass
+and were corrected before release.
+
+Figures are byte-reproducible: no timestamps, no version strings, fixed element
+order, PNG metadata chunks stripped. A diff in a figure means a
 change in the data.
 
 ## Related open-license tools

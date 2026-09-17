@@ -2399,7 +2399,7 @@
    "fc_genotype": "wild type",
    "wild_type_fc": true,
    "cutoff_angstrom": 5.0,
-   "doi": "https://doi.org/10.1074/jbc.M312904200",
+   "doi": "https://doi.org/10.1074/jbc.M100350200",
    "caveat": "",
    "contacts": {
     "235": 3.0,
@@ -2434,7 +2434,7 @@
    "fc_genotype": "M252Y/S254T/T256E (YTE)",
    "wild_type_fc": false,
    "cutoff_angstrom": 5.0,
-   "doi": "https://doi.org/10.1073/pnas.1408886111",
+   "doi": "https://doi.org/10.1074/jbc.M113.537563",
    "caveat": "This Fc is not wild type. The three YTE substitutions sit inside the FcRn contact patch, so contact distances at EU 252, 254 and 256 describe the engineered molecule, not human IgG1.",
    "contacts": {
     "251": 3.57,
@@ -2467,7 +2467,7 @@
    "fc_genotype": "wild type",
    "wild_type_fc": true,
    "cutoff_angstrom": 5.0,
-   "doi": "https://doi.org/10.1074/jbc.M117.808618",
+   "doi": "https://doi.org/10.1038/s41598-017-13845-8",
    "caveat": "",
    "contacts": {
     "235": 3.24,
@@ -3924,7 +3924,7 @@
    "has_deletion": false,
    "therapeutics": "",
    "phenotype": "Salt-bridge heterodimerization arm; pairs with the L351K/T366K chain.",
-   "source": "https://doi.org/10.3390/ijms22094550",
+   "source": "https://doi.org/10.1074/jbc.M117.793497",
    "notes": ""
   },
   {
@@ -3946,7 +3946,7 @@
    "has_deletion": false,
    "therapeutics": "",
    "phenotype": "Salt-bridge heterodimerization arm; pairs with the L351D/L368E chain.",
-   "source": "https://doi.org/10.3390/ijms22094550",
+   "source": "https://doi.org/10.1074/jbc.M117.793497",
    "notes": ""
   },
   {
@@ -3968,7 +3968,7 @@
    "has_deletion": false,
    "therapeutics": "",
    "phenotype": "Engineered cysteine for site-specific drug attachment.",
-   "source": "https://doi.org/10.1080/19420862.2022.2149432",
+   "source": "https://doi.org/10.3390/ph14070672",
    "notes": "Sits inside the FcgammaR contact patch. Conjugating here is not effector-neutral, which matters for ADC design."
   },
   {
@@ -3990,7 +3990,7 @@
    "has_deletion": false,
    "therapeutics": "",
    "phenotype": "Engineered cysteine in CH3 for site-specific drug attachment.",
-   "source": "https://doi.org/10.1080/19420862.2022.2149432",
+   "source": "https://doi.org/10.3390/ph14070672",
    "notes": "Distal to both the FcgammaR and FcRn interfaces."
   },
   {
@@ -4012,7 +4012,7 @@
    "has_deletion": false,
    "therapeutics": "",
    "phenotype": "Engineered cysteine for site-specific conjugation.",
-   "source": "https://doi.org/10.1080/19420862.2022.2149432",
+   "source": "https://doi.org/10.3390/ph14070672",
    "notes": ""
   },
   {
@@ -4034,7 +4034,7 @@
    "has_deletion": false,
    "therapeutics": "",
    "phenotype": "Engineered CH2 disulfide that stabilizes the domain in the absence of N297 glycosylation.",
-   "source": "https://doi.org/10.1080/19420862.2022.2149432",
+   "source": "https://doi.org/10.1074/jbc.M116.748525",
    "notes": "A direct answer to the destabilization caused by glycan-knockout silencing. Often combined with N297A, N297G or N297Q."
   },
   {
@@ -4122,8 +4122,8 @@
    "has_deletion": false,
    "therapeutics": "",
    "phenotype": "Abrogates Protein A binding.",
-   "source": "https://doi.org/10.1080/19420862.2022.2149432",
-   "notes": "Used to enable differential purification of bispecific heterodimers. H435R also sits in the FcRn contact patch, so a purification handle can carry a pharmacokinetic consequence."
+   "source": "https://doi.org/10.3390/antib11040065",
+   "notes": "Used to enable differential purification of bispecific heterodimers. H435R also sits in the FcRn contact patch, so a purification handle can carry a pharmacokinetic consequence. Cataloged by IMGT as G4v8; the H435R/Y436F pair (IgG3-derived, called RF) is the component with published binding characterization, in Steinhardt et al., https://doi.org/10.3390/pharmaceutics12010003."
   }
  ]
 }

@@ -2,11 +2,11 @@
   235   L CH2      20 1E4K 2.68 A (FcgammaRIIIb)         LALA, LALA-PG, LALA-PS, LALAGA, +16 more
   234   L CH2      17 1E4K 3.15 A (FcgammaRIIIb)         LALA, LALA-PG, LALA-PS, LALAGA, +13 more
   236   G CH2       7 1E4K 2.70 A (FcgammaRIIIb)         GRLR, STR, IgG2-like lower hinge, IgG2/IgG4 hybrid, +3 more
-  239   S CH2       6 5XJE 2.70 A (FcgammaRIIIa,)        DE, DLE, GASDALIE, GASDIE, +2 more
-  330   A CH2       6 5XJE 3.81 A (FcgammaRIIIa,)        IgG1 sigma, IgG2 sigma, IgG2m4, DLE, +2 more
-  332   I CH2       6 5XJE 3.59 A (FcgammaRIIIa,)        DE, DLE, GASDALIE, GASDIE, +2 more
+  239   S CH2       6 5XJE 2.70 A (FcgammaRIIIa)         DE, DLE, GASDALIE, GASDIE, +2 more
+  330   A CH2       6 5XJE 3.81 A (FcgammaRIIIa)         IgG1 sigma, IgG2 sigma, IgG2m4, DLE, +2 more
+  332   I CH2       6 5XJE 3.59 A (FcgammaRIIIa)         DE, DLE, GASDALIE, GASDIE, +2 more
   331   P CH2       5 -                                  LALA-PS, TM, IgG1 sigma, IgG2 sigma, +1 more
-  268   H CH2       4 5XJE 4.88 A (FcgammaRIIIa,)        IgG1 sigma, IgG2 sigma, IgG2m4, EFT
+  268   H CH2       4 5XJE 4.88 A (FcgammaRIIIa)         IgG1 sigma, IgG2 sigma, IgG2m4, EFT
   297   N CH2       4 1E4K 3.05 A (FcgammaRIIIb)         N297A, N297G, N297Q, DAPA
   300   Y CH2       4 -                                  margetuximab Fc, stavenhagen-set, XmAb5574 Fc, IgG2-aggregation
   309   L CH2       4 4N0U 3.04 A (FcRn)                 IgG2 sigma, IgG2m4, XmAb5574 Fc, IgG2-aggregation
@@ -25,7 +25,7 @@
   329   P CH2       3 1T89 3.23 A (FcgammaRIIIa)         LALA-PG, PG, LEPG
   409   K CH3       3 -                                  cFAE partner, DD, IgG4-R409K
   434   N CH3       3 4N0U 1.93 A (FcRn)                 LS, KF, YTE-KFH
-  238   P CH2       2 5XJE 2.71 A (FcgammaRIIIa,)        IgG1 sigma, IgG2 sigma
+  238   P CH2       2 5XJE 2.71 A (FcgammaRIIIa)         IgG1 sigma, IgG2 sigma
   243   F CH2       2 -                                  margetuximab Fc, stavenhagen-set
   333   E CH2       2 -                                  S298A/E333A/K334A, K326W-E333S
   339   A CH2       2 -                                  XmAb5574 Fc, IgG2-aggregation
@@ -43,13 +43,13 @@
   270   D CH2       1 -                                  D270A
   272   E CH2       1 -                                  E272C
   274   K CH2       1 -                                  XmAb5574 Fc
-  296   Y CH2       1 5XJE 2.98 A (FcgammaRIIIa,)        XmAb5574 Fc
+  296   Y CH2       1 5XJE 2.98 A (FcgammaRIIIa)         XmAb5574 Fc
   298   S CH2       1 1E4K 3.26 A (FcgammaRIIIb)         S298A/E333A/K334A
   302   V CH2       1 -                                  CH2-disulfide
   305   V CH2       1 -                                  stavenhagen-set
   310   H CH2       1 4N0U 2.04 A (FcRn)                 H310A
   324   S CH2       1 -                                  EFT
-  326   K CH2       1 5XJE 4.15 A (FcgammaRIIIa,)        K326W-E333S
+  326   K CH2       1 5XJE 4.15 A (FcgammaRIIIa)         K326W-E333S
   334   K CH2       1 -                                  S298A/E333A/K334A
   356   D CH3       1 -                                  KK
   392   K CH3       1 -                                  DD

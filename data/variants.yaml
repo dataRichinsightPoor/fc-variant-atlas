@@ -875,7 +875,7 @@ variants:
     phenotype: Salt-bridge heterodimerization arm; pairs with the L351K/T366K chain.
     evidence: functional
     therapeutics: []
-    source: https://doi.org/10.3390/ijms22094550
+    source: https://doi.org/10.1074/jbc.M117.793497
     notes: ""
 
   - id: DEKK-KK
@@ -886,7 +886,7 @@ variants:
     phenotype: Salt-bridge heterodimerization arm; pairs with the L351D/L368E chain.
     evidence: functional
     therapeutics: []
-    source: https://doi.org/10.3390/ijms22094550
+    source: https://doi.org/10.1074/jbc.M117.793497
     notes: ""
 
   # ---------------------------------------------------------------- conjugation
@@ -899,7 +899,7 @@ variants:
     phenotype: Engineered cysteine for site-specific drug attachment.
     evidence: structural
     therapeutics: []
-    source: https://doi.org/10.1080/19420862.2022.2149432
+    source: https://doi.org/10.3390/ph14070672
     notes: >
       Sits inside the FcgammaR contact patch. Conjugating here is not
       effector-neutral, which matters for ADC design.
@@ -913,7 +913,7 @@ variants:
     phenotype: Engineered cysteine in CH3 for site-specific drug attachment.
     evidence: structural
     therapeutics: []
-    source: https://doi.org/10.1080/19420862.2022.2149432
+    source: https://doi.org/10.3390/ph14070672
     notes: Distal to both the FcgammaR and FcRn interfaces.
 
   - id: E272C
@@ -925,7 +925,7 @@ variants:
     phenotype: Engineered cysteine for site-specific conjugation.
     evidence: structural
     therapeutics: []
-    source: https://doi.org/10.1080/19420862.2022.2149432
+    source: https://doi.org/10.3390/ph14070672
     notes: ""
 
   # -------------------------------------------------------------- stabilization
@@ -938,7 +938,7 @@ variants:
     phenotype: Engineered CH2 disulfide that stabilizes the domain in the absence of N297 glycosylation.
     evidence: structural
     therapeutics: []
-    source: https://doi.org/10.1080/19420862.2022.2149432
+    source: https://doi.org/10.1074/jbc.M116.748525
     notes: >
       A direct answer to the destabilization caused by glycan-knockout
       silencing. Often combined with N297A, N297G or N297Q.
@@ -992,8 +992,11 @@ variants:
     phenotype: Abrogates Protein A binding.
     evidence: binding
     therapeutics: []
-    source: https://doi.org/10.1080/19420862.2022.2149432
+    source: https://doi.org/10.3390/antib11040065
     notes: >
       Used to enable differential purification of bispecific heterodimers.
       H435R also sits in the FcRn contact patch, so a purification handle can
-      carry a pharmacokinetic consequence.
+      carry a pharmacokinetic consequence. Cataloged by IMGT as G4v8; the
+      H435R/Y436F pair (IgG3-derived, called RF) is the component with
+      published binding characterization, in Steinhardt et al.,
+      https://doi.org/10.3390/pharmaceutics12010003.
