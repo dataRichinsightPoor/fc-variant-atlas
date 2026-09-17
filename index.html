@@ -260,7 +260,14 @@ async function boot() {
   VIEW = $3Dmol.createViewer("gl", { backgroundColor: "#0d0f14", antialias: true });
 
   ["#q", "#intent", "#isotype"].forEach(s => $(s).addEventListener("input", renderList));
-  $("#pdb").addEventListener("change", e => { CURPDB = e.target.value; draw(); });
+  // The burial table is rendered per structure, so the panel has to be rebuilt
+  // when the structure changes. Redrawing only the 3D view left the table
+  // showing the previous entry's areas under the new entry's name.
+  $("#pdb").addEventListener("change", e => {
+    CURPDB = e.target.value;
+    if (CUR) detail(CUR);
+    draw();
+  });
   bind("#bIface", "iface"); bind("#bPartner", "partner");
   bind("#bLabels", "labels"); bind("#bSurf", "surface");
   bind("#bBurial", "burial"); bind("#bSide", "side");
