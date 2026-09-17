@@ -11,6 +11,8 @@ heavy-atom contacts measured in deposited Fc–receptor complexes.
 
 Then it hands you a PyMOL script, a PyMOL plugin, and a browser viewer.
 
+**Live viewer, nothing to install: https://datarichinsightpoor.github.io/fc-variant-atlas/**
+
 ```bash
 pip install -e .
 fcatlas show LALA-PG
@@ -213,7 +215,9 @@ genotype and provenance of the entry before it draws anything.
 
 ### A browser viewer
 
-No install at all: open `viewer/index.html` locally, or serve the directory. It
+Running at https://datarichinsightpoor.github.io/fc-variant-atlas/, published
+from the `gh-pages` branch, which holds the contents of `viewer/` at its root.
+Or open `viewer/index.html` locally, or serve the directory. It
 reads `viewer/atlas.json` and `viewer/interface_detail.json` and renders the same
 content with 3Dmol.js — searchable variant list, intent and isotype filters,
 structure switching, interface and glycan display, measured contact distances,
@@ -225,6 +229,14 @@ the isotype alignment block. The burial toggle colors residues on a fixed 0 to
 Deposited glycans are drawn as spheres rather than sticks, deliberately:
 branched-sugar bond inference is unreliable and sticks produce artifacts that
 look like structure.
+
+The hosted copy is regenerated from `viewer/` rather than maintained separately:
+
+```bash
+python -m fcatlas export json -o viewer/atlas.json
+cp data/interface_detail.json viewer/
+git push origin "$(git subtree split --prefix=viewer)":gh-pages
+```
 
 ## Command line
 
